@@ -354,7 +354,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 5. 스프링 시큐리가 제공해주는 authentication-provider을 이용해 인증을 진행하게되는데 유저 인증은 UserDetailsService에 UserDetails객체를 이용해 인증을 진행하게 된다.
     * <jdbc-user-service>을 사용하게되면 인증을 알아서 진행하는듯, 단 유저정보를 가지고올수있는 제약이걸림 사실상 사용못함.
 6. 그렇게 UserDetailsService에서 데이터를 가지고와서 DaoAuthenticationProvider에서 인증과정을 거친다.(UserDetailsService의 loadUserByUsername메소드를 이용함)
-7. 만약에 UserDetailsService를 커스텀 한다면 loadUserByUsername에서 회원정보를 꼭리턴해줘야한다. 왜냐하면 아까 말했듯이 이것을 통해 인증을 진행하기때문이다.
+7. 만약에 UserDetailsService를 커스텀 한다면 loadUserByUsername에서 회원정보를 꼭리턴해줘야한다. 왜냐하면 아까 말했듯이 이것을 통해 사용자가 입력한 암호를 비교 하기때문이다.
 
 
 
@@ -365,6 +365,8 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 * 유저정보를 불러오려면 UserDetailsService에서 내가 직접구현해야한다. 쿼리까지 그러면 테이블명과 필드명등을 추가하거나 뺄 수 있다.
 * jdbcUserDetailsManager 구현체에 crud가 정해져있는데 이것은 아까 말햇듯이 <jdbc-user-service> 특화되어있기때문에 못쓴다.
 
+
+유저정보는 돌려주는데 비번대조를 AthenticationProvider가 하는지 궁금
 
 
 

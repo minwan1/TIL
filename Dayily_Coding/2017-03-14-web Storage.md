@@ -22,7 +22,8 @@
 네트워크로는 전송되지 않기 때문에 네트워크 레벨에서는 안전하다고 볼 수 있다.
 하지만 평문으로 저장하는 경우, 그 값이 그대로 노출되어 XSS 등의 공격으로부터 안전하지 않다.
 
-
+http://stackoverflow.com/questions/19596779/intellij-and-tomcat-changed-files-are-not-automatically-recognized-by-tomcat
+intellij 자동완성
 
 참고
 * [Hou](https://vnthf.github.io/blog/localstroage/)

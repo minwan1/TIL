@@ -1,26 +1,22 @@
-# 지뢰찾기 (minesweeper)
+
 ### 목적
-* 개인 프로젝트
+
+## -. 네이밍 규칙
+### [[네이밍 규칙]]
 
 
-## 사용된 기술
-* javascript
-* jquery
+## -. CommonService 공유
+### [[다국어 변수 처리]]
 
 
-## 주요 내용
-* 지뢰찾기
 
+### dateFormat
+날짜 포맷을 관장하는 필터를 filters.js 에 추가해보았습니다. lang이 한글이나 영어냐에 따라서 다른 포맷이 적용되고 HTML에서 {{ [날짜값]  | dateFormat }} 이렇게 사용하시면 될것 같습니다
+##
 
-## 화면
-
-![](http://i.imgur.com/nFt6Zwi.png)
-![](http://i.imgur.com/Xj6GWSg.png)
-![](http://i.imgur.com/rakNNsm.png)
-
-
-## 프로젝트 실행 방법(window 기준)
-
-```
-메모장,이클립스 등
+### addMoneyFormat
+Argument : Soruce Money, SourceCurrency
+Usage :
+```html
+{{1000000 | addMoneyFormat : "KRW"}} //in HTML
 ```
