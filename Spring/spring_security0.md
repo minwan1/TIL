@@ -360,17 +360,6 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
 
 
-* 직접아이디 비번을 대조해야한다. 내가 직접.
-* 왜냐하면 이걸로 유저 인증을해서 컨텍스트에 넣어야하니까.
-* 유저정보를 불러오려면 UserDetailsService에서 내가 직접구현해야한다. 쿼리까지 그러면 테이블명과 필드명등을 추가하거나 뺄 수 있다.
-* jdbcUserDetailsManager 구현체에 crud가 정해져있는데 이것은 아까 말햇듯이 <jdbc-user-service> 특화되어있기때문에 못쓴다.
-
-
-유저정보는 돌려주는데 비번대조를 AthenticationProvider가 하는지 궁금
-
-
-
-
 
 
 ## 프로젝트 실행 방법(Mac 기준)

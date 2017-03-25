@@ -1,9 +1,7 @@
-# Daily Coding 2017-03-21일 spring security 암호화
+# Daily Coding 2017-03-23일 angular 필터,ng-클래스
 
 ## LDAP이란
 > LDAP(LightWeight Directory Access Protocol)이란 네트워크상에서 조직이나 개인정보 혹은 파일이나 디바이스 정보등을 찾아 보는것을 가능하게 만든 프로토콜
-
-
 
 
 2개이상 필터 html에서
