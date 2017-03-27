@@ -8,7 +8,7 @@
 * ***ProviderManager*** 는 인증구현을 ***AuthenticationProvider*** 에게 위임한다.
 * 일반적으로 ***AuthenticationProvider*** 을 커스터마이징해서 인증을 구현한다.
 * ***AuthenticationProvider*** 구현체는 3개가 있고, 이것에 인증에 성공하지 못할경우 예외처리가 발생한다.
-  * 구현체로 ***DaoAuthenticationProvider,LadpAuthenticationProvider,OpenIdAuthenticationProvider*** 가 존재한다.
+  * 구현체로 ***DaoAuthenticationProvider, LadpAuthenticationProvider, OpenIdAuthenticationProvider*** 가 존재한다.
 ![](http://i.imgur.com/ByfYXXm.png)  
 <center>[이미지 2]</center>
 * **이미지2** 는 AuthenticationProvider구현체까지 구현된 class다이어그램이다.
@@ -31,4 +31,4 @@ Spring Security에서 방금 담은 Authentication을  SecurityContext에 보관
 참고
 * [버리야 놀자](http://flyburi.com/584)
 * [Spring 4.0 프로그래밍](http://storefarm.naver.com/dcvirus/products/458328014?NaPm=ct%3Dj06r6ydk%7Cci%3D1744f23aa4586709889a372fc15683afa2b4928e%7Ctr%3Dsls%7Csn%3D182521%7Chk%3Dab9fe496302792c50421edea06a3e322286ad2b9) / 최범균 /
-** [Syaku(샤쿠)](http://syaku.tistory.com/286)
+* [Syaku(샤쿠)](http://syaku.tistory.com/286)
