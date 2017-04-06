@@ -1,5 +1,7 @@
 # Daily Coding 2017-03-26일 spring boot
 
+Spring boot는 기본적으로 classpath:templates/+뷰이름+.html로 화면으로 이동된다.
+
 ```
 @SpringBootApplication = @Configuration + @EnableAutoConfiguration + @ComponentScan
 ```
@@ -22,7 +24,7 @@
 
 ## Spring boot
 
-## DI
+## DI 기초
 ```JAVA
 1. Hello hello = new Hello();
 2.
@@ -34,6 +36,8 @@ DI 방법
 IOC컨테이너란
 * configuration에서 각클래스에서 필요한 의존성(부품)을 주입해주는것
 
+#### Configuration
+* @EnableAutoConfiguration 임베디드 톰켓 관련된거인듯 ?
 #### Configuration
   * 애너테이션을 붙여 이클래스가 JavaConfig용 클래스임을 컴파일러에 알린다.
 #### @bean

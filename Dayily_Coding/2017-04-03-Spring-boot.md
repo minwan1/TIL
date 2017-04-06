@@ -13,8 +13,6 @@
 
 
 ## DI 예제
-
-
 ```java
 public interface Calculator { //인터페이스
 	public int calc(int a, int b);
