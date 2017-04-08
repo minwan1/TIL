@@ -1,28 +1,28 @@
 # Daily Coding 2017-03-26일 spring boot
 
-Spring boot는 기본적으로 classpath:templates/+뷰이름+.html로 화면으로 이동된다.
+## Spring boot
 
-```
-@SpringBootApplication = @Configuration + @EnableAutoConfiguration + @ComponentScan
-```
+Spring boot는 기본적으로 classpath:templates/+뷰이름+.html로 화면으로 이동된다.
 ```
 @SpringBootApplication 은 기존에 우리가 쓰던  @Configuration + @EnableAutoConfiguration + @ComponentScan 을 합쳐 놓은 어노테이션이라고 볼 수 있다.
 ```
-```
-@Configuration : 현재 클래스가 Spring의 설정 파일임을 알려주는 어노테이션
-@EnableAutoConfiguration : spring boot 클래스패스 세팅 및 다양한 Bean 추가등을 시켜주는 어노테이션
-@ComponentScan : 다른 컴포넌트, 서비스, 설정등을 찾을 수 있게 도와주는 어노테이션
-```
 
+***@Configuration*** : 현재 클래스가 Spring의 설정 파일임을 알려주는 어노테이션
 
-## Angular select
-```javascript
-<select class="cs-select cs-skin-elastic" ng-model="recipientBankInfo" id="korea_bank_select" ng-options="bank.value for bank in koreanBankList">
-  <option ng-bind="gettextCatalog.getString('transfer.select.bank')" value=""></option>
-```
+***@EnableAutoConfiguration*** : spring boot 클래스패스 세팅 및 다양한 Bean 추가등을 시켜주는 어노테이션, classpath에 tomcat-embed-core.jar가 존재하면 톰캣 서버가 세팅되고, spring-webmvc.jar가 존재하면 자동으로 web.xml을 생성해 DispatcherServlet을 등록해준다
 
+***@ComponentScan*** : 다른 컴포넌트, 서비스, 설정등을 찾을 수 있게 도와주는 어노테이션
 
-## Spring boot
+```java
+@EnableAutoConfiguration
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}
+````
+이렇게하면 일반 자바프로그램 실행되듯이 임베디드 톰켓부터시작해서 자동으로 빌드 해주면서 프로그램이 실행이된다.
 
 ## DI 기초
 ```JAVA
@@ -51,6 +51,13 @@ ConfigurableApplicationContext context = SpringApplication.run(App.class, args)/
 ```java
 Calculator calculator = context.getBean(Calculator.class);//bean을 얻어온다
 ```
+
+## Angular select
+```javascript
+<select class="cs-select cs-skin-elastic" ng-model="recipientBankInfo" id="korea_bank_select" ng-options="bank.value for bank in koreanBankList">
+  <option ng-bind="gettextCatalog.getString('transfer.select.bank')" value=""></option>
+```
+
 
 참고
 * [OKIHOUSE](http://okihouse.tistory.com/entry/Facebook-간단한-Login-인증-만들기)
