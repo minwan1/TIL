@@ -24,6 +24,14 @@ SocialConfigurerAdapter에서 에서 오버라이딩하는 메소드 중에 getu
 이사이트를 통해 진행하면 된다.
 
 
+
+
+
+
+
+
+
+
 참고
 * [아둔한사의 개발공부와 테스트^^](http://adunhansa.tistory.com/194 )
 * [http://docs.spring.io](http://docs.spring.io/autorepo/docs/spring-security/3.2.0.RELEASE/apidocs/org/springframework/security/crypto/encrypt/TextEncryptor.html)
