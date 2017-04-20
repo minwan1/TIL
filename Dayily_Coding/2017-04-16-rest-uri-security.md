@@ -23,6 +23,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 ```
 
 
+CREATE TABLE `user` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `enabled` tinyint(1) NOT NULL,
+  `age` varchar(10) DEFAULT NULL,
+  `user_uuid` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `first_name` varchar(50) DEFAULT NULL,
+  `last_name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 
 
 참고
