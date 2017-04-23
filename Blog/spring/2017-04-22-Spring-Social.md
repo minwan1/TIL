@@ -2,7 +2,7 @@
 
 ## Spring social
 
-Spring social은 두가지 방법이 이있다. Connect Framework/Provider Sign In 방법이 있다.
+Spring social 로그인은 두가지 구현 방법이 있다. Connect Framework/Provider Sign In 방법이 있다.
 ```
 "/connection/facebook" post
 "/signin/facebook" post
@@ -167,5 +167,4 @@ CREATE TABLE `user` (
 ## [깃허브 소스](https://github.com/minwan1/Spring-social-facebook)
 
 참고
-* [갱짱.study](http://gangzzang.tistory.com/entry/Java-내부클래스inner-class)
 * [JavaCents](http://javacents.com/adding-social-sign-in-to-a-spring-boot-app/)

@@ -118,19 +118,5 @@ security-context.xml (security 네임스페이스을 추가해줘야한다.)
 
 
 
-
-
-
-
-
-## 프로젝트 실행 방법(Mac 기준)
-
-```
-$ git clone https://github.com/minwan1/securitybasis.git
-eclipse - import - 실행
-
-```
-
-
 참고
 * [사랑이 고픈 프로그래머..](http://zgundam.tistory.com/45)

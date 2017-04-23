@@ -22,12 +22,6 @@ public class SocialConfig {
 이렇게하면
 facebookconnectionfactory는 ConnectionFactoryLocator 에 등록된다.
 
-
-
-
-
-
-
 parent context (loaded by the ContextLoaderListener 가아닌 the local context (the one loaded by the DispatcherServlet)만 검색되고 있다.
 
 

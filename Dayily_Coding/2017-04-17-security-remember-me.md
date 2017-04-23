@@ -1,4 +1,4 @@
-# Daily Coding 2017-04-17일 Spring-REST-URI-SECURITY
+# Daily Coding 2017-04-17일 security-remember-me
 
 ## Spring rememberme
 
