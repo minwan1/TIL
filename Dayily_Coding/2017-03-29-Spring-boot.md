@@ -24,11 +24,6 @@ public class Application {
 ````
 이렇게하면 일반 자바프로그램 실행되듯이 임베디드 톰켓부터시작해서 자동으로 빌드 해주면서 프로그램이 실행이된다.
 
-## DI 기초
-```JAVA
-1. Hello hello = new Hello();
-2.
-```
 DI 방법
 1. new로 생성하는방법
 2. getter/setter로 하는방법
