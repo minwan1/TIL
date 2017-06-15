@@ -23,3 +23,11 @@ sudo apt-get install ruby-compass -y
 
 sudo gem install compass
 '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --allow-running-insecure-content
+
+
+## 포트확인명령어(뒤에 포트설정에따라 줄수있음 22는 ssh)
+telnet ec2-13-124-128-232.ap-northeast-2.compute.amazonaws.com 22
+## 리눅스 실시간 테일
+tail f  마지막 열줄 계속계속해서 출력
+## 리눅스 검색
+/  뒤에 찾을말
