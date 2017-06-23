@@ -90,6 +90,32 @@ public class TestController {
 ```
 
 
+##
+```java
+throw new HttpBadRequestException("zxcv");
+```
+이렇게 던지면 그클래스안에서 try catch로 를 쓰면 따로 throw로 또 던져줘야한다.
+```java
+try{
+}catch (HttpBadRequestException e){
+	thorw HttpBadRequestException 던져줘야할듯
+}catch (Exception e){
+	Exception 처리
+}
+
+```
+***아래와같이 던지면 어차피 HttpBadRequestException을 아래 catch에서 잡혀서 serverexception처리가 된다.***
+```java
+try{
+	throw HttpBadRequestException("test");
+catch (Exception e){
+	HttpServerException("erorr");
+	Exception 처리
+}
+```
+
+
+
 참고
 * [Baeldung](http://www.baeldung.com/exception-handling-for-rest-with-spring)
 * [개발이하고싶어요](http://hyeonstorage.tistory.com/199)
