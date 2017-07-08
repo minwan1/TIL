@@ -33,6 +33,16 @@ ng-class="{on:true}"
 
 
 
+
+
+
 참고
 * [조대협의 블로그](http://bcho.tistory.com/851)
 * [백발의 개발자](http://m.blog.naver.com/jjoommnn/130181901609)
+
+
+
+##semantic ui
+active << 클래스 색넣는거 파란색
+
+visible<< 가장앞에서 화면 보여주는것(드럽박스할떄)

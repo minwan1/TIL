@@ -1,5 +1,5 @@
 ## Spring-data-JPA
-
+[createQuery]
 ### Spring-data
 spring-data는 최근 나와있는 다양한 데이터관리솔루션(mysql,mongdb,radis)을 동일한 방식의 인터페이스로 사용할수 있게해주는 프로젝트이다.
 
@@ -118,14 +118,63 @@ EntityManagerFacotry를 생성하는데는 많은 자원이든다. 그래서 Ent
 * 필드가 많으면 다이나믹업데이트로 바꿔서 직접 업데이트 시키는게 성능최적화됨(기존에는 항상 모든 필드를 다업데이트하기때문에)
 * 영속성 컨텍스트는 어플리케이션과 데이터베이스 중간에서 객체를 보관하는 가상의 데이터베이스같은 역할을한다.
 
-####
+## 엔터티 매핑
+
+@OneToOne
+@JoinTable(name = "transfer_mapping",
+  joinColumns = @JoinColumn(name = "transfer_id"),
+  inverseJoinColumns = @JoinColumn(name = "soda_id"))
+private TransferMapping transferMapping;
+
+
+
+#### 연관관계 삭제코드
+```java
+Member member1 = em.find(Member.class,"member1");
+member1.setTeam(null);
+```
+
+#### 연관관계의 주인
+* 두 객체 연관관계 중 하나를 정해서 테이블의 외래키를 관리해야하는데 이것을 연관관계의 주인
+* 외래키를 가지고있는게 주인, 그외래키를 프라이머리키로쓰는데가 노예
+* manytoone은 항상주인이므로 mappedBy속성이 없다.
+
+#### 양방향 연관관계 신경쓰기 클래스
+양방향 연관관계 신경쓰기 클래스
+```java
+public void setTeam(Team team){
+  if(this.team != null){
+    this.team.getMembers().remove(this);
+  }
+
+  this.team = team;
+  team.getMembers().add(this); //this 여기서는 멤버
+}
+```
+* 위와같이 양방향으로 데이터를 안넣어주면 데이터베이스에 저장하는데는 문제가 발생하지 않지만 순수 객체 상태에서 team이 멤버의 수자를 조회하게되면 조회할수없다 아래예제와같이
+```java
+member1.setTeam(team1);
+member2.setTeam(team1);
+List<Member> members = team1.getMembers();
+```
+위에서 멤버의길이가 2일것으로 예상되지만 답은 0이다. 만약 위에 정보들이 디비에 들어가있던 정보에서 List<Member> members = team1.getMembers() 조회하면 2의정보가 조회되겠지만 위에 정보는 객체이기때문에 객체는 단방향이기때문에 저러한 결과를 초래한다. 그래서 양방향 연관관계 신경쓰기 클래스를 주입해주는게 좋다.
 
 
 참고
 * [시나몬 브레드](http://adrenal.tistory.com/23)
 
 
+manytoone
+member class
+@JoinColumn
+##
+onetomany
+team class
+mappedby
 
+* Optional
+*```
+  * 기본 true로 되어있고 false로 설정하면 연관된 엔터티가 항상있어야한다.
 
 http://projects.spring.io/spring-hateoas/
 JSON형식을 만들어줌

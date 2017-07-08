@@ -1,3 +1,5 @@
+## Interface
+interface에서 선언된 변수는 public static fnal속성을 생략되어 작성된다. 일반 변수를 선언해도 pulbic static final과 같이 선언되는것이다.
 ## enum이란?
 상수의 경우 비교하고자 하는것이 다른 종류의 타입인데 상수의 값이 같은경우 같은벨류로 취급하기때문에 각각의 타입의 인스턴스로 생성하여 서로를 비교를 못하게 만든것.
 ```java

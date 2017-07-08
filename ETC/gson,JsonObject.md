@@ -18,4 +18,14 @@ jsonelement =gson.toJson(user.class,user);
 JsonObject temp = parser.parse(rslt.get("_result").getAsString()).getAsJsonObject();
 bankList = (BankList) gson.fromJson(temp, BankList.class);
 ```
+
+list<pojo> to string
+```java
+List<FacebookPage> facebookPage
+arrayString = gson.toJson(facebookPage);
+```
+
 이걸 위에와 같이 담으면 bankList에 담을 수 있다. fromJson은 JsonObject로부터 BankList클래스 형태로 변경하는것,
+
+
+```
