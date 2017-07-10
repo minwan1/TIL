@@ -5,7 +5,7 @@ g재생 b위치 기억
 * this 그것
 * it 이것
 
-| 복수,You | 단수,he,she,this[3인칭] |
+| (1인칭)복수,You | 단수,he,she,this,dog[3인칭] |
 |----------|--------------------|
 | do,are,have   | dose , is ,has       |
 
@@ -100,4 +100,42 @@ i was waitting for you 나는 너를 기다리고 있는중이었다.
 he was waitting for you 그는 너를 기다리고 있는중이었다.
 we were working 우리는 일하고있는 중이었다.
 
+is bright
+is dark
+is famous 인기가 많다
+
+was famous  유명했었다.
+was popular 인기있었다.
+
+how was 어떗어?
+how is 어떠니?
+
+how was china 중국 어땠어?
+how was movie 영화 어땠어?
+
+movie was fun 영화재밌었어.
+
+
+How was the subway ride? 지하철을 타는거는 어땠니?
+
+## to ( -하로 , ~하기위해서 [맨뒤에 온다.])
+
+I like to study 나는 공부하는것을 좋아한다.
+i am going to 스타벅스 to drink 나는 스타벅스에 커피마시러 갈것이다(to drink 마시러)
+
+to have some sandwich 샌드위치를 먹기위해서
+to take a phone call 전하받기위해서
+to call 이시원 이시원한테 전화하기위해서
+to be pretty 예뻐지기위해서
+to be healthy 건강해지기위해서
+not to study  공부 하지 않기위해서
+not to smoke 담배 피지 않기위해서
+
 http://www.tablesgenerator.com/markdown_tables 마크다운표만드는것
+
+
+### 관계대명사
+who,wich,that 이 있다. 완전한절이아님,
+
+
+관계대명사 what(주어+동사가있음 하지만 앞에 명사는없다.)
