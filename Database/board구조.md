@@ -92,3 +92,5 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
+add
+alter table transfer_data_dst message text;

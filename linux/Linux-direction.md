@@ -31,3 +31,12 @@ telnet ec2-13-124-128-232.ap-northeast-2.compute.amazonaws.com 22
 tail -f  마지막 열줄 계속계속해서 출력
 ## 리눅스 검색
 /  뒤에 찾을말
+
+
+## tail 명령어
+컨트롤 b = 페이지 맨위로
+컨트롤 f = 페이지 아래로
+tail -f  마지막 열줄 계속계속해서 출력
+
+## 로그파일 위치
+/opt/tomcat/logs

@@ -29,3 +29,53 @@ arrayString = gson.toJson(facebookPage);
 
 
 ```
+
+## json object 로거 출력
+
+
+
+
+
+
+
+
+
+
+```
+public BankList getKoreaBankList() throws Exception {
+
+		BankList bankList = null;
+
+		Gson gson = new Gson();
+
+		CtiHandler hanlder = new CtiHandler(payGateTiService);
+		JsonObject header = new JsonObject();
+		JsonObject input = new JsonObject();
+		header.addProperty(CommonCode.METHOD_KEY, "GET");
+		JsonObject body = new JsonObject();
+//		body.addProperty("langCd", language); for language
+
+		input.addProperty(CommonCode.BODY_KEY, body.toString());
+
+		JsonObject rslt = hanlder.execute("paygate/endpoint/query_bank_list", header, input);
+
+		JsonObject temp = rslt.get("_result").getAsJsonObject();
+
+
+
+//		RestTemplate rest1= new RestTemplate();
+//		ResponseEntity<String> result= rest1.getForEntity("https://stg5.paygate.net/v5/code/listOf/banks?_method=GET",String.class);
+//		JsonParser parser = new JsonParser();
+//		JsonObject temp = parser.parse(result.getBody()).getAsJsonObject();
+//		bankList = (BankList) gson.fromJson(temp, BankList.class);
+
+
+		bankList = (BankList) gson.fromJson(temp, BankList.class);
+
+		return bankList;
+	}
+
+```
+for (CtiFilter filter : filters) {
+  filter.postHandler(target, input, json);
+}
