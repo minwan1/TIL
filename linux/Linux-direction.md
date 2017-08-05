@@ -40,3 +40,18 @@ tail -f  마지막 열줄 계속계속해서 출력
 
 ## 로그파일 위치
 /opt/tomcat/logs
+
+
+## 톰켓위치
+
+HOME : /usr/share/tomcat7
+CONF :  /etc/tomcat7
+LOG :  /var/log/tomcat7
+ROOT : /var/lib/tomcat7  
+
+## 톰켓관련 명령어
+sudo service tomcat7 restart
+sudo service tomcat7 status
+
+
+출처: http://chago.tistory.com/4 [Mr,Cha GO!!!]

@@ -94,3 +94,21 @@ CREATE TABLE `user` (
 ```
 add
 alter table transfer_data_dst message text;
+
+
+```
+https://www3.ntu.edu.sg/home/ehchua/programming/java/JavaUnitTesting.html#zz-7.1
+
+http://coronasdk.tistory.com/745
+
+기본 orm
+http://www.techferry.com/articles/hibernate-jpa-annotations.html
+
+mvn설치  centos
+https://tecadmin.net/install-apache-maven-on-centos/
+
+
+
+
+
+```

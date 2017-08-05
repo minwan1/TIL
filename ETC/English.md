@@ -1,4 +1,4 @@
-g재생 b위치 기억
+ # 쉬운것부터 계속계속 반복해야함 
 
 1.영어 정리
 
@@ -429,6 +429,208 @@ i ve got no place to sudy 나 공부할곳이 없어요
 i`ve got somthing to study 나 공부해야할것이  있어.
 i`ve got children to feed 나는 밥을먹여야할 아이들이 있다.
 i need more of this source 나는 이소스가 좀더 필요해요
+
+I dont`t know what to eat 나는 모르겠다 무엇을 먹어야할지
+I dont`t know what to see 나는 모르겠다 무엇을 봐야할지
+I dont`t know how to go there  나는 모르겠다 어떻게 가야할지 거기를
+I dont`t know what to say 나는 무슨말을 해야할지 모르겠다.
+I dont`t know how to explain 불고기 나는 어떻게 불고기를 설명 해야할지 모르겠다.
+do you know when to meet ? 너는 언제 만날지 알어 ?
+do you know with whom study ? 너는 누구랑 공부할지 아니 ?
+
+
+
+## 동명사
+working 일하는것
+metting here 여기에서 일하는것은
+studing here 여기에서 공부하는것
+studing around here is allowed 여기에서 공부하는것은 허락되어진다.
+Walking around here at night is not allowed. 밤에 여기 걸어 다니는 것은 허가되지 않았다.
+getting money back is no easy. 환불받는것은 쉽지않다.
+having a diner with him was good. 그와저녁을 한것은 좋았었어.
+i love singing 나는 노래하는것을 좋아합니다.
+i love reading 나는 읽는것을 좋아합니다.
+
+Going to New York takes long time. 뉴욕가는건 오래걸린다.
+
+(★ 딱 just / 쯤 about / 넘게 over /
+~보다 적게 less than)
+takes about 1 hour 한시간쯤 걸린다.
+Flying to Tokyo takes less than 2 hours. 도교로가는 비행기는 2시간 덜걸린다.
+It is hard to take over cancel 암을 이겨내는것은 어렵다.
+
+The concert tickets are everywhere. 콘서트 표는 널려있으니까.
+
+### be going to를 줄여서 be gonna로 말할 수 있습니다. 이 둘은 will을 대신할 수 있습니다.
+### -will 부분을 be going to로 바꿔서 말해 보세요-
+
+i'm gonna take this 나는 이것을 가져갈것이다.
+i'm gonna take class 나는 수업을 들을것입니다.
+I’m not gonna do. 난 안 할거야.
+go up 올라가다
+go down 내려가다
+go out 나가다
+go in 들어가다(get in)
+
+### 할 수 있어 be able to
+### be able to는 can을 대신 합니다.
+
+i have to be able to speak english because i have to communicate you
+나는 너에게 의사 소통해야하기 때문에 영어로 말할 수 있어야한다.
+
+넌 목소리를 낼 수 있어야 한다.
+You have to speak up.
+
+Where are you gonna study?
+
+### 해야만하다.
+gotta go = have to go 가야만한다.
+gotta take a medicine 약을 복용해야만한다(먹어야한다)
+go get 사오다,사러간다,가지러간다.
+
+I gotta go drink (get) some water. 나 물 마시러 가야 돼.
+i gotta buy 나는 사야만한다.
+I gonna go get some icecream 나는 아이스크림을 먹을로갈것이다.
+i gotta go get some warter 나는 아이스크림을 먹어야만한다.
+
+I gotta go take a bus. 나 버스 타러 가야 돼.
+i gonna go have a lunch 나는 점심먹으로 갈것이다.
+
+want to = wanna
+
+
+I gotta go see a movie. You wanna come? 나 영화 보러 가야 되는데, 너도 갈래?
+
+
+I gotta go see a doctor. 나 병원 가야 돼.
+(★ 의사를 보러 가다, 병원에 가다 see a doctor)
+
+이거 한번 보세요. Take a look at this. /
+저거 한번 봐. Take a look at that.
+
+I gotta go talk to my mom. 나 엄마랑 얘기하러 가야 해
+
+
+## try to ~하려고 노력한다.
+i try to understand 나는 이해하려고 노력합니다.
+
+i am trying to see 나는 보려고 노력합니다.
+i am trying to lean 나는 배우려고 노력합니다.
+
+
+Are you trying to get over your depression? 너 지금 우울증을 이겨내려고 하고 있어?
+(★ 우울증 depression / ★ 이겨내다 get over)
+
+i am about to go out 저 막 나가려고 해요.
+I was about to go out. 저 막 나가려고 했어요.
+
+## ~하게 된다 get to
+### 알게 된다 get to know
+I want to get to know you. 나는 너를 알게 되길 원 해.
+보게 되다 get to see
+너를 알게 되고 싶어. I want to get to know you.
+
+
+It was good to get to know you. 당신을 알게 되어서 좋았다.
+You will get to see him 너는 그를 보게 될 거야.
+
+네가 내 입장이 있으면, 너는 나를 이해하게 될 거야. (★ 입장 position)
+If you are in my position, you will get to understand me.
+
+
+## tend to 하는 경향이 있다.
+This tends to be small. 이거는 작은 편이야.
+tends to be late
+
+더 많이 먹는 경향이 있다. (동사앞에 over이들어가면 동사를 많이 반복하는것.)
+I tend to overeat.
+
+
+## if
+If you are here, call me.
+
+If you understand, nod. 네가 이해를 했으면 끄덕여.
+If you don’t need me, let me go.
+
+
+If you don’t mind, can I go?  괜찮으시면 저 가도 될까요?
+Can I go first? / 저 먼저 가도 되나요?
+Can I go later? 나중에 가도 되나요?
+
+## so that ~할수 있도록
+
+He is giving me a ride. 그가 날 태워다 주고 있어.
+He will give me a ride. 그가 날 태워 줄 거야.
+
+
+
+My husband went out so that I could see 별그대 내 남편이 내가 별그대를 볼 수 있도록 나가줬어요.
+
+I’m drinking coffee every morning so that I could stay awake. 깨어있을 수 있도록 매일 아침마다 커피를 마셔.
+
+
+## look ‘~인 것처럼 보인다’
+ㆍlook은 ‘~인 것처럼 보인다’라는 뜻으로 ‘be동사 + 형용사’같이 ‘look + 형용사’로 말합니다.
+
+
+You look fine. 너 괜찮아 보여.
+You look tired. 너 피곤해 보여.
+You look okay. 너 괜찮아 보여.  
+You look fat. 너 뚱뚱해 보인다.
+
+
+This bag is looking awkward.이 가방 좀 이상해 보여.
+This color is looking awkward. 이 색 좀 이상해 보여.
+
+## even if ~할지라도
+
+even if it’s not sunny, 날씨가 맑지않더라도
+Even if it’s cold, you gotta come. 춥더라도 너 와야 해.
+Even if it’s expensive, you gotta buy it. 비싸더라도 너 사야 해.
+
+
+
+### don’t have to stop 멈추지 않아도 된다
+### should not stop / must not stop 멈추면 안 된다
+
+Even if it’s hard, you must not stop 어렵더라도 너 멈추면 안 돼.
+
+
+You must not stop trying. 도전하는 걸 멈추면 안 돼.
+
+You must not stop eating.  먹는 걸 멈추면 안 돼.
+
+You must not stop coming up with ideas. (★ come up with ideas 아이디어를 내다)
+
+stop moving 움직이는 것을 멈추다
+keep moving 계속 움직이다
+
+
+Even if it’s hard, you must not stop moving. 어렵더라도 움직이는 걸 멈추시면 안 돼요.
+You must keep trying. 계속 노력하셔야 해요.
+
+
+Even if it’s hard, you must not stop thinking. 어렵더라도 생각하는 걸 멈추면 안 돼요.
+
+You must not stop coming up with ideas. 아이디어 내는 것을 멈추시면 안 돼요.
+
+
+This is looking too big. 이거 너무 커 보인다.
+
+Even if it’s looking small, you must not underestimate. 이거 작아 보여도 과소평가 하면 안 돼.
+Even if this looks too easy for you, you must not underestimate it.  이게 너한테 너무 쉬워 보여도, 과소평가 하면 안 돼.
+Even if taxies look expensive, you gotta take them at night. 택시가 비싸 보여도 밤에 택시를 타야 돼.
+Even if my 라면 is not looking good, you gotta finish it / you gotta eat them all 내 라면이 맛이 없어 보여도 너 다 먹어야 돼
+
+make you smart 너는 똑똑하게 만든다.
+make you fat 너를 뚱뚱하게 만든다.
+
+
+
+
+
+
+
 
 
 

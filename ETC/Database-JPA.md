@@ -202,6 +202,8 @@ List<Member> members = team1.getMembers();
 
 
 
+## 값 타입 컬렉션
+값 타입을 하나 이상 저장하려면 컬렉션에 보관하고 @ElementCollection, @CollectionTable 어노테이션을 사용하면 된다. (대신 별도의 테이블로 컬렉션의 값을 관리해야한다.)
 
 
 
