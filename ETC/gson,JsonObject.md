@@ -34,13 +34,6 @@ arrayString = gson.toJson(facebookPage);
 
 
 
-
-
-
-
-
-
-
 ```
 public BankList getKoreaBankList() throws Exception {
 

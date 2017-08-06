@@ -1,4 +1,4 @@
-# Daily Coding 2017-04-17일 security-remember-me
+# Daily Coding 2017-08-06일 security-remember-me
 
 ## Spring rememberme
 
@@ -47,12 +47,6 @@ SPRING_SECURITY_REMEMBER_ME의 이름으로 쿠키에저장되며 브라우저�
 ```
 
 
-http://www.mkyong.com/spring-security/spring-security-remember-me-example/
-http://blog.naver.com/whydda/220748235260 시리즈 정보에대해 조금알수있는듯?
-http://www.concretepage.com/spring/spring-security/remember-me-in-spring-security-example 정리해야할듯
-
-
 참고
-* [TEBICA STORY](http://earlybird.kr/1584)
 * [Nirman's Tech Blog](http://technirman.blogspot.kr/2014/01/spring-security-remember-me-example.html)
 * [https://docs.spring.io](https://docs.spring.io/spring-security/site/docs/3.0.x/reference/remember-me.html)

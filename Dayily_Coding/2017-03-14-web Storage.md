@@ -15,15 +15,14 @@
 * 동기적으로 작동하기 때문에 큰 작업의 경우 file.io가 발생하여 스레드가 블락 될 수 있습니다.
 
 ## Local Storage vs Session Storage
-그럼 같은 web Storage인 둘의 차이점은 무엇일까요? #### 지속기간 * Local Storage는 사용자가 직접 지우기전까지는 데이터가 영구적으로 보존됩니다. 그래서 브라우저 별로 데이터를 같이 공유하고 새로운 탭을 열거나 브라우저를 꺼도 데이터가 보존됩니다. * Session Storage는 탭을 닫거나 브라우저를 종료하면 데이터가 모두 사라집니다.
+그럼 같은 web Storage인 둘의 차이점은 무엇일까요?
+* Local Storage는 사용자가 직접 지우기전까지는 데이터가 영구적으로 보존됩니다. 그래서 브라우저 별로 데이터를 같이 공유하고 새로운 탭을 열거나 브라우저를 꺼도 데이터가 보존됩니다.
+* Session Storage는 탭을 닫거나 브라우저를 종료하면 데이터가 모두 사라집니다.
 
 ### 보안
 일단은 쿠키와 비교했을 때, 클라이언트의 디바이스에 직접 저장되고
 네트워크로는 전송되지 않기 때문에 네트워크 레벨에서는 안전하다고 볼 수 있다.
 하지만 평문으로 저장하는 경우, 그 값이 그대로 노출되어 XSS 등의 공격으로부터 안전하지 않다.
-
-http://stackoverflow.com/questions/19596779/intellij-and-tomcat-changed-files-are-not-automatically-recognized-by-tomcat
-intellij 자동완성
 
 참고
 * [Hou](https://vnthf.github.io/blog/localstroage/)
