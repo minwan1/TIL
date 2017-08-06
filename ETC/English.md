@@ -1,4 +1,4 @@
- # 쉬운것부터 계속계속 반복해야함 
+ # 쉬운것부터 계속계속 반복해야함
 
 1.영어 정리
 
@@ -181,7 +181,7 @@ suould be in korea 한국에 있어야만한다.
 
 
 * tend to 하는 경향이 있다.
-* get to ~하게 된다
+*    ~하게 된다
 * be mean to ~하려고한다.
 * try to ~하려 고한다.
 
@@ -627,6 +627,15 @@ make you fat 너를 뚱뚱하게 만든다.
 
 
 
+원래 문장구조는
+if you should have any further questions ~ 인데요.
+
+가정법에는 특정 조건에서 if를 생략하는 규칙이 있습니다.
+if절에 주어 다음에 should나 were 또는 had p.p. 가 오는 경우에
+if 를 생략하고 should, were, had는 주어 앞으로 도치가 된답니다.
+
+
+How much do I have to pay? 난 얼마를 내야 해요?   
 
 
 
