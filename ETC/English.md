@@ -639,6 +639,82 @@ How much do I have to pay? 난 얼마를 내야 해요?
 
 
 
+be not going to meet 안만날것이다.
+be not going to see 보지 않을것이다.
+
+
+
+will not be able to work 일할 수 없을 거야
+You will not be able to see. 너는 볼 수 없을 거야
+
+앞에 be를 붙이면 ~에 있다.
+
+next to
+right to
+left to
+outside of
+in front of
+under
+on
+above
+around
+
+
+in front of car 차 앞에
+left to building 빌딩 왼쪽에
+aboove my head 내머리위에
+be in house 집안에 있다.
+my car is next to house 내차는 내집옆에 있다.
+
+
+i will be working 나는 일하고있는중일것이다.
+he was reading book 그는 책을 읽고있는중이었다.
+
+We will not be drinking.  우린 술을 마시는 중은 아니야.
+We will not be drinking. 우린 술을 마시는 중은 아닐 거야.
+
+
+
+I met my friend when I was working in the office.
+When I was walking in the office, I met my friend.
+
+I will give him a car if he leaves here.
+If he leaves here, I will give him a car.
+
+Is teaching hard? 가르치는 건 어려워요?  
+you will get waste 너는 낭비하게 될것이다.
+
+be supposed to + 동사원형 ‘원래 ~해야만 해’  
+I am supposed to study. 나 원래 공부해야 해.
+
+Am I supposed to be working now?  나는 원래 지금 일하고있는중이여야하나요 ?
+
+너 원래 지금 시간을 낭비하면 안 되는 거잖아.
+You are not supposed to be wasting your time.
+너 원래 지금 수업에 들어오면 안 되는 거잖아.
+You are not supposed to be coming into the class.
+
+have,want,like,save = 진행형으로 안쓰는 동사들
+
+We are supposed to save our money. 우리는 원래 돈을 아껴야 해.
+
+
+When I was in high school, I was not supposed to drink soju.
+내가 고등학교에 있었을 때, 나는 소주 먹으면 안 되는 거였어.
+
+Are you supposed to go?
+너는 원래 가야 하는 거야?
+
+mean (의미,못된,심술궂은)
+
+Although = even though
+
+Although I was supposed to go to work, I went to church. 비록 회사에 가야 됨에도 불구하고, 난 교회에 갔다.
+
+
+
+
+
 
 
 
@@ -701,3 +777,9 @@ cnn 뉴스한개
 리스닝한개
 강의2개
 단어 반복
+
+
+모음 앞에 the가 오면 '디' 나머지는 '더'라고 읽으면 됩니다.
+모음은 a, e, i, o, u, 입니다.
+예) the one은 디 원으로 읽고
+      the pen은 더 팬으로 읽으면 됩니다
