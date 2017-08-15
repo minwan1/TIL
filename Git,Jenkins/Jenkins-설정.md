@@ -1,4 +1,4 @@
-# Daily Coding 2017-04-26일
+## Jenkins
 
 ```
 빌드는 CPU와 메모리, 디스크를 많이 소비하는 작업이다.
@@ -19,7 +19,7 @@ CI(Continuous Integration)란
 ### SCM
 * Git
 ### Build Tool(컴파일,테스트,정적분석등 동작가능한 소프트웨어로 생성하는 도구)
-* mavan¡
+* maven
 
 빌드 스크립트를 통한 CI 자동화 수행절차
 1. 소스코드를 바이너리 파일로 컴파일한다.
@@ -33,17 +33,29 @@ CI(Continuous Integration)란
     * aws의 경우 홈페이지에서 열어주고, 일반리눅스의경우 명령어로 포트열기
 3. 톰켓 실행
 4. jenkins관리에서 Configure global security의 회원관리 설정
+5. Global tools Configuration
+    * 메이븐 플러그인 설치(http://www.nextree.co.kr/p2129/)
+    * java(jdk)  /usr/java/jdk1.8.0_05/
+    * git (version control tool)
+    * Maven (build tool)
+6. publish over ssh 플러그인추가
+    * jenkins관리 - 시스템설정 - publish over SSH
+    * ssh 서버설정
 
 
-aws 주소
-http://35.165.30.71:8080/board/sboard/list
 
-http://35.165.30.71:9090/jenkins
+14.63.213.32.8080
 
-젠킨스 삭제
-http://stackoverflow.com/questions/38604715/how-can-i-remove-jenkins-completely-from-linux
+
+
 
 
 참고
 * [조대협의 블로그]( http://bcho.tistory.com/654)
 * [Devlog](http://asfirstalways.tistory.com/303)
+
+
+젠킨스 삭제
+http://stackoverflow.com/questions/38604715/how-can-i-remove-jenkins-completely-from-linux
+
+http://35.165.30.71:9090/jenkins

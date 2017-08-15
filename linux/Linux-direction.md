@@ -54,5 +54,16 @@ ROOT : /var/lib/tomcat7
 sudo service tomcat7 restart
 sudo service tomcat7 status
 
+## 리눅스 용량확인
+```
+df -k : 킬로바이트 단위로 현재 남은 용량을 확인
+
+df -m : 메가바이트 단위로 남은 용량을 왁인
+
+df -h : 보기 좋게 보여줌
+
+df . : 현재 디렉토리가 포함된 파티션의 남은 용량을 확인
+```
+
 
 출처: http://chago.tistory.com/4 [Mr,Cha GO!!!]

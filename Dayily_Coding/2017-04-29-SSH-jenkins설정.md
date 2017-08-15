@@ -32,13 +32,13 @@ a8c30be51965309125fbbe1b2eac1be7d69d1d20
 4. jenkins관리에서 Configure global security의 회원관리 설정
 
 5. Global tools Configuration
-    * 메이븐 플러그인 설치(http://www.nextree.co.kr/p2129/)
-    * java(jdk)  /usr/java/jdk1.8.0_05/
-    * git (version control tool)
-    * Maven (build tool)
+  * 메이븐 플러그인 설치(http://www.nextree.co.kr/p2129/)
+  * java(jdk)  /usr/java/jdk1.8.0_05/
+  * git (version control tool)
+  * Maven (build tool)
 6. publish over ssh 플러그인추가
-    * jenkins관리 - 시스템설정 - publish over SSH
-    * ssh 서버설정
+  * jenkins관리 - 시스템설정 - publish over SSH
+  * ssh 서버설정
 
 
 
