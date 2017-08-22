@@ -241,28 +241,19 @@ JSON형식을 만들어줌
 
 
 
+```java
+test2 = new ObjectMapper().writeValueAsString(user1);
+test1 = new ObjectMapper().writeValueAsString(transferData);
 
 
+//user
+@JsonManagedReference
+@OneToMany(mappedBy="senderId", fetch = FetchType.EAGER) //상대쪽 변수이름으로
+private List<TransferData> transfers = new ArrayList<TransferData>();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-돈잔고 추가되는금액,
-완료메일발송
+//transfer
+@JsonBackReference
+@ManyToOne
+@JoinColumn(name = "sender_id") //참조레퍼스 옵션넣으면 그냥 username넣으면될듯
+private UserInformation senderId;
+```

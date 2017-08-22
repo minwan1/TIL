@@ -712,7 +712,7 @@ Although = even though
 Although I was supposed to go to work, I went to church. 비록 회사에 가야 됨에도 불구하고, 난 교회에 갔다.
 
 
-
+can you dance like 이효리 ?
 
 
 

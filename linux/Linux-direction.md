@@ -27,6 +27,7 @@ sudo gem install compass
 
 ## 포트확인명령어(뒤에 포트설정에따라 줄수있음 22는 ssh)
 telnet ec2-13-124-128-232.ap-northeast-2.compute.amazonaws.com 22
+telnet 13.124.132.88 22
 ## 리눅스 실시간 테일
 tail -f  마지막 열줄 계속계속해서 출력
 ## 리눅스 검색

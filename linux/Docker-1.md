@@ -39,7 +39,12 @@ docker compose
 여러가지 컨테이너를 한번에 빌드할수 있게해주는 툴
 
 
-
+docker 젠킨스 실행
+```
+docker run -p 8080:8080 -v /docker/jenkins:/var/jenkins_home -u root jenkins
+docker run -d -p 8080:8080 -v /docker/jenkins:/var/jenkins_home -u root jenkins //background돌림
+docker run -i -t jenkins /bin/bash //도커 접속하는것
+```
 
 
 

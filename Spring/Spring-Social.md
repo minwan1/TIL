@@ -19,7 +19,7 @@ ProviderSignInController는 컨트롤러로 구성되어있다. /signin/{provide
 ```sql
 create table UserConnection (userId varchar(255) not null,
 	providerId varchar(255) not null,
-	providerUserId varchar(255),
+providerUserId varchar(255),
 	rank int not null,
 	displayName varchar(255),
 	profileUrl varchar(512),

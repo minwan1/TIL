@@ -44,14 +44,22 @@ CI(Continuous Integration)란
 
 
 
-14.63.213.32.8080
+##새로운방식
+메이븐 그냥 기본설정해주는대로 설치
+
+걍바로 프로젝트생성
+
+배포하는방식이 두가지가있는것같다(톰켓,ssh배포)
 
 
+https://stackoverflow.com/questions/26906972/cannot-run-program-mvn-error-2-no-such-file-or-directory
+글로벌설정해야함.
 
+6. publish over ssh 플러그인추가이거 설정해줘야함
+pem을 vi로열어서 그것을 창에 입력해줘야함
 
 
 참고
-* [조대협의 블로그]( http://bcho.tistory.com/654)
 * [Devlog](http://asfirstalways.tistory.com/303)
 
 
