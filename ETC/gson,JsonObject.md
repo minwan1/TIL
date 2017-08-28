@@ -28,9 +28,12 @@ arrayString = gson.toJson(facebookPage);
 이걸 위에와 같이 담으면 bankList에 담을 수 있다. fromJson은 JsonObject로부터 BankList클래스 형태로 변경하는것,
 
 
+리스트 바로넣기
+json.add("history", gson.toJsonTree(history));
 
 ## Circular reference
 
+인터넷에서 찾오보니까 구글에서는 기본적으로 @exclude 방식을 지원안하는것같다. white list 방식(expose할 필드를 명시적으로 지정하는 방식)의 처리를 하는게 맞다고 본것일까...
 
 
 ```java
@@ -46,4 +49,19 @@ private List<TransferData> transfers = new ArrayList<TransferData>();
 @ManyToOne
 @JoinColumn(name = "sender_id")
 private UserInformation senderId;
+```
+
+
+
+
+```
+{
+  "first_name": "wan",
+  "last_name": "jin",
+  "country": "KOR",
+  "address_line1": "test",
+  "city": "test",
+  "postal_code": "123",
+  "province": "test"
+}
 ```

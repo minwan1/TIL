@@ -2,20 +2,12 @@
 
 1.영어 정리
 
-
-* get : 사다
-* that 저것
-* this 그것
-* it 이것
-
 | (1인칭)복수,You,we,they | 단수,he,she,this,dog[3인칭] |
 |----------|--------------------|
 | do,are,have   | dose , is ,has,s       |
 
 ##
 
-Do you want
-* 너는 원해?
 Do you take a rest
 * 너는 쉬니 ?
 Do you come
@@ -41,12 +33,6 @@ He didn’t drink this
 Do you see?
 Did you see?
 Will you see?
-
-## Will
-Will you go to
-* 너는 갈거니?
-Will you get?
-* 너는 살거니?
 
 
 ## won`t (will not)
@@ -254,15 +240,8 @@ I will get off the work
 
 I will get together with my friend 나는 친구들을 만날것이다
 
-
-get bonus
-don`t get bonus
-dosen`t get bonus
-got bonus
-didn`t get bonus
-
 do the dishes 설거지를 하다.
-did the laundry 센탁을하다
+did the laundry 세탁을하다
 
 ## 의문사 + 동사 (뒤에 복수 동사를 가져가야함)
 what goes in here ? 무엇이 들어가나요?
@@ -346,6 +325,8 @@ these are pencils, and those are books.
 
 will would(가정,좀더 존중의 문법)
 
+
+## 어제
 
 ## be
 be by here 여기 옆에 있다.
@@ -716,6 +697,7 @@ can you dance like 이효리 ?
 
 
 
+will you let me read ? 나를 읽게 해줄수 있나요 ?
 
 
 
