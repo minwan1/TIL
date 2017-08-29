@@ -325,9 +325,6 @@ these are pencils, and those are books.
 
 will would(가정,좀더 존중의 문법)
 
-
-## 어제
-
 ## be
 be by here 여기 옆에 있다.
 be by 강남역 강남역 옆에 있다.
@@ -354,7 +351,7 @@ each and every one 각각
 no one 아무도 아닌
 
 no one is hungry 아무도 배가 안고프다.
-notthing is refresh  아무것도 신선하지않다.
+nothing is refresh  아무것도 신선하지않다.
 
 Who doesn’t like 이시원? 누가 이시원을 안 좋아합니까?
 
@@ -370,7 +367,7 @@ we need you to stay awake 우리는 너가 깨어있기를 원한다.
 I went 나는 갔어
 I didn`t go나는 않갔어
 I`m getting on the bus 버스를 타고있는중이야(버스에 계단으로 올라가는것)
-I`m taking a but 타스를 타고가고있는(실제 버스를타고 가는중)
+I`m taking a bus 타스를 타고가고있는(실제 버스를타고 가는중)
 I was asking for 콜라 나는 콜라는 달라고 요청하고있었어
 
 i can be leaving 나는 떠나는 중 일 수 있다.
@@ -400,7 +397,7 @@ let it go 이것을 그냥 가게해주세요.
 I went there and it was good 나는 그곳에 갔었고 그곳은 좋았다.
 
 
-to work here, I brought my laptop. 일하기위해서 나는 랩탑을 샀다.
+to work here, I bought my laptop. 일하기위해서 나는 랩탑을 샀다.
 to speak english, i studied for ten year
 
 I have = i`ve got 둘이 같음
@@ -606,6 +603,7 @@ Even if my 라면 is not looking good, you gotta finish it / you gotta eat them 
 make you smart 너는 똑똑하게 만든다.
 make you fat 너를 뚱뚱하게 만든다.
 
+## 내일보자
 
 
 원래 문장구조는
