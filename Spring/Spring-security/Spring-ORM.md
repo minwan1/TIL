@@ -1,12 +1,8 @@
 ## ORM
 
-### 1.JPA
-* [[Spring-JPA-OSIV]]
-* [[Spring-JPA-JPQL]]
-* [[Spring-JPA-Cache]]
-* [[Spring-Jpa-N+1]]
-* [[Spring-JPA-CASCADE]]
-* [[Spring-JPA-관계설정]]
+### 1.Security
+* [[Spring-Authentication]]
+
 
 
 

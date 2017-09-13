@@ -603,9 +603,6 @@ Even if my 라면 is not looking good, you gotta finish it / you gotta eat them 
 make you smart 너는 똑똑하게 만든다.
 make you fat 너를 뚱뚱하게 만든다.
 
-## 내일보자
-
-
 원래 문장구조는
 if you should have any further questions ~ 인데요.
 
