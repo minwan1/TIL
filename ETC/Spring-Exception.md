@@ -120,3 +120,13 @@ catch (Exception e){
 참고
 * [Baeldung](http://www.baeldung.com/exception-handling-for-rest-with-spring)
 * [개발이하고싶어요](http://hyeonstorage.tistory.com/199)
+
+
+
+
+```java
+@Override
+public boolean rollbackOn(Throwable ex) {
+  return (ex instanceof RuntimeException || ex instanceof Error);
+}
+```
