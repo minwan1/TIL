@@ -9,7 +9,8 @@ Spring DI container
 
 ![](https://i.imgur.com/B3cmrIG.png)
 
-Spring은 기본적으로 bean들을 위와같이 싱글톤으로 관리하여 사용한다.
+Spring은 기본적으로 bean들을 위와같이 싱글톤으로 관리하여 사용한다. 하지만
+@lazy를 넣게되면 시작될때 빈이 생성되는게아니라 프로그램이 다켜지고 직접 빈을 참조할때 초기화된다. 하지만 prototype에서는 매번 요청할때마다 객체를 새로 생성하기떄문에 먹히지 않는다.
 
 
 
@@ -79,6 +80,30 @@ public class CarDAO {
 “POJO” 클래스는 그냥 “new 하면 스스로 생성”이 가능한 클래스의 형태를 말합니다.
 스프링이 모든 빈 들을 싱글톤으로 관리하기 때문입니다.
 멤버변수를 선언하게되면 thread safe하지 않다.그래서 스프링은 각각의 빈들을 싱글톤으로 관리하고, 여러 스레드에서 이를 공유하여 사용할 수 있게 해주는 겁니다
+
+
+
+
+```java
+@Component
+@Scope("prototype")   // 생략하면 싱글톤
+public class Test {
+       .....
+}
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 출처: http://jojoldu.tistory.com/28 [기억보단 기록을]

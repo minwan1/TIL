@@ -230,17 +230,6 @@ JSON형식을 만들어줌
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 ```java
 test2 = new ObjectMapper().writeValueAsString(user1);
 test1 = new ObjectMapper().writeValueAsString(transferData);

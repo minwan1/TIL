@@ -66,5 +66,7 @@ df -h : 보기 좋게 보여줌
 df . : 현재 디렉토리가 포함된 파티션의 남은 용량을 확인
 ```
 
+## 메이븐 빌드 명령어
+mvn clean package
 
 출처: http://chago.tistory.com/4 [Mr,Cha GO!!!]

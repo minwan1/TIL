@@ -7,6 +7,8 @@
 * [[Spring-Jpa-N+1]]
 * [[Spring-JPA-CASCADE]]
 * [[Spring-JPA-관계설정]]
+* [[Spring-JPA-QueryDsl]]
+* [[Spring-Transaction]]
 
 
 
