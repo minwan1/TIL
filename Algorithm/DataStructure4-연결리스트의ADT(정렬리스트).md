@@ -139,6 +139,9 @@ while(1){
 }
 ```
 
+
+## 연결리스트의 정렬 삽입의 구현
+
 정렬 기능 추가된 연결리스트의 구조체
 ```c
 typedef struct _linkedList{
@@ -146,7 +149,7 @@ typedef struct _linkedList{
   Node * cur;
   Node * before;
   int numOfData;
-  int (*comp)(LData d1,LData d2);
+  int (*comp)(LData d1,LData d2); //
 }
 ```
 연결리스트의 핵심.
@@ -168,7 +171,73 @@ void FInsert(List * plist, LData data)
 newNode->next = plist->head->next; 노드를 계속계속해서 연결시키는부분
 
 
-연결리스트의 정렬과 삽입 구현2 볼차례
+정렬 기능 추가된 연결리스트의 구조체
+```c
+typedef struct _linkedList{
+  Node * head;
+  Node * cur;
+  Node * before;
+  int numOfData; //데이터의 갯수
+  int (*comp)(LData d1,LData d2); // 노드 우선순위 비교를 위해 함수포인터변수 선언
+}
+```
+
+
+```c
+void ListInit(List * plist){
+  plist -> head = (Node*)malloc(sizeof(Node));
+  plist -> head -> next = NULL;
+  plist -> comp = NULL;
+  plist -> numOfData = 0;
+}
+```
+
+
+
+
+위와같이 정렬 삽입의 리스트를 구현하기 위한 노드 구조체를 정의한다.
+```c
+void SetSortRule(List * plist, int(*comp) (LData d1, LData d2)){
+  plist -> comp = comp;
+}
+```
+위와같이 함수 포인터를 이용해서 오름차순으로 정렬할지 내림차순으로 정렬할지에따라 노드의 두개의 값을 비교할 수 있는 함수를 삽입한다.
+
+```c
+void SInsert(List * plist, LData data){
+  Node * newNode = (Node*)malloc(sizeof(Node));
+  Node * pred = plist -> head;
+  newNode -> data = data;
+
+//정렬을 하기위해서 생겨진 while문
+  while(pred -> next != NULL && plist->comp(data, pred->next->data) != 0){
+    pred = pred -> next;
+  }
+
+  //새로운 데이터가 삽입되어지고 그뒤로 노드를 순서대로 이어주는기능
+  newNode -> next = pred -> next;
+  pred -> next = newNode;
+
+  (plist->numOfData)++;
+
+}
+```
+넘겨진 리스트에 데이터를 삽입할때 알아서 값을 삽입할 때 while문을 통해 처음에 SetSortRule함수에 정해진 정렬함수에 따라 값이 정렬되어져서 삽입된다.
+* pred -> next != NULL list의 마지막 노드인지 확인하는 연산
+* comp 입력되어진 함수에 따라 데이터의 값의 우선순위를 비교해주는 로직
+
+
+```c
+int WhoIsPrecede(int d1, int d2){
+  if(d1 < d2){ //반대로하면 반대 차순으로 정렬된다.
+    return 0;  //d1<d2로하게되면 오름차순으로 정렬된다.
+  }else{
+    return 1;
+  }
+}
+```
+
+[깃허브 소스](https://github.com/minwan1/Algorithm/tree/master/DLinkedList)
 
 참고
 [http://norux.me/8](http://norux.me/8)
