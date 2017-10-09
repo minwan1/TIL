@@ -23,6 +23,23 @@ com.mysema.querydsl와 com.querydsl 차이는  3. * 버전이 mysema버전이고
 		<scope>provided</scope>
 	</dependency>
 
+	<plugin>
+	<groupId>com.mysema.maven</groupId>
+	<artifactId>apt-maven-plugin</artifactId>
+	<version>1.1.3</version>
+	<executions>
+		<execution>
+			<goals>
+				<goal>process</goal>
+			</goals>
+			<configuration>
+				<outputDirectory>target/generated-sources/java</outputDirectory>
+				<processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
+			</configuration>
+		</execution>
+	</executions>
+</plugin>
+
 or(밑에사용해야함)
 
 <dependency>
@@ -36,23 +53,39 @@ or(밑에사용해야함)
 </dependency>
 
 
-
-  <plugin>
-  <groupId>com.mysema.maven</groupId>
-  <artifactId>apt-maven-plugin</artifactId>
-  <version>1.1.3</version>
-  <executions>
-    <execution>
-      <goals>
-        <goal>process</goal>
-      </goals>
-      <configuration>
-        <outputDirectory>target/generated-sources/java</outputDirectory>
-        <processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
-      </configuration>
-    </execution>
-  </executions>
+<plugin>
+	<groupId>com.mysema.maven</groupId>
+	<artifactId>apt-maven-plugin</artifactId>
+	<version>1.1.3</version>
+	<executions>
+		<execution>
+			<goals>
+				<goal>process</goal>
+			</goals>
+			<configuration>
+				<outputDirectory>target/generated-sources/java</outputDirectory>
+				<processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>
+			</configuration>
+		</execution>
+	</executions>
 </plugin>
+
+```
+mvn compile 명령어를 통해서 q객체들을 생성해줘야한다. target/generated-sources/java 위치에 q객체들이 생성 됬을것이다.
+
+
+엔터티 매니저와 사용하는 방법
+```java
+pulbic void queryDSL(){
+	EntityManager em = emf.createEntityManager();
+	JPAQuery query = new JPAQuery(em);
+	QMember qMember = new QMember("m");
+
+	List<Member> members = query.from(qMember).where(qMember.name.eq("회원1"))
+	.orderBy(qMember.name.desc()).list(qMember);
+
+}
+
 ```
 
 
@@ -81,7 +114,6 @@ public interface QueryDslPredicateExecutor<T> {
 }
 
 
-출처: http://netframework.tistory.com/entry/13-queryDSL-Spring-Data-JPA [Programming is Fun]
 ```
 
 QueryDslRepositorySupport 를 통해 update,delete 처리를 한다.
@@ -144,11 +176,15 @@ public abstract class QueryDslRepositorySupport {
 Prodicate() 계층이 있어야할듯 무조건,
 
 
+QueryDslPredicateExecutor 의 경우는 select 를 해올떄 사용되고
+QueryDslRepositorySupport 의 경우는 update,insert의 경우 사용된다.
 
 
 
 
 
+
+출처: http://netframework.tistory.com/entry/13-queryDSL-Spring-Data-JPA [Programming is Fun]
 
 
 
