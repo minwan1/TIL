@@ -8,6 +8,14 @@
 * cd /Applications //맥 응용프로그램 접속
 
 
+## 로컬 배포방식
+mvn -f pom_dev.xml clean package
+
+
+
+scp -i ~/.ssh/dev.pem target/$WAR_FILE ubuntu@$TARGET_IP:/opt/tomcat/webapps/ROOT.war
+
+
 ## angular spring 리눅스 셋팅
 
 ## 노드 설치

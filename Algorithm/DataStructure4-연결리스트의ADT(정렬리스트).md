@@ -101,6 +101,7 @@ int main(int argc, char** argv)
 
 ```
 연결리스트의 이해에서 사용한 리스트를 업그레이드하여 링크드 리스트 제작
+head에서 더미노드를 하나 생성하고 시작한다. 그냥 head가 널인지 체크랑 삽입,삭제등할때유입함
 ```
 typedef struct _node{  //typedef를 붙이면 구조체 선언할때 typedef를 안붙여도됨.
   int data;

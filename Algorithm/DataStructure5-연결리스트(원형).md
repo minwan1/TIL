@@ -133,4 +133,31 @@ LData LRemove(List * plist){
 }
 ```
 
-양방향 연결리스트1 볼차례
+## 양방향 연결리스트
+노드를 양방향으로 연결시켜준다.
+![](https://i.imgur.com/KRbDqOB.png)
+
+
+```c
+typedef struct _node{
+  Data data;
+  struct _node * next;
+  struct _node * prev;
+}
+```
+위에 노드에서 next,prev가 추가됬기때문에 그전소스에서 포인터before변수를 지웠다.
+```c
+int LNext(List * plist, Data * pdata){
+  if(plist->cur->next == NULL){
+    return FALSE;
+  }
+
+  plist->cur = plist->cur->next;
+  *pdata = plist->cur->data;
+
+  return TRUE;
+}
+
+```
+
+양방향연결리스트 2 볼차례
