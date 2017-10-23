@@ -11,3 +11,9 @@ that i took 내가 탔던
 The bag that i want to get is this. 내가 사고싶은 백은 이것이야.
 
 the time that you can come 너가 올 수 있는 시간
+that work 일하는
+that love 사랑하는
+that drives 운전하는
+the people that study 공부를 하는 사람들
+the people that work 일하는 사람들
+the people that go to 가는 사람들  
