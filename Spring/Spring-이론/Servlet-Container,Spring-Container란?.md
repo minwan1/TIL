@@ -25,7 +25,7 @@ destroy() - 서버가 꺼질대 한번만실행
 | IoC(Inversion of Control)       | 개발자는 JAVA코딩시 New연산자, 인터페이스 호출,팩토리 호출방식으로 객체를 생성하고 소멸시킨다. IOC란 인스턴스의 생성부터 소멸까지의 객체 생명주기 관리를 개발자가하는 대신 스프링(컨테이너)가 관리한다     |
 | DI(Dependency Injection) | IoC를 실제로 구현하는 방법으로서 의존성있는 컴포넌트들 간의 관계를 개발자가 직접 코드로 명시하지 않고 컨테이너인 Spring이 런타임에 찾아서 연결해주게 하는 것이다. |
 
-Spring Container는 Bean들의 생명주기를 관리한다. Spring Container는 어플리케이션을 구성하는 Bean들을 관리하기위해 IOC를 사용한다. Spring 컨테이너 종류에는 BeanFactory와 이를 상속한ApplicationContext가 존재한다. 이 두개의 컨테이너로 의존성 주입된 빈들을 제어하고 관리할 수 있다. 아래는 스프링 웹어플리케이션 동작원리이다.
+Spring Container는 Bean들의 생명주기를 관리한다. Spring Container는 어플리케이션을 구성하는 Bean들을 관리하기위해 IOC를 사용한다. Spring 컨테이너 종류에는 BeanFactory와 이를 상속한ApplicationContext가 존재한다. 이 두개의 컨테이너로 의존성 주입된 빈들을 제어하고 관리할 수 있다. 애플리케이션 컨텍스트 오브젝트는 하나의 애플리케이션에서 보통 여러개가 만들어져 사용된다. 이를 통틀어서 스프링 컨테이너라고 부를수 도 있다. 아래는 스프링 웹어플리케이션 동작원리이다.
 
 
 

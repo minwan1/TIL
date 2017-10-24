@@ -17,3 +17,6 @@ that drives 운전하는
 the people that study 공부를 하는 사람들
 the people that work 일하는 사람들
 the people that go to 가는 사람들  
+
+
+that will make money 돈을 벌
