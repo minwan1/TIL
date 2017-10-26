@@ -55,7 +55,7 @@
 위 부분에서 연산자 우선순위부분에서 설명 하지 않은경우 우선순위가 같은 경우가있다. 예를들어 쟁반에 +가 먼저 들어가있고 나중에 - 가따라온다면 둘은 우선순위가 같은경우이다. 사칙연산에서는 우선순위가 같으면 먼저 나온 연산자를 실행한다. 그럼으로 우선순위를 높이려면 쟁반에 맨 위부분으로 올려줘야한다.그럼으로 -가 맨아래로가고 +가 올라온다.
 
 
-### 중위 표기법을 후위 표기법으로 바꾸는 방법 1/2: 소괄호를 고려하고
+### 중위 표기법을 후위 표기법으로 바꾸는 방법 2/2: 소괄호를 고려하고
 
 (1+2+3)/4
 후위 표기법의 수식에서는 먼저 연산이 이뤄져야 하는 연산자가 뒤에 연산이 이뤄지는 연산자보다 앞에 위치해야한다. 따라서 위의 수식에서는 / 연산자보다 + 연산자와 * 연산자가 먼저 쟁반에서 빠져나가야한다.
@@ -68,3 +68,119 @@
 이어서 숫자 3을 변환된 수식의 자리로 옮기고 ) 연산자를 쟁반위로 옮길 차례이다. 그런데 이때 등장하는 ) 연산자가 의미하는 바는 소과호의 끝을 의미한다. ( 연산자 이후에 쌓인 연산자들을 쟁반에서 꺼내어 변환된 수식의 자리로 옮겨야 한다.
 이제 남은것은 / 연산자와 숫자 4의 처리이다. 기존그대로 쟁반과 수식의자리로옮기고 최종적으로 /를 가지고와 수식으로 옮기게되면 아래와같이 완성되게 된다.
 ![](https://i.imgur.com/8AIxVzG.png)
+
+### 중위 표기법을 후위 표기법으로 바꾸는 프로그램의 구현
+먼저 후위 표기법으로 변환을 처리하는 함수를 구현해야한다.
+
+```c
+void ConvToRPNExp(char exp[]){ //후위 표기법의 수식으로 변환
+  ....
+}
+
+```
+
+함수의 매개변수 형과 반환형을 위와 같이 결정한 이유는 중위 기표법의 수식을 담고 있는 배열의 주소 값을 인자로 전달하면서 ConvToRPNExp함수를 호출하면, 인자로 전달된 주소 값의 배열에는 후위 표기법으로 바뀐 수식이 저장된다. 따라서 함수 ConvToRPNExp는 다음 형태로 호출되어진다.
+
+```java
+int main(void){
+  char exp[] = "3-2+4"; //중위 표기법
+  ConvToRPNExp(exp); //후위볍기법으로 변경!
+  ...
+}
+```
+ConvToRPNExp를 정의하기전에 거기에 사용되는 몇개의 함수를 먼전 선안하겠다
+
+```c
+int GetOpPrec(char op) // 연산자의 우선순위 정보를 반환한다.
+{
+  switch(op){
+    case '*':
+    case '/':
+      return 5; //가장 높은 우선순위
+    case '+':
+    case '-':
+      return 3; // 중간 우선순위
+    case '(': // 가장 낮은 연산순위
+      return 1;
+  }
+
+  return -1; //등록되지 않은 연산자알림
+}
+
+```
+
+다음은 GetOpPrec 함수의 호출결과를 바탕으로 두연산자의 우선순위를 비교하여, 그결과를 반환하는 함수이다.
+
+```c
+int WhoPrecOp(char op1, char op2){
+  int op1Prec = GetOpPrec(op1);
+  int op2Prec = GetOpPrec(op2);
+
+  if(op1Prec > op2Prec)
+    return 1;
+  else if(op1Prec < op2Prec)
+    return -1;
+  else
+      return 0; //우선순위가 같다면
+}
+```
+
+다음은 위에서 언급함 ConvToRPNExp 함수이다
+
+```c
+void ConvToRPNExp(char exp[]){ //후위표기법으로 전환해주는 함수
+//문자열 배열이들어옴
+
+  Stack stack;
+  int expLen = strlen(exp); //strlen은 길이를 변환하는 함수
+  char * convExp = (char*)malloc(expLem+1); //변환된 수식을 담을공간
+
+  int i, idx = 0;
+  char tok, popOp;
+
+
+  //memset 함수는 특정값으로 초기화하는것, 여기에서는 0으로 초기화
+  memset(convExp, 0, sizeof(char)*expLen+1); // 할당된 배열을 0으로 초기화
+
+  for(int i=0; i<expLen; i++){
+    tok = exp[i];  //exp로 전달된 문자열 하나씩 tok에 저장
+
+    if(isdigit(tok)){
+      convExp[idx++] = tok;
+    }else{
+      switch(tok){
+        case '()':
+          SPush(&stack, tok);
+          break;
+        case ')':
+          while(1){
+            popOp = SPop(&stack);
+            if(popOp == '(')
+              break;
+
+            convExp[idx++] = popOp; // 배열 convExp에 저장한다
+          }
+          break;
+
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+        while(!SIsEmpty(&stack) && WhoPrecOp(Speek(&stack),tok)>=0)
+          convExp[idx++] = SPop(&stack);
+
+        SPush(&stack, tok);
+        break;
+
+      }
+    }
+  }
+
+  while(!SIsEmpty(&stack))
+    convExp[idx++] = SPop(&stack);
+
+  strcpy(exp, convExp);// 변환된 수식을 exp에 복사한다
+  free(convExp); // 그리고 소멸
+}
+
+```
