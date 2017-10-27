@@ -20,3 +20,18 @@ the people that go to 가는 사람들
 
 
 that will make money 돈을 벌
+
+
+have p.p 해왔다,한적있다,했었다  
+
+
+am cold
+was cold
+have been cold
+
+am ready
+was ready
+have been ready
+
+여기 있어 왔다
+have been here
