@@ -79,33 +79,3 @@ System.out.println(accountServiceClassName); //userServiceImpl
 
 http://egloos.zum.com/springmvc/v/498979
 aop심도있는
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```java
-//@EnableAspectJAutoProxy(proxyTargetClass = true)
-```
-
-
-EnableAspectJAutoProxy << 이걸 정리한번해야겟다
-
-
-The bean ‘partnerMachnet’ could not be injected as a ‘com.sodatransfer.web.partner.PartnerMachnet’ because it is a JDK dynamic proxy that implements:
-    com.sodatransfer.web.partner.Partner
-
-
-
-    The bean 'partnerMachnet' could not be injected as a 'com.sodatransfer.web.partner.PartnerMachnet' because it is a JDK dynamic proxy that implements:
-	com.sodatransfer.web.partner.Partner

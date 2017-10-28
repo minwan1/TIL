@@ -1,9 +1,7 @@
 http://aoruqjfu.fun25.co.kr/index.php/post/966
 
 
-
-
-
+## 수프링 트랜잭션
 
 서비스에 같은 클래스내에서는 같은 트랜잭션을 가진다?
 
@@ -78,3 +76,9 @@ public String addCoupon2(){
 ```
 하지만 위에와같이 진행하게되면 CoponDAO에서 익셉션이 나면 addCoupon에서 catch하니까 createUser에서 business logic을 다수행하고 마지막에 리턴할때 jpa가 수행되면서 익셉션이 발생한다. 아래와같은 에러를 뱉는다.
 org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction; nested exception is javax.persistence.RollbackException:
+
+
+
+
+
+참고 문헌
