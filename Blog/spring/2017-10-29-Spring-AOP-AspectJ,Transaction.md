@@ -101,7 +101,7 @@ public class AppConfig {
 }
 
 ```
-그 다음 추가된 AspectJ를 사용하기위해서는 Spring Configuration을 설정해줘야 합니다. @EnableAspectJAutoProxy을 설정하여 Aspect을 적용 시킵니다. 물론 여기서 proxyTargetClass = ture로 설정함으로 CGLIB를 사용한다는 설정 또한 해줘야합니다. 아마 AspectJ를 적용하기위해서는 true값이 필수 인것같습니다. AOP모드 또한 proxy모드에서 ASPECTJ로 변경해줍니다. 이렇게 설정하고 아까의 소스를 다시 실행시키면 트랜잭션이 분리된 모습을 확인할 수 있습니다.
+그 다음 추가된 AspectJ를 사용하기위해서는 Spring Configuration을 설정해줘야 합니다. @EnableAspectJAutoProxy을 설정하여 Aspect을 적용 시킵니다. 물론 여기서 proxyTargetClass = ture로 설정함으로 CGLIB를 사용한다는 설정 또한 해줘야합니다. AOP모드 또한 proxy모드에서 ASPECTJ로 변경해줍니다. 이렇게 설정하고 아까의 소스를 다시 실행시키면 트랜잭션이 분리된 모습을 확인할 수 있습니다.
 
 
 ```java
@@ -129,4 +129,3 @@ Advice를 핵심로직코드에 적용하는것을 weaving이라고 한다. 즉 
 출처
 * [Programming is Fun](http://netframework.tistory.com/entry/LTW-CTW를-이용한-Transactional의-사용)
 * [Spring document](https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/transaction.html)
-[완료]

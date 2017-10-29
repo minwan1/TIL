@@ -56,12 +56,3 @@
 참조
 https://www.mkyong.com/spring3/spring-aop-aspectj-annotation-example/
 http://zgundam.tistory.com/81
-
-
-
-들어오는 데이터를 저장하고 그 데이터를 보내기를 원하면
-만약 데이터 저장이 실패하면 우리는 편지를 보내기를 원하지 않는다.
-
-편지를 보내다가 실패하면 데이터를 저장하는것을 원하지 않는다.
-
-그래서 우리는 데이터를 분리해야한다.@Transactional(propagation = Propagation.REQUIRES_NEW)
