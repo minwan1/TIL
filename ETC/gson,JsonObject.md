@@ -25,6 +25,12 @@ List<FacebookPage> facebookPage
 arrayString = gson.toJson(facebookPage);
 ```
 
+list<pojo> to json삽입
+```java
+List<TransferData> myList = dao.getList();
+json.add("myList", gson.toJsonTree(myList));
+```
+
 이걸 위에와 같이 담으면 bankList에 담을 수 있다. fromJson은 JsonObject로부터 BankList클래스 형태로 변경하는것,
 
 

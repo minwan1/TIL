@@ -79,4 +79,62 @@ We have been waiting for 1 year.  우리는 1년 동안 기다려 왔어요.
 The concert that we have been waiting for a long time is here now.
 우리가 오랫동안 기다려 왔던 콘서트가 지금 여기 있습니다.
 
-  
+
+
+that I have been watching
+내가 계속 봐온
+
+that I’ve been reading
+내가 계속 읽어온
+
+that I’ve been thinking
+내가 계속 생각해온
+
+the coffee that she has been drinking 그녀가 계속마셔오던 커피
+
+the person that she has been waiting for  그녀가 계속 기다리던 사람
+
+that has been here 계속 여기 있었던
+that has been busy 계속 바빴던
+
+
+something that is big 큰것
+something that is small 작은것
+someone that has been cold 계속 추워왔던 누군가
+someone that has been thinking 계속 생각해왔던 누군가
+something that has been moving 계속 이동했던 무언가
+
+might ~할지 모른다.
+
+
+만들어지는 that is made
+만들어졌던 that was made
+
+
+that will be made  만들어 질
+that can be made  만들어 질 수 있는
+that should be made  만들어져야만 하는
+
+
+write – wrote – written
+
+
+that was written 100 years ago 100년 전에 쓰여졌던
+I was shocked. 나 놀랐어. (나 충격 받았어.)
+that was shocked  충격을 받았던
+
+이유 for (~로)
+the singer that was known for 가창력
+the car that was known for 안정성
+
+
+
+Does he want to? 걔 (~하고)싶대?
+Does he want to go to? 걔 가고싶대 ?
+
+stop studying 공부하는걸 멈추다
+start studying 공부하는걸 시작하다
+keep studying 공부하는걸 계속하다
+
+Do you want to stop drinking? 너 그만마실래 ?
+Do you want to keep studying? 너 공부하기를 원하니 ? 

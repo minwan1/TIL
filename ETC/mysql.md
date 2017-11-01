@@ -11,3 +11,10 @@ mysql 시간순으로 불러오기
 
 
 1. [백발의개발자](http://m.blog.naver.com/jjoommnn/130181901609) - angular 이론에 대해 아주 쉽게 설명해준다.
+
+
+
+mysql.server start 실행
+sudo mysql -u root -p 로그인
+
+root 1234 local
