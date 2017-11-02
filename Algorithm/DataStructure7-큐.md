@@ -58,3 +58,72 @@ R과 F를 회전시킨다는것은 배열을 다음의 형태로 바라본다는
 
 * 원형큐가 텅빈상태 : F와 R이 동일한 위치를 가리킨다.
 * 원형 큐가 꽉찬 상태 : R이 가리키는 위치의 앞을 F가 가리킨다.
+
+원형 큐의 핵심 소스 원형으로 이어주는 부분
+```c
+int NextPosIdx(int pos){
+    if(pos == QUE_LEN-1){ //배열의 마지막 요소의 인덱스 값이라면
+        return 0; // 0을 돌려주게되면 0 부터 이제 다시시작하게되는것이다
+    }else{
+        return pos+1; // 아니라면 넣어준 위치에 + 1을 해서 준다.
+    }
+}
+```
+큐가 꽉찼다는것은 꼬리 다음에 머리가 다찼을시에 꽉찬것이다.
+```C
+void Enqueue(Queue * pq, Data data){
+    if(NextPosIdx(pq->rear) == pq->front){ // 큐가 꽉 찼다면, 꼬리다음에 머리가있으면 꽉찬것이다.
+        printf("Queue Memory Error!");
+        exit(-1);
+    }
+    pq->rear = NextPosIdx(pq->rear);
+    pq->queArr[pq->rear] = data;
+}
+```
+
+[배열기반의 원형 큐 소스](https://github.com/minwan1/Algorithm/tree/master/CircularQueue/CircularQueue)
+
+## 큐의 연결리스트 기반 구현
+스택과 큐의 유일한 차이는 앞에서 꺼내느냐 뒤에서 꺼내느냐에 따라 달라질것같다는 말은 연결리스트 기반의 큐라면 위의 판단이 어느정도 옮다, 하지만 연결리스트 기반의 큐에서도 여전한 차이점은 push와 pop이 이뤄지는 위치가 같ㅇㄴ 반면, 큐는 enqueue와 dequeue가 이뤄지는 위치가 다르다.
+
+### 연결리스트 기반 큐의 구현
+F->null
+R->null
+
+처음 생성을하게되면 F,R은 null로 초기화해준다.
+
+```c
+void Enqueue(Queue * pq, Data data){
+    Node * newNode = (Node *)malloc(sizeof(Node));
+    newNode->next = NULL;
+    newNode->data = data;
+
+    if(QIsEmpty(pq)){
+        pq->front = newNode;
+        pq->rear = newNode;
+    }else{
+        pq->rear->next = newNode; //마지막노드 다음 노드에 새로운 노드삽입
+        pq->rear = newNode; // 꼬리에 삽임
+    }
+
+}
+```
+위에처럼 새로운 노드가 추가시 R도 새로운노드를 봐야하고 기존의 꼬리노드도 새로운 꼬리노드를 바라보게해야한다.
+```c
+Data Dequeue(Queue * pq){
+    Node * delNode;
+    Data retData;
+
+    if(QIsEmpty(pq)){
+        printf("Queue Memory Error");
+        exit(-1);
+    }
+
+    delNode = pq->front; // 삭제할노드 주소저장
+    retData = delNode->data; //리턴할 데이터 저장
+    pq->front = pq->front->next; // 다음 노드로 이동 후 데이터삭제
+
+    free(delNode);
+    return retData;
+}
+```

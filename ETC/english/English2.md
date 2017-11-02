@@ -137,4 +137,33 @@ start studying 공부하는걸 시작하다
 keep studying 공부하는걸 계속하다
 
 Do you want to stop drinking? 너 그만마실래 ?
-Do you want to keep studying? 너 공부하기를 원하니 ? 
+Do you want to keep studying? 너 공부하기를 원하니 ?
+
+
+
+which 사물
+where 장소
+who 사람
+
+
+the place where I am drinking coffee 내가 커피를 마시는 장소는
+the place where I am studying  내가 공부하는 장소는
+Do you know the number which I have? 내가 가지고있는 숫자르 알고있니 ?
+the room where I am 내가 있는 방  
+
+the people who are studying 공부하는 사람들
+the people whom I have met  내가 만났던 사람들
+
+
+She said that they were in 삼성동 그녀가 그러던데 걔들 삼성동에 있대.
+She said that she was busy. 그녀는 바쁘다고 그러더라고.
+The school that we were in was this. 우리가 있었던 학교가 이거였어요.
+He said that the school that we were in was sold. 걔가 그러던데 우리가 있었던 학교가 팔렸대.
+
+
+The region that I was in had a nice park. 내가 작년에 살았던 동네엔 멋진 공원이 있었어요.  (내가 작년에 살던 동네는 멋진 공원을 가지고 있었어요.)
+
+
+My friend said that the school that I was in had a library. 내 친구가 그러더라고, 내가 있었던 학교에 도서관이 있었다고.
+He told me that you were hungry. 걔가 그랬어, 너 배고프다고.
+He told me that he was hungry. 걔가 그랬어, 걔 배고프다고.  
