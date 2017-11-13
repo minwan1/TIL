@@ -9,3 +9,4 @@
 * [[DataStructure6-스택]]
 * [[DataStructure6-스택-계산기]]
 * [[DataStructure7-큐]]
+* [[DataStructure8-트리]]

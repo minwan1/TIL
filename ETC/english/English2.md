@@ -167,3 +167,94 @@ The region that I was in had a nice park. 내가 작년에 살았던 동네엔 �
 My friend said that the school that I was in had a library. 내 친구가 그러더라고, 내가 있었던 학교에 도서관이 있었다고.
 He told me that you were hungry. 걔가 그랬어, 너 배고프다고.
 He told me that he was hungry. 걔가 그랬어, 걔 배고프다고.  
+
+
+1. 과거완료(had p.p.)
+ㆍ’~였었어’같이 과거보다 더 과거에 있었던 상태나 활동을 과거완료로 말할 수 있습니다.
+
+I went to 종로 yesterday and met my friend who had worked in 시원스쿨.
+
+I met the person who had come here. 여기에 왔었던 사람
+who had run the restaurant 레스토랑을 운영했었던
+
+The people who had bought the apartment lost money last year.
+아파트를 샀던 사람들은 돈을 잃었습니다.
+
+
+ㆍ가다 go, 오다 come은 완료형으로 표현하면 have gone, have come 대신 have been으로 써도 뜻이 똑같습니다.
+
+
+I have been there. // 나는 거기 간적있었어
+I have been here.  // 나는 여기있던적이 있었어
+We’ve been there.
+We’ve been here.
+
+
+과거에 있었던 일에서 설명하는곳에 had를 넣어준다고 생각하면된다.
+
+ㆍ’현재완료 have + p.p.’와 ‘수동태 be + p.p.’를 합치면 ‘have been p.p.’가 됩니다.
+
+
+ㆍ’과거완료 had + p.p.’와 ‘수동태 be + p.p.’를 합치면 ‘had been p.p.’가 됩니다.
+
+만들어진 적 있다 /
+만들어져 왔다 have been made
+쓰여진 적 있다 /
+쓰여져 왔다 have been used
+쓰여졌던 적이 있다 /
+쓰여져 왔었다 had been used
+
+The cars that had been used by many Korean were 포드
+The pens that had been produced in China were very expensive.
+중국에서 생산되어졌던 펜은 매우 비쌌다.
+
+#### ㆍ’주어가 ~라고 하더라고요, 그러던데요, 그러더라고요’를 ‘주어 + said that’구조로 말할 수 있습니다. that 뒤에는 반드시 ‘주어 + 동사’구조로 전달하는 정보를 완벽히 밝혀야 합니다.
+He said that I was angry. 걔가 그러더라고, 내가 화났다고.
+He said that you went to America. 걔가 그러더라고, 네가 미국 갔다고.
+
+
+he said(과거) that (he was beautiful)과거문장이나와야함!
+he said(과거) that (he would be beautiful) 미래형도 과거로! 그는 그가 아름다워질거라고 말했어
+
+
+#### ㆍ‘주어 + said 다음 that ‘주어 + 동사’구조 대신 따옴표로 말한 내용 전체가 오면, 이 때 따옴표 안에는 주어가 당시에 말한 내용을 그대로 적으면 됩니다. 책이나 글을 보면 자주 나옵니다.
+He said “Korea is beautiful.”
+
+
+우리 아버지가 나한테 있는 차가 위험하다고 그러시더라고. My father said that the car that I had was dangerous.
+
+
+something that I am telling you 내가 너에게 말하고 있는 것
+This is something that I am telling you. 이게 내가 너에게 말하고 있는 것이야.
+This is something that I told you. 이게 내가 너에게 말한 거야.
+This is something that I am told.  이게 내가 듣는 거야.
+This is something that I was told. 이게 내가 들었던 거야.
+This is something that I’ve been telling you. 이게 내가 너에게 말해오고 있는 거야.
+This is something that I was told. 이게 내가 들었던 거야.  
+This is something that I’ve been told. 이게 내가 들어온 거야.
+
+
+
+
+I’ve been helping. 나는 계속 도와왔어.
+I’ve been helped. 나는 도움을 받은 적이 있어.
+I’ve been supporting. 나는 계속 서포트 해왔어.
+I’ve been supported. 나는 서포트 받은 적이 있어.
+
+
+
+Korea which accepts 서양문화를 받아들이는 한국
+Korea which accepted 서양문화 서양문화를 받아들였던 한국
+which has accepted 서양문화 /  서양문화를 받아들여온
+which has been accepting 서양문화 서양문화를 받아들여온
+
+
+서양문화 which is accepted  받아들여지는 서양문화 ->
+서양문화 which was accepted 받아들여졌던 서양문화 ->
+서양문화 which will be accepted  받아들여질 서양문화 ->
+
+
+the new policy which has been accepted by 부서 / 부서에 의해서 받아들여져 온 새로운 행정
+The new policy which has been accepted by 인사과 is fair. 인사과에 의해서 받아들여져 온 새로운 행정은 공평해요.
+인사과 which has been accepting the new policy is young. 새로운 행정을 받아들여 온 인사과는 젊다.
+The new policy which has been accepted by 인사과 will be announced to everyone today  인사과에 의해 받아들여진 새로운 행정은 오늘 모든 사람에게 발표될 것이다.
