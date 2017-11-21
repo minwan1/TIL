@@ -75,6 +75,12 @@ df . : 현재 디렉토리가 포함된 파티션의 남은 용량을 확인
 ```
 
 ## 메이븐 빌드 명령어
-mvn clean package
+mvn -f pom_dev.xml clean package
+
+
+## 리눅스 명령어
+ps -ef | grep java  //자바켜져있는지 확인
+nslookup admin_dev.sodatransfer.com // ip보는 명령어
+ls -altr  // 현재위치에서 파일업데이트된 시간확인하는것
 
 출처: http://chago.tistory.com/4 [Mr,Cha GO!!!]

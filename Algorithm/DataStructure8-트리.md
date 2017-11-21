@@ -130,3 +130,50 @@ void InorderTraverse(BTreeNode * bt){ // 이진 트리 전체를 중위 순회�
   InorderTraverse(bt->right); //3 단계 오른쪽 서브 트리의 순회
 }
 ```
+[깃허브 중위순회 소스](https://github.com/minwan1/Algorithm/tree/master/BinaryTreeTraverseMain/BinaryTreeTraverseMain)
+이로써 중위 순회를 끝냈다, 전위 순회와 후위 순회도 끝낸것이나 다름없다. 노드의 방문순서가 이들의 유일한 차이기 때문이다.
+```c
+void PreorderTraverse(BTreeNode * bt){ // 전위 순회함수
+  if(bt == NULL){
+    return ;
+  }
+
+  printf("%d \n", bt->data); // 전위 순회이므로 루트 노드 먼저 방문
+  PreorderTraverse(bt->left);
+  PreorderTraverse(bt->right);
+}
+
+```
+```c
+void PreorderTraverse(BTreeNode * bt){ // 후위 순회함수
+  if(bt == NULL){
+    return ;
+  }
+
+  printf("%d \n", bt->data);
+  PreorderTraverse(bt->left);
+  PreorderTraverse(bt->right); // 후위 순회이므로 루트 노드 먼저 방문
+}
+
+```
+### 노드의방문을 자유롭게 구성하기
+위에서는 단순히 노드의 방문했을경우에는 Printf로 값을출력해준다. 하지만 방문의 상황에따라 목적이 달라진다. 이때 함수 포인터를 이용해서 이것을 제어할 수 있다.
+
+```c
+typedef void VisitFuncPtr(BTData data);
+void InorderTraverse(BTreeNode * bt, VisitFuncPtr action);{
+  if(bt == NULL){
+    return ;
+  }
+
+  InorderTraverse(bt->left, action);
+  action(bt -> data);
+  InorderTraverse(bt->right,action);
+
+}
+
+void showData(int data){
+  printf("%d ",data)
+}
+```
+showData함수를 던지게되면 안에 함수내용에따라 기능을 다르게 사용할 수 있다.

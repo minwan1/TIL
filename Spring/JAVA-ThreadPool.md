@@ -5,3 +5,33 @@
 
 
 출처: http://palpit.tistory.com/732 [palpit's log-b]
+
+
+
+
+Spring threadpool예제
+https://www.mkyong.com/spring/spring-and-java-thread-example/
+
+
+
+
+Spring ThreadPoolTaskScheduler vs ThreadPoolTaskExecutor
+
+
+
+ThreadPoolTaskExecutor is a specialized class for executing tasks.
+ThreadPoolTaskScheduler is a specialized class for scheduling tasks.
+ThreadPoolTaskExecutor 지금 바로 실행이 필요할경우 사용.
+ThreadPoolTaskScheduler 예정되어진 일정이 있다면 스케줄러사용.
+
+
+
+
+
+
+
+http://heowc.tistory.com/68 (쓰레드풀 테스트)
+
+
+
+https://stackoverflow.com/questions/43874079/how-to-decide-on-the-threadpooltaskexecutor-pools-and-queue-sizes(쓰레드 수용범위 계산)

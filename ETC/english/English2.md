@@ -258,3 +258,142 @@ the new policy which has been accepted by 부서 / 부서에 의해서 받아들
 The new policy which has been accepted by 인사과 is fair. 인사과에 의해서 받아들여져 온 새로운 행정은 공평해요.
 인사과 which has been accepting the new policy is young. 새로운 행정을 받아들여 온 인사과는 젊다.
 The new policy which has been accepted by 인사과 will be announced to everyone today  인사과에 의해 받아들여진 새로운 행정은 오늘 모든 사람에게 발표될 것이다.
+
+
+
+Does he go down? / Is he going down? 걔 내려가?
+Does he go up? / Is he going up? 걔 올라가?
+We are not leaving without you. 우리는 너 없이 출발 안 할거야.
+I left. 나는 출발했어.
+I’m leaving my bag at the front desk.나는 내 가방 프론트 데스크에 맡기고 갈 거야.
+Are you leaving that file on the desk? 넌 그 파일 책상에 두고 갈거니?    
+
+
+
+A는 B와 같다. ★ ~와 같다 be the same with
+A is (the) same with B.
+
+네가 나한테 갖고 준 칼
+the knife that you got me
+the rug that you got me (★ 양탄자, 깔개 rug) 네가 나한테 갖고 준 양탄자/깔개
+the book that you got me 네가 나한테 갖고 준 책
+
+
+
+I will go get 난 가지러 갈 거야
+I will go get coffee. 난 커피 가지러 갈 거야.
+I will go read the book that you got me. 난 네가 나한테 갖다 준 책 읽으러 갈 거야.
+
+
+that you (have) got me 네가 나한테 갖다 준
+that he (has) got me 걔가 나한테 준
+that my mother (has) got me 엄마가 나한테 준
+something that I’m trying to do 내가 하려고 하는 것  
+Is this something that I’m trying to do? 이게 내가 하려고 하는 거예요?
+
+This is something that I can’t accept. 이건 내가 받아들일 수 없는 거예요.
+
+
+This is not something that we can accept. 이건 우리가 받아들일 수 있는 것이 아니에요.
+
+
+여기서 공부하(고 있)는 학생들은 아름답습니다.
+그래서 저는 여기서 일하는 걸 좋아합니다.
+The students that are studying here are beautiful,
+so I like to work here(working here).
+ㆍ like, love 등은 뒤에 ‘to + 동사원형’ 혹은 ‘동사~ing’ 둘 다 올 수 있고 뜻의 차이가 없습니다.
+
+
+
+the people that are leaving their bag here 여기에 가방을 두고 가는 사람들
+the people that are bringing their bag 가방을 가져오는 사람들
+
+
+
+the people that were here 여기 있었던 사람들
+The people that were here were 사기꾼들. 여기 있었던 사람들은 사기꾼들이었어.
+
+
+the cup that will be here 이쪽으로 오는 컵
+the speaker/chair that will be here 이쪽으로 올 스피커/의자
+The bed that will be in my room must be 시몬스. 내 방으로 올 침대는 시몬스여야 해요.
+
+
+The water that is going in here must be clean. 이쪽으로 들어가는 물은 깨끗해야 해.
+
+1. get + 형용사(비교급) - ‘더 ~해지다’
+★ get better 더 좋아진다 / 더 나아진다 / 발전하고 있다
+
+You are getting better. 너 좋아지고 있네.
+I got fatter. 나 더 뚱뚱해졌어.
+You got better.  너 좋아졌어.
+
+
+My situation is getting better. (★ situation 상황) 내 상황이 조금 나아지고 있어.
+
+
+you have met 너는 만난 적이 있다
+he has met 걔는 만난 적이 있어
+I have seen movie  나는 본 적 있어
+
+I have tried 해본 적 있다/먹어본 적 있다
+
+
+I have done 나 끝냈어
+I haven’t done 나 끝내지 않았어
+
+
+I do my hair. 나 머리 해.
+I did my hair. 나 머리 했어.
+I have done my hair. 나 머리 끝냈어.
+I haven’t done my hair. 나 머리 아직 못 끝냈어.
+
+
+
+Have you done working? 일하는 거 끝냈어?
+Have you done doing the dishes? 설거지 하는 거 끝냈어?
+
+
+걔는 바빠. He is busy.
+걔는 바빴어. He was busy.
+걔는 계속 바빴어. He has been busy.
+ㆍ has/have been + 형용사(fast/smart/late/hot 등등) = 계속 (형용사)했다
+
+
+
+My hair is black. 내 머리는 검정색이야.
+My hair was black. 제 머리는 검정색이었어요.
+My hair has been black. 제 머리는 계속 검정색이었어요.
+
+
+Chanel has been expensive. 샤넬은 계속 비쌌어.
+Chanel is getting more expensive. 샤넬은 계속 비싸지고 있어.
+
+
+He is with me. 걔는 나랑 있어.
+He was with me. 걔는 나와 있었어.
+He has been with me. 걔는 나랑 계속 같이 있었어.
+The people that have been busy are using 시원스쿨닷컴. 계속 바빴던 사람들은 시원스쿨닷컴을 이용하고 있다.
+
+
+
+I have put salt/sugar. 나는 소금/설탕을 넣었어.
+I have put some milk. 나는 우유를 (좀) 탔어
+
+
+I have left my cellphone in the restroom. 나 화장실에 내 핸드폰 두고 왔어.
+I gotta go get my cell phone.  나는 지금 핸드폰 가지러 가야 해.
+
+I gotta leave my key. 나 내 열쇠 맡겨야 되겠어.
+I have got him. 내가 걔 (이미) 잡았어.
+
+get // 잡다,주다,받다,
+
+
+Have you got on the bus? 너 버스에 (이미) 탔니?
+
+
+
+have taken a shower (이미) 샤워를 했다
+I take a shower. 나는 샤워를 합니다.
+I took a shower.  나는 샤워를 했습니다.

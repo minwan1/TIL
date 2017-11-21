@@ -7,3 +7,8 @@ public void updateRecipient(Recipient recipient,RecipientMapping recipientMappin
 }
 영속성 붙은 recipient가 넘어왔어도 REQUIRES_NEW 속성떄문에 영속성이 유지안되는듯
 ```
+
+
+
+2. 로그인 로그아웃 처리
+AuthenticationEntryPoint 클래스로하는듯
