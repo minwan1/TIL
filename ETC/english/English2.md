@@ -397,3 +397,51 @@ Have you got on the bus? 너 버스에 (이미) 탔니?
 have taken a shower (이미) 샤워를 했다
 I take a shower. 나는 샤워를 합니다.
 I took a shower.  나는 샤워를 했습니다.
+
+
+
+am/is/are making 만드는 중이야
+was/were making 만드는 중이었어
+have/has been making 계속 만들어왔어
+
+
+am/is/are hungry 배고파
+was/were hungry 배고팠어
+have/has been hungry 계속 배고팠어
+
+
+She is beautiful. 그녀는 아름다워요.
+She was beautiful. 그녀는 아름다웠어요.
+She has been beautiful. 그녀는 계속 아름다웠어요.
+
+
+
+Have you studied? 너 공부한 적 있니?
+Have you been studying? 너 계속 공부했니?
+
+
+Have you been listening? 너 계속 들었니?
+Have you listened?
+
+
+Have you been doing the dishes alone? 너 설거지 계속 혼자 했니?
+Have you tried doing the dishes? 너 설거지 해본 적 있니?
+
+You have been going first. 네가 계속 먼저 갔잖아.
+(★ 먼저 first / 나중에 later)
+You have been leaving. 너 계속 두고 가더라.
+
+
+
+I have been using white towels. 저는 흰 수건을 계속 써왔어요.
+Have you left white towels in my room? 제 방에 흰 수건 두셨나요?
+
+
+the album that I am waiting for 내가 기다리는 중인 앨범
+the website that I was working on 내가 작업하고 있었던 웹사이트
+
+something that I like = what I like
+something that I know = what I know
+
+
+something that I was waiting for = what I was waiting for 내가 기다리는 중이었던 것

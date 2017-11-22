@@ -58,3 +58,33 @@ void ShowPostfixTypeExp(BTreeNode * bt); // 후위 표기법 기반 출력
 1. 피연산자를 만나면 무조건 스택으로 옮긴다.
 2. 연산자를 만나면 스택에서 두 개의 피연산자를 꺼내어 자식 노드로 연결한다.
 3. 자식 노드를 연결해서 만들어진 트리는 다시 스택으로 옮긴다.
+
+
+다음은 후위 표기법을 수식으로 계산하는것이다.
+```c
+BTreeNode * MakeExpTree(char exp[]){
+    Stack stack;
+    BTreeNode * pnode;
+
+    int expLen = strlen(exp);
+    int i;
+
+    StackInit(&stack);
+
+    for(i = 0; i<expLen; i++ ){
+        pnode = MakeBTreeNode();
+
+        if(isdigit(exp[i])){ // 피연산자(숫자)인지 체크
+            SetData(pnode, exp[i]-'0'); // 문자를 정수로 바꿔서 저장
+        }else{
+            MakeRightSubTree(pnode, SPop(&stack)); // 연산자라면
+            MakeLeftSubTree(pnode, SPop(&stack));
+            SetData(pnode, exp[i]);// + - 등의 연산자일경우에는 그 해당 문자열의 숫자값이 저장된다.
+        }
+        SPush(&stack,pnode);
+    }
+
+    return SPop(&stack);
+}
+
+```
