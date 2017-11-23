@@ -445,3 +445,9 @@ something that I know = what I know
 
 
 something that I was waiting for = what I was waiting for 내가 기다리는 중이었던 것
+
+
+is designed 디자인됩니다 
+
+
+is being designed 디자인되는 중입니다
