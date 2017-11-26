@@ -447,7 +447,103 @@ something that I know = what I know
 something that I was waiting for = what I was waiting for 내가 기다리는 중이었던 것
 
 
-is designed 디자인됩니다 
+is designed 디자인됩니다
 
 
 is being designed 디자인되는 중입니다
+
+
+I am given (with) the card. 나에게 카드가 주어진다.
+I am given (with) some time. 나에게/너에게 시간이 주어진다.
+
+
+
+the hotel where I am staying 내가 머무르는 호텔
+
+★ where ~하는 곳
+ㆍ where는 ‘place that’의 의미가 포함되어 있어요. 그래서 ‘~하는 곳’이라는 의미도 가능해요.
+
+
+the hotel where I am 내가 있는 호텔
+where I am 내가 있는 곳
+
+
+where I am studying 내가 공부하는 곳
+where I am sleeping 내가 자는 곳
+
+This is where I had coffee with my friends. 여기가 내가 친구와 커피를 마셨던 곳입니다.
+
+what 것
+where 곳
+
+
+what you know 네가 아는 것
+the person whom you love 네가 사랑하는 사람
+who comes here 여기에 오는
+
+
+★ what I know 내가 뭘 아는지 / 내가 아는 것  (목적어) / (주억)
+what I have 내가 뭘 갖고 있는지, 내가 갖고 있는 것
+when I go 내가 언제 가는지
+
+
+what this is 이게 뭔지
+You don’t know what I think. 넌 내가 뭘 생각하는지 넌 몰라.
+
+
+I don’t know where you are. 나 네가 어디 있는지 몰라.  
+
+
+the person whom I love 내가 사랑하는 사람
+the person who loves me 나를 사랑하는 사람
+
+
+the sister whose bus is red 빨간 버스를 가진 여동생
+the sister whose bus is big 큰 버스를 가진 여동생
+my friend whose jacket is yellow 노란색 재킷을 갖고 있는 (입고 있는) 내 친구
+my friend whose position is boss 사장이란 포지션을 가지고 있는 내
+
+
+Before I studied English, I had studied Chinese. 내가 영어를 배우기 전에 중국어를 공부했었어.
+
+
+The people that I had met helped me a lot. 내가 만났었던 사람들은 나에게 많은 도움을 줬다.
+The jackets that I had bought were there. 내가 (이미) 샀었던 재킷들이 거기에 있었다.
+
+
+The people who had studied here came to me. 여기서 공부했었던 사람들이 나한테 왔다.
+
+
+has/have been made with wood 나무로 만들어졌다
+The houses that had been made with wood were sold last year. 나무로 만들어졌던 집들은 작년에 팔렸습니다.
+
+
+
+I’m afraid that this might be small. 난 이게 작을 까봐 걱정돼.
+I’m afraid that I might be late. 난 내가 늦을 까봐 걱정돼.
+I’m afraid that he could come. 난 걔가 올 수 있을 까봐 걱정돼.
+
+
+Have you been teaching? 계속 가르쳐오셨어요?
+Have you been eating lunch? 점심 계속 드셔 왔어요?
+
+
+I have been hungry. / I haven’t been hungry. 계속 배고팠니? Have you been hungry?
+
+He said that English was easy. 걔가 영어 쉽다고 하더라고.
+My father said that he was busy. 아버지는 바쁘다고 그러셨어요.
+
+
+I said that I would be busy. 내가 바쁠 거라고 그랬잖아.
+
+
+★ ~을 잘하다 be good at (명사)
+I’m good at basketball. 나 농구를 잘 해.
+I am good at writing. 나는 글쓰기를 잘한다.
+I’m good at programming 나는 프로그래밍 잘해.
+
+He said that I was good at designing. 걔는 내가 디자인을 잘한대요.
+He said that this was expensive. 걔는 이게 비싸대요.
+
+He said that he had studied. 걔 공부한 적 있었대.
+She said that she needed some time. 걔가 시간이 좀 필요하대. 
