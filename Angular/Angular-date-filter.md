@@ -1,6 +1,5 @@
 ## Angular date filter
 
-
 {{ "1511145798906" | date:'medium' }}
 
 

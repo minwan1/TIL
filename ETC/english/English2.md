@@ -546,4 +546,71 @@ He said that I was good at designing. 걔는 내가 디자인을 잘한대요.
 He said that this was expensive. 걔는 이게 비싸대요.
 
 He said that he had studied. 걔 공부한 적 있었대.
-She said that she needed some time. 걔가 시간이 좀 필요하대. 
+She said that she needed some time. 걔가 시간이 좀 필요하대.
+
+
+
+I’m not sure if this is right or not. 난 이게 맞는지 아닌지 모르겠어.
+I’m not sure if this is good. 난 이게 좋은지 모르겠어.
+I’m not sure if he would come. 난 걔가 올지 모르겠어.
+
+
+I’m not sure if this is dark enough. 여기가 충분히 어두운지는 모르겠어요.
+I’m not sure if this is big enough. 여기가 충분히 큰지는 모르겠어요.
+I’m not sure if he is good enough. 걔가 충분히 잘 하는지 모르겠어.
+
+
+Do you think she is good enough? 그녀가 충분히 잘 하는 거 같아?
+I’m afraid that she might not be good enough 난 그녀가 충분히 잘하지 않을 까봐 걱정돼.
+I’m not sure if she is good enough. 걔가 충분히 잘하는지는 잘 모르겠어.
+
+
+Is this enough? 이거 충분하세요?
+
+
+I’m sure that this is a lot. 이게 많다고는 확신해요.
+
+
+Get him up. 쟤를 올려 보내.
+Get him down. 쟤 내리게 해.
+Get this there. 이거 잡아서 저쪽으로 보내줘.
+Get him here. 쟤 여기로 데리고 와.
+Get my bag here. 내 가방 여기로 가지고 와.
+
+
+★ get + 과거분사(p.p.) - ‘~하게 해놔’
+이거 청소해 놔. Get this room cleaned.
+
+
+Get my car cleaned. 내 차 청소해 놔.
+Get these in my room. 이것들 내 방에 갖다 놔.
+(★ 이것들 these)
+Get your head off. 머리 치워.
+
+
+ㆍ have도 get과 비슷한 표현이 가능해요.
+
+Have/Get this done. 이거 끝내줘.
+Have this up. 이거 올려줘.
+I will get you out. 내가 너 빼내줄게.
+
+
+중국에서 만들어진 전화는 한국에서 팔렸다.
+The phone that was made in China was sold in Korea.
+The phone, made in China was sold in Korea.
+
+
+something that gets me sad 나를 슬프게 하는 뭔가
+something that gets me happy 나를 행복하게 하는 뭔가
+
+I need something that can help me with speaking English. 난 영어를 말하는데 있어서 날 도와줄 수 있는 뭔가가 필요해요.
+  I need something that can help me with doing shopping. 난 쇼핑을 하는데 있어 날 도와줄 수 있는 뭔가가 필요해요.
+
+
+★ should have p.p. ~했었어야 했는데
+김연아 should have won the gold medal. 김연아가 금메달 땄었어야 했는데.
+
+
+You should have been there. 너 거기 갔었어야 해.
+You should have been here. 너 여기 왔었어야 해.
+I could have been there. 나 거기 갈 수 있었는데. 

@@ -4,7 +4,7 @@ Proxy_pass 지시자를 통해 nginx가 받은 리퀘스트를 넘겨 줄 서버
 
 
 
-
+sudo nginx -s stop && sudo nginx
 
 
 
