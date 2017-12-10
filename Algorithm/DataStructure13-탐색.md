@@ -105,3 +105,161 @@ BTreeNode * BSTSearch(BTreeNode * bst, BSTData target){
 
 #### 이진 탐색 삭제 원리
 ![](https://i.imgur.com/fVyRBlV.png)
+먼저 이진 탐색 트리의 삭제대한 경우의 수를 생각해보자
+* 삭제할 노드가 단말 노드인 경우
+* 삭제할 노드가 하나의 자식 노드를(하나의 서브트리를)갖는 경우
+* 삭제할 노드가 두개이 자식노드를(두개의 서브트리를)갖는 경우
+
+##### 먼저 삭제할 노드가 단말 노드인 경우를 삭제해보자
+![](https://i.imgur.com/TFaG6Cj.png
+위 그림에서 보이듯이 상황 1에서는 ㅏㄱ제 대상인 단말 노드를 삭제하는것으로 삭제과정이 완료된다.
+```c
+if(삭제할 노드가 단말 노드이다!){
+  if(GetLeftSubTree(pNode) == dNode){ // 삭제할 노드가 왼쪽 자식 노드라면
+    RemoveLeftSubTree(pNode); // 왼쪽 자식 노드 트리에서 제거
+  }else{ // 삭제할 노드가 오른쪽 자식 노드라면
+    RemoveRightSubTree(pNode); // 오른쪽 자식 노드 트리에서 제거
+  }
+}
+```
+
+
+##### 삭제할 노드가 하나의 자식 노드를(하나의 서브트리를)갖는 경우
+![](https://i.imgur.com/mPd5nJu.png)
+위그림 왼쪽 트리에서, 10이 저장된 노드가 왼쪽 자식 노드이건 오른쪽 자식 노드이건, 이에 상관없이 10이 저장된 노드는 8이 저장된 노드의 오른쪽 자식 노드가 되어야한다.
+
+```c
+if(삭제할 노드가 하나의 자식 노드를 지닌다!){
+  BTreeNode * dcNode;
+
+  if(GetLeftSubTree(dNode) != NULL){ // 자식 노드가 왼쪽에 있다면,
+    dcNode = GetLeftSubTree(dNode);
+  }else{ // 자식 노드가 오른쪽에 있다면
+    dcNode = GetRightSubTree(dNode);
+  }
+
+  if(GetLeftSubTree(pNode) == dNode) // 삭제 대상이 왼쪽 자식 노드이면
+    ChangeLeftSubTree(pNode, dbNode); // 왼쪽으로 연결
+  else // 삭제 대상이 오른쪽 자식 노드이면
+    ChangeRightSubTree(pNode, dcNode); // 오른쪽으로 연결
+
+}
+```
+##### 먼저 삭제할 노드가 단말 노드인 경우를 삭제해보자
+![](https://i.imgur.com/zYWkRcq.png)
+위의 첫번째 그림에서 8을 삭제할경우 이를 대체할 후보로 다음 두개의 노드를 꼽을 수 있다.
+* 8이 저장된 노드의 왼쪽 서브 트리에서 가장 큰 값인 7을 저장한 노드
+* 8이 저장된 노드의 오른쪽 서브트리에서 가장 작은 값인 8를 저장한 노드
+
+위 2번째 그림은 8의 노드를 지우고 7또는 9를 저장한 노드로 각각 대체했을 때의 결과의 그림이다. 이그림에서 대체 후에도 이진 탐색 트리가 유지됨에 주목하자. 위그림에서 보듯이 삭제할 노드의 왼쪽 서브트리에서 가장 큰 값이나, 살제할 노드의 오른쪽 서브트리에서 가장 작은값을 저장한 노드로 대체하면 된다. 물론 서브트리에서 가장 큰 값이나 가장 작은 값을 저장한 노드를 찾는것은 어렵지 않은데, 다음 그림을 통해서 그 방법을 보이겠다.
+
+위 3번째 그림에서 보듯이 NULL을 만날때 까지 계속해서 오른쪽 자식 노드로 이동하면되고, 가장 작은 값을 찾을 때는 NULL을 만날 때까지 왼쪽으로 이동하면된다. 어느것을 택해도 이진 탐색 트리의 유지에는 지장이 없으므로 삭제할 ***노드의 오른쪽 서브트리에서 가장 작은 값을 지니는 노드를 찾아서 이것으로 삭제할 노드를 대체한다.***
+
+다음은 앞서 보인 이진 탐색 트리의 삭제 전과 후의 모습의 그림이다.
+![](https://i.imgur.com/yV8W2I6.png)
+위그림에서 보이는 삭제 결과를 이루기 위해 해야할일은 다음과 같다. 삭제가 되는 8이 저장된 노드를 대체한다. 그리고 이로 인해서 생기는 빈자리는 9가 저장된 노드의 자식노드로 대체한다.
+
+그리고 위와같이 적용되는 방식을 아래의 그림과 같이 적용하려한다.
+![](https://i.imgur.com/WlXpS1Q.png)
+위 그림에서 8이 저장된 노드의 위치에 9가 저장된 노드를 가져다 놓지 않고, 값의 대입을 통해 노드의 교체를 대신하고 있다. ***우선 이방법은 여러모로 편한다*** 이방법을 사용할 경우 삭제 대상인 8의 부모노드,자식노드의 연결을 유지하기위해서 별도의 코드를 삽입할필요가 없기 때문이다. 그리고 10의 노드는 9의 노드와 연결해주면 된다
+
+
+
+```c
+if(삭제할 노드가 두 개의 자식 노드를 지닌다.){
+  BTreeNode * mNode = GetRightSubTree(dNode); // mNode는 대체 노드 가리킴
+  BTreeNode * mpNode = dNode; // mpNode는 대체 노드의 부모 노드 가리킴
+  ***
+
+  // 단계 1. 삭제 대상의 대체 노드를 찾는다.
+  while(GetLeftSubTree(mNode != NULL)){
+    mpNode = mNode;
+    mNode = GetLeftSubTree(mNode);
+  }
+
+  // 단계 2. 대체할 노드에 저장된 값을 삭제할 노드에 대입한다.
+  SetData(dNode, GetData(mNode));
+
+  //단계 3. 대체할 노드의 부모노드와 자식 노드를 연결한다.
+  if(GetLeftSubTree(mpNode) == mNode){ // 대체할 노드가 왼쪽 자식 노드라면
+    //대체할 노드의 자식 노드를 부모 노드의 왼쪽에 연결
+    ChangedLeftSubTree(mpNode, GetRightSubTree(mNode));  
+  }else{ // 대체할 노드가 오른쪽 자식 노드라면
+    // 대체할 노드의 자식 노드를 부모 노드의 오른쪽에 연결
+    ChangedRightSubTree(mpNode, GetRightSubTree(mNode));
+  }  
+
+}
+
+```
+
+#### 이진 탐색 트리의 삭제구현 : 삭제의 구현을 위한 이진 트리의 확장
+삭제를 포함한 이진 탐색 트리의 완성을 위해서 우선 BinaryTree2,BinaryTree2.c에 다음 네 개의 함수를 추가로 선언 및 정의하고자 한다.
+
+```c
+//왼쪽 자식 노드를 트리에서 제거, 제거된 노드의 주소 값이 반환 된다.
+BTreeNode * RemoveLeftSubTree(BTreeNode * bt);
+//오른쪽 자식 노드를 트리에서 제거, 제거된 노드의 주소값이 반횐된다.
+BTreeNode * RemoveRightSubTree(BTreeNode * bt);
+//메모리 소멸을 수반하지 않고 main의 왼쪽 자식 노드를 변경한다.
+void ChangedLeftSubTree(BTreeNode * main, BTreeNode * sub);
+//메모리 소멸을 수반하지않고, main의 오른쪽 자식 노드를 변경한다.
+void ChangedRightSubTree(BTreeNode * main, BTreeNode * sub);
+```
+
+앞서 우리는 이진트리의 구성과 관련된 기본적인 기능을 BinaryTree2.c 사용했다. 그리고 이를 이용해 수식트리를 구현했다. 하지만 이진 탐색 트리의 구현을 위한 충분한 도구가 되지는 못한다. 그이유는 다음 두가지이다.
+* 노드의 제거에 대한 기능이 정의되지 않았다.
+* MakeLeftSubTree, MakeRightSubTree함수는 교체되는 노드의 소멸까지 진행한다.
+
+위의 내용에 대한 부연 설명을 위한 MakeLeftSubTree 소스이다
+```c
+void MakeLeftSubTree(BTreeNode * main, BTreeNode * sub){
+  if(main -> left != NULL)
+    free(main -> left); // 메모리의 소멸까지 진행한다!
+
+  main->left = sub;
+}
+```
+
+위함수 문제는 main이 가리키는 노드의 왼쪽 자식 노드가 존재하는 상황이라면 이에대한 메모리 해제를 진행한다. 따라서 왼쪽 자식 노드의 교체를 목적으로 어울리지 않는다. 그래서 자식 노드의 단순 교체를 목적으로 다음 두함수를 추가로 정의하였다.
+
+
+```c
+// 메모리의 소멸을 수반하지 않고 main의 왼쪽 자식 노드를 변경한다.
+void ChangedLeftSubTree(BTreeNode * main,BTreeNode * sub){
+  main->left = sub;
+}
+
+//메모리의 소멸을 수반하지 않고 main의 오른쪽 자식 노드를 변경한다.
+void ChangedLeftSubTree(BTreeNode * main,BTreeNode * sub){
+  main->right = sub;
+}
+
+```
+
+그전에 BinaryTree2,BinaryTree2.c에서 이진트리 구성의 초점을 맞췄기 때문에 삭제에 대한 기능을 정의하지 않았다. 이진 탐색 트리에서는 삭제에 대한 논의가 빠질 수 없기 때문에 삭제와 관련된 다음 두 함수를 추가로 정의 하였다.
+
+```c
+BTreeNode * RemoveLeftSubTree(BTreeNode * bt){
+  BTreeNode * delNode;
+
+  if(bt != NULL){
+    delNode = bt->left;
+    bt->left = NULL;
+  }
+
+  return delNode;
+}
+
+
+BTreeNode * RemoveRightSubTree(BTreeNode * bt){
+  BTreeNode * delNode;
+
+  if(bt != NULL){
+    delNode = bt -> right;
+    bt -> right = NULL;
+  }
+
+  return delNode;
+}
+```

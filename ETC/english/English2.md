@@ -613,4 +613,21 @@ I need something that can help me with speaking English. 난 영어를 말하는
 
 You should have been there. 너 거기 갔었어야 해.
 You should have been here. 너 여기 왔었어야 해.
-I could have been there. 나 거기 갈 수 있었는데. 
+I could have been there. 나 거기 갈 수 있었는데.
+
+
+★ whenever 언제든지
+
+whenever you call me 네가 나를 부를 때마다
+whenever you see me 네가 나를 볼 때마다
+
+
+She has been here. 그녀는 여기 와본 적 있어.
+They have been here. 그들은 여기 와본 적 있어.
+
+I have been in Seoul. 나는 서울에 있어왔다.
+
+
+
+You made me study. 넌 날 공부하게 만들었어.
+You made me work. 넌 날 일하게 만들었어.
