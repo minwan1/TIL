@@ -631,3 +631,20 @@ I have been in Seoul. 나는 서울에 있어왔다.
 
 You made me study. 넌 날 공부하게 만들었어.
 You made me work. 넌 날 일하게 만들었어.
+
+
+
+I think this is hard. 난 이게 어려운 거 같아.
+I think I am hungry. 난 배고픈 거 같아.
+
+ㆍ 관계대명사 that과 be동사가 같이 나올 경우엔 이 둘을 한번에 생략할 수 있습니다.
+the bus (that is) going to 삼성동
+삼성동으로 가는 중인 버스 = the bus going to 삼성동
+
+
+people (that are) making money
+돈을 버는 사람들 = people making money
+
+
+The bus (that is) coming here will be late.
+여기 오는 중인 버스는 늦을 거야. = The bus coming here will be late.

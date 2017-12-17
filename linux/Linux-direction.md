@@ -3,6 +3,8 @@
 * find / - name "mysql" //파일찾기
 * mysql -u root -p //mysql 접속
 
+## curl 명령어 헬스체크
+curl -X GET --header 'Accept: application/json' 'http://localhost:8080/noticeBar?type=greeting'
 
 ## 맥 명령어
 * cd /Applications //맥 응용프로그램 접속
