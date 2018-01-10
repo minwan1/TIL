@@ -8,25 +8,42 @@ sudo nginx -s stop && sudo nginx
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-도메인 네임 변경 로컬 sudo vi /etc/hosts
+## mac
 /usr/local/etc/nginx/nginx.conf 맥위치
+도메인 네임 변경 로컬 sudo vi /etc/hosts
+
+nginx: [emerg] open() "/usr/local/Cellar/nginx/1.12.0/logs/access.log" failed (13: Permission denied) [로그]
+##linux
+/var/www.html
+/etc/nginx/conf.d/default.conf
+/etc/nginx/sites-available/default
+
+/var/log/nginx/logs
+
+
+
+
+```
+/usr/local/etc/nginx/nginx.conf
+/usr/local/var/www
+```
+
+
+
+
+
+
+[4:13]
+sudo su 로 접근하세요
+
+
+
+
 
 
 ### NGINX 설정
 설정파일은 아래의 위치 중의 하나에 있다.
-/etc/nginx/conf.d/default.conf
-/etc/nginx/sites-available/default
+
 
 
 
