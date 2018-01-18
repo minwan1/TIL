@@ -68,15 +68,6 @@ public class CarDAO {
 ```
 
 
-
-
-출처: http://joont.tistory.com/144 [Toward the Developer]
-
-출처: http://joont.tistory.com/144 [Toward the Developer]
-출처: http://joont.tistory.com/144 [Toward the Developer]
-
-
-
 “POJO” 클래스는 그냥 “new 하면 스스로 생성”이 가능한 클래스의 형태를 말합니다.
 스프링이 모든 빈 들을 싱글톤으로 관리하기 때문입니다.
 멤버변수를 선언하게되면 thread safe하지 않다.그래서 스프링은 각각의 빈들을 싱글톤으로 관리하고, 여러 스레드에서 이를 공유하여 사용할 수 있게 해주는 겁니다
@@ -110,3 +101,7 @@ public class Test {
 출처: http://jojoldu.tistory.com/28 [기억보단 기록을]
 
 [Toward the Developer](http://joont.tistory.com/144 )
+출처: http://joont.tistory.com/144 [Toward the Developer]
+
+출처: http://joont.tistory.com/144 [Toward the Developer]
+출처: http://joont.tistory.com/144 [Toward the Developer]
