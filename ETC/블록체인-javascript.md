@@ -10,18 +10,30 @@ class Block{
     this.previousHash = previousHash;
 
     this.hash = this.calculateHash();
+    this.noce = 0; // 난이도
   }
 
   // 해시키 생성하여 리턴해줌
   // 이것으로 이 해당 블록을 찾음
   calculateHash(){
-    return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringfy(this.data)).toString();
+    return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringfy(this.data)+this.noce).toString();
   }
+
+  mineBlock(difficulty){
+    while(this.hash.substring(0, difficulty) !== Array(difficulty +1).join("0")){
+      this.nonce++;
+      this.hash = this.calculateHash();
+
+    }
+    console.log("Block mined: " + this.hash);
+  }
+
 }
 
 class Blockchain{
   constructor(){
     this.chain = [this.createGenesisBlock()];
+    this.difficulty = 2;
   }
 
   createGenesisBlock(){
@@ -52,7 +64,8 @@ class Blockchain{
 
   addBlock(newBlock){
     newBlock.previousHash = this.getLatestBlock().hash();
-    newBlock.hash = newBlock.calculateHash();
+    //newBlock.hash = newBlock.calculateHash();
+    newBlock.mineBlock(this.difficulty);
     this.chain.push(newBlock)
 
   }
