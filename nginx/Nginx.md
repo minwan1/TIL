@@ -12,8 +12,10 @@ sudo nginx -s stop && sudo nginx
 /usr/local/etc/nginx/nginx.conf 맥위치
 도메인 네임 변경 로컬 sudo vi /etc/hosts
 
-nginx: [emerg] open() "/usr/local/Cellar/nginx/1.12.0/logs/access.log" failed (13: Permission denied) [로그]
+nginx: [emerg] open() "/usr/localå/Cellar/nginx/1.12.0/logs/access.log" failed (13: Permission denied) [로그]
 ##linux
+killall nginx  << nginx 죽이기
+
 /var/www.html
 /etc/nginx/conf.d/default.conf
 /etc/nginx/sites-available/default
