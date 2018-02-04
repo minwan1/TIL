@@ -47,3 +47,24 @@ CascadeType.ALL – 모든 Cascade 적용
 
 참고
 - [TaeHyun Jung](http://chomman.github.io/blog/java/jpa/programming/jpa-cascadetype-%EC%A2%85%EB%A5%98/)
+
+
+https://stackoverflow.com/questions/13027214/jpa-manytoone-with-cascadetype-all
+```java
+public class User {
+
+   @OneToMany(fetch = FetchType.EAGER)
+   protected Set<Address> userAddresses;
+
+}
+
+public class Address {
+
+   @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+   protected User addressOwner;
+
+}
+
+```
+
+위의 경우 Address에 User Casecade 속성을 ALL로 줬는데 이렇게되면 Address를 지우게되면 유저도 지워지기떄문에 나머지 주소들은 고아가된다.

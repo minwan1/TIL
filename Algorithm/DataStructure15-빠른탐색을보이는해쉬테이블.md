@@ -294,3 +294,31 @@ h2(k) = 1+(k%c)
 * Person.h Person.c 슬롯에 저장할 데이터 관련 헤더 및 소스 파일
 * Slot.h, Table.h, Table.c 테이블 관련 헤더 및 소스파일
 그리고 동일한 해쉬값의 슬롯을 연결리스트로 연결하기 위해서,Chapter 04에서 구현한 다음 연결리스트 DLinkedList.h, DLinkedList.c
+
+이전에 보인 Table.h와의 가장 큰 차이점은, 테이블의 저장소였던 slot형 배열을 List형 배열로 바꾸었다는점이다. 이를 위해서 헤더 파일 DLinkedList.h를 포함하는 선언문도 추가하였다. 하지만 여기서 연결리스트와 구조체 Slot의 관계를 고민해야한다. 우리가 고민해 볼 수 있는 모델 두가지중 하나는 다음과 같다. 이는 구조체 Slot을 연결리스트의 노드로 활용하는 방안이다. 다음은 그소스이다.
+
+```c
+
+typedef struct -slot{ // 구조체 Slot이 연결리스트의 노드 역할을 겸하는 구조
+  Key key;
+  Value val;
+  struct -slot * next; // 다음 노드를 가리키는 포인터 변수
+}
+```
+이와 비슷한 방법 또한 존재한다.
+
+다음은 슬롯과 노드를 구분하는 방법이다.
+```c
+typedef Slot * Data;
+
+typdef struct _node{
+  Data data;
+  struct _node * next;
+}Node;
+```
+
+크게 체이닝을 구현하느 방법은 두가지이다.
+* 슬롯이 연결 리스트의 노드 역할을 하게 하는 방법
+* 연결리스트의 노드와 슬롯을 구분하는 방법
+
+이중에서 노드와 슬롯을 구분하는 방법을 선택해 구현할 것이다.
