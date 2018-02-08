@@ -14,3 +14,31 @@ TDD를 하면 가지는 이점
 https://semaphoreci.com/community/tutorials/stubbing-and-mocking-with-mockito-2-and-junit
 
 데이터베이스에 의존하면 안좋은 티디디 설명
+\
+
+
+
+
+
+
+
+
+
+
+
+@Before
+ public void setup() {
+   MockitoAnnotations.initMocks(this);
+   mockService = new MockService(mockRepository);
+ }
+
+
+
+
+https://m.blog.naver.com/PostView.nhn?blogId=duco777&logNo=220906658410&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F
+
+spring, mock ㅇ이용방법
+
+
+
+http://wonwoo.ml/index.php/post/1453 모키토 예쩨

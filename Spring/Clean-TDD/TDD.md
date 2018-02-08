@@ -18,3 +18,12 @@
 
 @RunWith(SpringJUnit4ClassRunner.class) // Spring 테스트 컨텍스트 프레임워크의 JUnit확장 기능 지정
 @ContextConfiguration(classes={DaoFactory.class}) // 테스트 컨텍스트가 자동으로 만들어줄 어플리케이션 컨텍스트의 위치
+
+
+
+
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>2.8.9</version>
+</dependency>
