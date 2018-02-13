@@ -164,15 +164,15 @@ OAuth2와 가장큰차이점은 JwtAccessTokenConverter가 추가 된것이다. 
 
 **AuthorizationServerConfigurer** : 이 클래스의 존재여부로써 기존에 자동화된 설정이 꺼지고 Spring boot가 자동으로 위의 클래스에서 설정한대로 AuthorizationServerConfigurer 인터페이스가 구현현된다.
 
-**Client id** : 이것도 좀 공부를 해봐야겟다
+**Client id** : 이것은 인증하기위해 인가되어진 id이다. 이것은 서버에 요청을 허용해주는 아이디이다.
 
-**Client secret** : 이게 아마 시그니처에 들어가는 서명인것같다.
+**Client secret** : 이것은 클라이언트 어플리케이션의 패스워드이다.
 
-**Grant type** : 좀더 스터디 필요
+**Grant type** : 이것은 일단 password 타입으로 정의
 
 **scope** 일기전용과 쓰기 전용으로 정의한다.
 
-**Resource Id** : 이것은 리소스 서버에도 기재되어야만한다.
+**Resource Id** : 이것은 자원서버의 아이디를 말하는거면 자원서버 또한 기재되어야한다.
 
 **AuthenticationManager** : 유저의 인증을 처리한다.
 
