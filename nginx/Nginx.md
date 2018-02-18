@@ -31,6 +31,21 @@ killall nginx  << nginx 죽이기
 ```
 
 
+location @backend {
+               fastcgi_intercept_errors on;
+               proxy_pass http://simpleserver_backend;
+               set_real_ip_from 172.31.0.0/16;
+               real_ip_header   X-Forwarded-For;
+               proxy_ignore_client_abort on;
+               #proxy_set_header  X-Forwarded-For $ssl_protocol;
+               proxy_set_header X-HTTPS-Protocol https;
+               proxy_set_header X-Real-IP $remote_addr;
+               proxy_set_header Host $host;
+               proxy_set_header X-NginX-Proxy true;
+               #proxy_pass http://localhost:8080/;
+               #proxy_redirect http://dev3.sodatransfer.com:8080/ https://$server_name/;
+       }
+
 
 
 
