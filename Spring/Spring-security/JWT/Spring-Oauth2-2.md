@@ -76,7 +76,7 @@ public class DemoApplication extends AuthorizationServerConfigurerAdapter {
 4. org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore
 - Redis ( Key Value 저장소 )에 Token 정보를 저장하는 방식
 
-기본적인 설정은 InMemoryTokenSotre를 사용하기 때문에 서버가 리붓되는 동시에 데이터가 초기화된다. 그래서 먼저 JdbcTokenStore를 사용하여 토큰을저장해보자. 
+기본적인 설정은 InMemoryTokenSotre를 사용하기 때문에 서버가 리붓되는 동시에 데이터가 초기화된다. 그래서 먼저 JdbcTokenStore를 사용하여 토큰을저장해보자.
 
 #### JDBCTokenSotre를 구현하기 위한 사전 준비사항
 1. Oauth2 토큰을 저장하기 위한 DB스키마 생성
@@ -100,5 +100,9 @@ jdbc:h2:mem:testdb
 그리고 이제 JdbcTokenStore 아래와같이 빈을 등록해주면 된다.
 ```java
 @Bean
-pblic TokenStore JdbcTokenStore(Datasource da)
+pblic TokenStore JdbcTokenStore(Datasource datasource){
+  return new JdbcTokenStore(dataSource);
+}
 ```
+
+이부분만 추가되면 DB에 토큰을 저장할 준비가 완료되었다. 이제 h2디비에 토큰이 저장되는것을 확인할수있을것이다. 하지만 실제 OAUTH_ACCESS_TOKEN에 발급된 토큰과 비교해보면 발급된 토큰과 다른것을 알 수 있다. 이것은 비번과 마찬가지로 암호되어 토큰이 암호화되어 저장되기 때문이다.
