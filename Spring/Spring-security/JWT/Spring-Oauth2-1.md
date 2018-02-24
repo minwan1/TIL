@@ -1,5 +1,4 @@
-how does oauth2 work
-![](https://i.imgur.com/i7qfXyD.png)
+
 
 
 ## OAuth2.0 구성

@@ -96,3 +96,6 @@ $ curl -F "grant_type=client_credentials" -F "scope=read" "http://foo:bar@localh
 ```
 curl -H "Authorization: Bearer 6dfb79ab-46cc-49ad-9b46-b4da66e9e103" "http://localhost:8081/members"
 ```
+
+
+h2정보[기억보단 기록을](http://jojoldu.tistory.com/234)

@@ -1,7 +1,7 @@
 # Daily Coding 2017-04-05일 spring social
 
 
-## sprimg social을 이용한 로그인 구현
+## spring social을 이용한 로그인 구현
 
 * spring social도 여러가지 방식이 있다 밑에 두가지만봐도 단순연결과 로그인 기능으로 토큰등을 받는 방법이 있다.
   * /signin/facebook
