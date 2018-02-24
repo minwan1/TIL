@@ -1,13 +1,15 @@
-## 좋은 블로그들 추천
+## mac 환경 mysql 실행 및 중지
+mysql.server start
+mysql.server stop
+## mysql 접속
+mysql -u root
 
-
-select * from coupon where user_id="cfeb5db5-3474-439f-86d4-9bdf050a101a" order by expire_date desc;
-mysql 시간순으로 불러오기
-
-
-
-
-
+##mysql 비밀번호 변경
+mysql 접속 후 아래 명령어 실행
+```
+mysql> use mysql;
+mysql> set password = password('원하는 비밀번호');
+```
 ## 스케줄러
 스케줄러 시작
 ```sql
