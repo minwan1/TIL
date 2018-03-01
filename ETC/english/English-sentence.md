@@ -6,5 +6,3 @@ Aside from wanting them to incorporate the colors of autumn, such as red, orange
 ```
 want + 목 + to부정사'(~가 ~하기를 원하다)
 ```
-
-##
