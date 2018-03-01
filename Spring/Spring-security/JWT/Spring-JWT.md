@@ -2,11 +2,6 @@
 
 기존의 OAuth2의 단점은 API를 호출할때마다 accessToken이 유효한지 실제 oauth서버에 통해 검증하는것이다. 이때 매번 oauth서버에 상당한 부담을 준다는것이다. 이러한 문제점을 개선하기위해서 토큰 자체에 만료일을 체크하는 부분을 첨부하고 아울러서 사용자에 대한 추가정보등을 저장하고 있고 이를 사용하면 oauth서버에 부다음 상당히 줄이게된다.
 
-
-
-
-
-
 ResourceServerConfigurerAdapter api설정
 
 AuthorizationServerConfigurerAdapter 인증설정

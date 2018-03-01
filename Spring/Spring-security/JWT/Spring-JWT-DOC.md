@@ -40,7 +40,7 @@ Client details정보관리는 jdbc ClientDetailsService등으로 구현할 수 �
 
 #### 토큰 관리
 AuthorizationServerTokenServices는 OAuth 2.0토큰을 관리하는 역할을 한다.
-* 액세스 토큰이 만들어질떄 나중에 access token을 허용하는 자원들이 참조할숭ㅆ도록 저장되어야한다.
+* 액세스 토큰이 만들어질떄 나중에 access token을 허용하는 자원들이 참조할 수 있도록 저장되어야한다.
 
 여기에서 JWT을 사용하기위해서는 JwtAccessTokenConverter 을 등록해줘야한다.
 
