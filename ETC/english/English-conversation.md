@@ -22,3 +22,15 @@ I eat the food whenever I think about it.
 
 
 Should I read more?
+
+
+He is lying down.
+
+They are sick.
+nauseous
+
+
+Be diligent. hospitable
+
+명사
+it seems to mean your second boyfriend21
