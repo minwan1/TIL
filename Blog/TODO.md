@@ -1,5 +1,5 @@
 1.CASECADE 정리
-
+https://www.youtube.com/watch?v=CGZHbPwcVW8&list=PLAXbOMavY3k1VJGqqhfqAn0tUSC14Qsvq&index=68
 
 
 
