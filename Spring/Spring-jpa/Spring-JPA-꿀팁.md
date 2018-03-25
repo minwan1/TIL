@@ -74,3 +74,13 @@ completeTransaction 에서 트랜잭션이 잠시 중지된다. 그리고 만약
 
 
 다른 트랜잭션을 물게되면 다른 영속성 컨텍스트를 가진다.
+
+
+
+##
+
+예를들어 id 1 게시판이 있다, 그러면 댓글을 저장할때 굳이 이 1을 조회해서 데이터를 저장할필요없는다. 그냥 게시판안에 new 게시판(1)을 넣어서 저장이 가능하다. 하지만 이렇게 저장한후 그트랜잭션안에서 1번 게시판을 조회해오려고하면
+object references an unsaved transient instance - save the transient instance before flushing : com.test.board.댓글.게시글 -> com.test.board.comment.Comment 에러를 만날것이다
+
+
+fee 테이블
