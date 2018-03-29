@@ -33,4 +33,6 @@ nauseous
 Be diligent. hospitable
 
 명사
-it seems to mean your second boyfriend21
+it seems to mean your second boyfriend
+
+What kind of pet is it?
