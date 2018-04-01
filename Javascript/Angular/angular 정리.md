@@ -27,3 +27,11 @@ https://stackoverflow.com/questions/22710241/angularjs-disable-button-on-http-q-
 
 https://www.slideshare.net/deview/angularjs-45155720
 angular 설명
+
+
+
+
+## MVC
+
+Model : 데이터베이스로부터 넘어온 데이터들을 의미한다.
+View : Data를 보여주기위해 dom 엘리먼트들이다.
