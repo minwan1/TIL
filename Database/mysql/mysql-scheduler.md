@@ -15,7 +15,7 @@ create event IF NOT EXISTS e1
     ON SCHEDULE
         EVERY 60 SECOND
         STARTS CURRENT_TIMESTAMP
-    DO update transfer_data set current_state = "PROCESSING" where current_state ="PENDING" and dst_currency = "KRW" and UNIX_TIMESTAMP(created_at) < UNIX_TIMESTAMP(now()) - (60*3);
+    DO update transfer_data set current_state = "PROCESSING" where current_state ="PENDING" and src_currency = "USD" and UNIX_TIMESTAMP(created_at) < UNIX_TIMESTAMP(now()) - (60*3*10);
 
 ```
 
