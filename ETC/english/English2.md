@@ -648,3 +648,5 @@ people (that are) making money
 
 The bus (that is) coming here will be late.
 여기 오는 중인 버스는 늦을 거야. = The bus coming here will be late.
+
+I slept faster than usual.
