@@ -51,4 +51,13 @@
 
 
 
-서비스란 트랜잭션단위,
+http://lorenzo-dee.blogspot.kr/2016/08/spring-security-oauth2-with-google.html
+
+
+보안 관련 3요소(스프링 시큐리티 3대요소)
+## 접근 주체 (Principal)
+## 인증 (Authentication)
+## 인가 (Authorize)
+
+
+보통
