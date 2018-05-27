@@ -37,37 +37,7 @@ json.add("myList", gson.toJsonTree(myList));
 리스트 바로넣기
 json.add("history", gson.toJsonTree(history));
 
-## Circular reference
-
-인터넷에서 찾오보니까 구글에서는 기본적으로 @exclude 방식을 지원안하는것같다. white list 방식(expose할 필드를 명시적으로 지정하는 방식)의 처리를 하는게 맞다고 본것일까...
-
 
 ```java
 test2 = new ObjectMapper().writeValueAsString(user1);
 test1 = new ObjectMapper().writeValueAsString(transferData);
-
-@JsonManagedReference
-@OneToMany(mappedBy="senderId", fetch = FetchType.EAGER)
-private List<TransferData> transfers = new ArrayList<TransferData>();
-
-
-@JsonBackReference
-@ManyToOne
-@JoinColumn(name = "sender_id")
-private UserInformation senderId;
-```
-
-
-
-
-```
-{
-  "first_name": "wan",
-  "last_name": "jin",
-  "country": "KOR",
-  "address_line1": "test",
-  "city": "test",
-  "postal_code": "123",
-  "province": "test"
-}
-```
