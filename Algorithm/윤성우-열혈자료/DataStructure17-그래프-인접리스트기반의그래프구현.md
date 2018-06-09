@@ -119,7 +119,7 @@ LInsert(&(pg->adjList[A]),B);
 LInsert(&(pg->adjList[B]),A);
 
 이렇듯 정점의 이름이 바로 사용될 수 있는 이유는, 정점의 이름이 의미하는 바가 상수이고, 그값이 0에서부터 시작해서 1씩 증가히기 때문이다.
-![](![](https://i.imgur.com/4sjayn7.png)
+![](https://i.imgur.com/4sjayn7.png)
 쉽게 말해 위 첫번째 그림을 그래프로 구현한것이다. 위에 정점과 간선만 다를뿐 원리는 같다. 강정점들은 연결리스트로 구성되어있고, 그 정점들은 리스트(배열)로 구성되어있다.
 
 [깃허브소스](https://github.com/minwan1/Algorithm/tree/master/ALGraph/ALGraph)
