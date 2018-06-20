@@ -1,16 +1,3 @@
-int INT_RESULT_SUCCESS=200;
-int INT_RESULT_FAIL=400;
-int INT_RESULT_SERVER_ERROR=500;
-INT_RESULT_NOT_FOUND=404;
-INT_RESULT_EXPIRED=700;
-
-_result결과물
-result결과코드
-resultMessage결과코드
-
-
-
-
 Response Class Code
 Response Class 의미
 설명
