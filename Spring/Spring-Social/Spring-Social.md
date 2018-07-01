@@ -1,4 +1,87 @@
-# Daily Coding 2017-04-22일 spring boot-social-facebook
+
+## Service Provider 'Connect' Frame Work
+Spring-social-core모듈은 페이스북, 트위터같은 Service Provider들을 위해 Connection Framework를 제공한다. 이 프레임워크는 서비스에 접속하는 유저의 아이디와 서비스프로바이더에 연결을 설정하는것을 돕는다. 아이디와 스프링소셜 코어의 커넥션 프레임워크와 연결이 되었을때 유저를 대신 페이스북과같은 서비스프로바이더의 API를 호출할 수 있게 해준다.
+
+이예제는 서비스 프로바이로서 페이스북을 사용하겠다. 예를들어 AcmeAppi이 있다고 치면 이앱을 자신의 페이스북친구들에게 내용을 공유하기를 원한다.이것을 하기위해서는 먼저 유저를대신해 유저의 페이스북 기능을 쓰기위해서는  페이스북과 이 AcmApp에 연결이 필요하다.
+
+
+```java
+
+public interface Connection<A> {
+
+    ConnectionKey getKey();
+
+    String getDisplayName();
+
+    String getProfileUrl();
+
+    String getImageUrl();
+
+    void sync();
+
+    boolean test();
+
+    boolean hasExpired();
+
+    void refresh();
+
+    UserProfile fetchUserProfile();
+
+    void updateStatus(String message);
+
+    A getApi(); //구현체를 꺼내는 부분
+
+    ConnectionData createData();
+
+}
+
+```
+
+위에 보면 Connection<A>가 있는데 이 A에 어떤 서비스프로바이더를 넣을지에따라 api기능이 다랄진다. 아래기능은 Ouath2인증을 하기위해 사용되어지는 Factory이다. getOAuthOperations()은 환한다 API를
+
+```java
+public class OAuth2ConnectionFactory<A> extends ConnectionFactory<A> {
+
+    public OAuth2Operations getOAuthOperations();
+
+    public Connection<A> createConnection(AccessGrant accessGrant);
+
+    public Connection<A> createConnection(ConnectionData data);
+
+}
+
+```
+
+
+### 2. Facebbok 구성
+스프링 소셜은 ConnectController은 하나의상의 ConnectionFactory 있어야 작업가능하다. 여기에서는 페이스북을 이용해 ConnectionFactory를 등록하여 이용할것이다. ConnectController에서 FacebbokConnectionFacytory를 찾을 수 있도록 ConnectionFactoryGegistry에 등록해줘야만 한다.
+
+```java
+@Configuration
+public class SocialConfig implements SocialConfigurer {
+
+    @Override
+    public void addConnectionFactories(ConnectionFactoryConfigurer cfConfig, Environment env) {
+        cfConfig.addConnectionFactory(new FacebookConnectionFactory(
+            env.getProperty("facebook.clientId"),
+            env.getProperty("facebook.clientSecret")));
+    }
+
+    ...
+}
+```
+
+### Facebbok API Binding
+Facebook 라이브러리중에 Facebook이라는 Interface가 있는데 이것의 구현으로 FacebookTemplate 가존재한다. FaccebookTeamplte은 아래와같이 생성자를 넘겨줌으로써 기능을 사용할 수 있다.
+```java
+authorization
+Facebbok facebook = new FacebbokTemplate(AccessToken, AppNameSpace);
+```
+만약 오픈 그래플를 사용하지않는다면 namespace는 필요없다.
+
+
+
+
 
 ## Spring social
 
@@ -169,3 +252,54 @@ CREATE TABLE `user` (
 참고
 * [갱짱.study](http://gangzzang.tistory.com/entry/Java-내부클래스inner-class)
 * [JavaCents](http://javacents.com/adding-social-sign-in-to-a-spring-boot-app/)
+
+
+```java
+https://docs.spring.io/spring-social/docs/1.0.x/reference/html/implementing.html
+
+
+https://github.com/spring-social/spring-social-google-example/blob/master/src/main/java/org/springframework/social/example/controller/PlusController.java
+
+
+
+```
+빈들등록한다.
+처음에 컨트롤러에서 시작
+1.ConnectionFactory<?> connectionFactory = this.connectionFactoryLocator.getConnectionFactory  조회기능 (providerId)
+
+2. ConnectionFactory<?> connectionFactory = connectionFactories.get(providerId); 커넥션 팩토리르 꺼내온다.
+
+다시 컨틀로러옴
+3.OAuth2ConnectionFactory<?> connectionFactory = (OAuth2ConnectionFactory<?>) connectionFactoryLocator.getConnectionFactory(providerId);
+
+
+
+
+```java
+@RequestMapping(value="/{providerId}", method=RequestMethod.POST)
+public RedirectView connect(@PathVariable String providerId, NativeWebRequest request) {
+	ConnectionFactory<?> connectionFactory = connectionFactoryLocator.getConnectionFactory(providerId);
+	MultiValueMap<String, String> parameters = new LinkedMultiValueMap<String, String>();
+	preConnect(connectionFactory, parameters, request);
+	try {
+		return new RedirectView(connectSupport.buildOAuthUrl(connectionFactory, request, parameters));
+	} catch (Exception e) {
+		sessionStrategy.setAttribute(request, PROVIDER_ERROR_ATTRIBUTE, e);
+		return connectionStatusRedirect(providerId, request);
+	}
+}
+
+
+@RequestMapping(value="/{providerId}", method=RequestMethod.GET, params="code")
+public RedirectView oauth2Callback(@PathVariable String providerId, NativeWebRequest request) {
+	try {
+		OAuth2ConnectionFactory<?> connectionFactory = (OAuth2ConnectionFactory<?>) connectionFactoryLocator.getConnectionFactory(providerId);
+		Connection<?> connection = connectSupport.completeConnection(connectionFactory, request);
+		addConnection(connection, connectionFactory, request);
+	} catch (Exception e) {
+		sessionStrategy.setAttribute(request, PROVIDER_ERROR_ATTRIBUTE, e);
+		logger.warn("Exception while handling OAuth2 callback (" + e.getMessage() + "). Redirecting to " + providerId +" connection status page.");
+	}
+	return connectionStatusRedirect(providerId, request);
+}
+```
