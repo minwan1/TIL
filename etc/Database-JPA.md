@@ -211,38 +211,4 @@ List<Member> members = team1.getMembers();
 참고
 * [시나몬 브레드](http://adrenal.tistory.com/23)
 
-
-manytoone
-member class
-@JoinColumn
-##
-onetomany
-team class
-mappedby
-
-* Optional
-  * 기본 true로 되어있고 false로 설정하면 연관된 엔터티가 항상있어야한다.
-
-http://projects.spring.io/spring-hateoas/
-JSON형식을 만들어줌
-
-
-
-
-
-```java
-test2 = new ObjectMapper().writeValueAsString(user1);
-test1 = new ObjectMapper().writeValueAsString(transferData);
-
-
-//user
-@JsonManagedReference
-@OneToMany(mappedBy="senderId", fetch = FetchType.EAGER) //상대쪽 변수이름으로
-private List<TransferData> transfers = new ArrayList<TransferData>();
-
-//transfer
-@JsonBackReference
-@ManyToOne
-@JoinColumn(name = "sender_id") //참조레퍼스 옵션넣으면 그냥 username넣으면될듯
-private UserInformation senderId;
 ```
