@@ -55,6 +55,19 @@ Composition은 Aggregation보다 강한 집합이라고 했다. 여기서 강한
 * 첫 번째, part를 가지는 whole 인스턴스가 part 인스턴스의 전체 수명을 책임진다.
 * 두 번째, part에 해당하는 인스턴스는 공유 될 수 없다.
 
+
+아래는 대부분의 다중성을 표현한 것입니다.
+
+표기법 | 의미
+------- | -------
+0..1 | 0 또는 하나의 인스턴스. n..m 표기법은 n에서 m까지의 범위
+0..* 또는 * | 0을 포함한 무한수. 제한없음
+1 | 명백한 하나
+1..* | 적어도 하나이상
+
+
+출처: http://chanlee.tistory.com/entry/uml-practice-class [차니의 B로그]
+
 ### 결론
 애플리케이션 규모가 커지면 커질수록 클래스 다이어그램을 이용해서 관리를 해야겠다는 생각이 점점 든다. Intelij Class Diagram 정도로만 관리를 해도 클래스 다이어그램은 클래스들의 관계를 쉽게 보고, 의존관계를 쉽게 파악하게 관리할 수 있을 것 같다. 그런데 Intelij에서는 Association과 관련하여 그냥 복합 연관으로 만 관리하는 것 같은데, 왜 그런지에 대해서는 좀 더 알아봐야 할 것 같다.
 
@@ -63,3 +76,4 @@ Composition은 Aggregation보다 강한 집합이라고 했다. 여기서 강한
 * [킈킈킈!!](http://ysmanse.tistory.com/31)
 * [Nextree](http://www.nextree.co.kr/p6753/)
 * [_jbee](http://asfirstalways.tistory.com/95)
+* [uml-practice-class](http://chanlee.tistory.com/entry/uml-practice-class)

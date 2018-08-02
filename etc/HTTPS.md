@@ -1,24 +1,56 @@
-## Spring
+## HTTPS VS HTTP
+HTTP는 Hypertext Transfer Protocol의 약자다. 즉 Hypertext 인 HTML을 전송하기 위한 통신규약을 의미한다. HTTPS에서 마지막의 S는 Over Secure Socket Layer의 약자로 Secure라는 말을 통해서 알 수 있듯이 보안이 강화된 HTTP라는 것을 짐작할 수 있다. HTTP는 암호화되지 않은 방법으로 데이터를 전송하기 때문에 서버와 클라이언트가 주고 받는 메시지를 감청하는 것이 매우 쉽다. 예를들어 로그인을 위해서 서버로 비밀번호를 전송하거나, 또는 중요한 기밀 문서를 열람하는 과정에서 악의적인 감청이나 데이터의 변조등이 일어날 수 있다는 것이다. 이를 보안한 것이 HTTPS다.
+
+## HTTPS와 SSL
+HTTPS와 SSL를 같은 의미로 이해하고 있는 경우가 많다. 이것은 맞기도 틀리기도 하다. 그것은 마치 인터넷과 웹을 같은 의미로 이해하는 것과 같다. 결론적으로 말하면 웹이 인터넷 위에서 돌아가는 서비스 중의 하나인 것처럼 HTTPS도 SSL 프로토콜 위에서 돌아가는 프로토콜이다.
+
+## SSL과 TLS
+같은 말이다. 네스케이프에 의해서 SSL이 발명되었고, 이것이 점차 폭넓게 사용되다가 표준화 기구인 IETF의 관리로 변경되면서 TLS라는 이름으로 바뀌었다. TLS 1.0은 SSL 3.0을 계승한다. 하지만 TLS라는 이름보다 SSL이라는 이름이 훨씬 많이 사용되고 있다.
+
+##HTTPS란
+SSL 인증서는 클라이언트(웹브라우저와)와 서버(웹서버)간의 통신을 제3자가 보증해주는 전자화된 문서다. 클라이언트가 서버에 접속한 직후에 서버는 클라이언트에게 이 인증서 정보를 전달한다. 클라이언트는 이 인증서 정보가 신뢰할 수 있는 것인지를 검증 한 후에 다음 절차를 수행하게 된다. 
 
 
-@Consumes : 수신 하고자하는 데이터 포맷을 정의한다.(request)
-@Produces : 출력하고자 하는 데이터 포맷을 정의한다.(response)
+SSL과 SSL 디지털 인증서를 이용했을 때의 이점은 아래와 같다.
 
-Produces와 Consumes 차이 : @Produces는 Accept 헤더를 참고하고, @Consumes은 Content-Type 헤더를 참고함
+통신 내용이 공격자에게 노출되는 것을 막을 수 있다. 
+클라이언트가 접속하려는 서버가 신뢰 할 수 있는 서버인지를 판단할 수 있다.
+통신 내용의 악의적인 변경을 방지할 수 있다. 
 
-@RequestMapping
-컨트롤러에 기본이 되는 요청정보를 설정하는 어노테이션이다.
-Accept 와 content-Type 에 대한 접근 허용을 사용하기 위해 header 라는 속성을 사용했다면, 3.1부터는 consumes 와 produces 로 나눠 사용할 수 있다.
+ 
+ 서버에 SSL 인증서를 설치해서 서버로 접속하는 클라이언트가 안전하게 통신할 수 있도록 하는 것이다. SSL의 동작방법은 이를 수행하기 위해서 꼭 필요한 내용은 아니지만, 이를 모르면 인증서를 사용하는 과정에서 많은 의문점이 생길 것이다. 자연스럽게 보안상의 허점이 생길 확률도 높아질 것이다. 필자의 경험에 따르면 SSL 인증서의 사용은 SSL의 동작방법에 상당히 많이 의지하기 때문에 SSL의 메커니즘을 이해하는 것이 좋다
 
 
-## spring 의 컨트롤러에서 gson의 JsonObject를 리턴하면 에러나는이유.
-Spring 에서 @responsebody을 사용하게되면 RequestResponseBodyMethodProcessor 는 MappingJackson2HttpMessageConverter 이핸들러를 사용하여 serialize한다. 내부적으로 MappingJackson2HttpMessageConverter는 ObjectMapper을 사용한다. 기본적으로 ObjectMapper는 클래스의 getter을 이용하여 serialize하여 json형식으로 만든다.
-그래서 gson은 출력안되고 JSONObject는 json형식으로 출력해주는듯.
-참고
 
-## javascript
+ ## SSL에서 사용하는 암호화의 종류 
 
-이렇게 contentType을 application/json으로 명시해줄 경우 반드시 Stringify를 해야 한다. 그렇지 않으면, 기본적으로 Ajax는 data값이 string이 아닐 경우 pre-process과정을 통해 data obejct를 query String형태(?key=value&key=value&…)로 변경시킨다. 결국 서버에서는 JSON형태가 아니기에 잘못된 파라미터로 인식하고 400 error(Bad request)를 리턴 할 것이다.
 
-* [Syaku 샤쿠](http://syaku.tistory.com/277)
-* [참고](https://stackoverflow.com/questions/19204048/returning-jsonobject-using-responsebody-in-springmvc)
+
+ SSL의 핵심은 암호화다. SSL은 보안과 성능상의 이유로 두가지 암호화 기법을 혼용해서 사용하고 있는데 SSL 동작방법을 이해하기 위해서는 이 암호화 기법들에 대한 이해가 필요하다
+
+ ## 대칭키
+ 암호화는 복화될 수 있는것을말한다. 단방향으로 암호화되는것을 해쉬화라고하는데 이 해시는 복호화할 수 없는 값을 말한다. 암호화는 일반적으로 키 값을 기반으로 암호화를 하고 그 키를 기반으로 복호화를 한다.
+
+다음은 plaintext.txt를 openssl을 이용하여 des3방식으로 암호화를 하여 ciphertext.bin 출력 하겠다는 의미이다.
+```
+openssl enc -e -des3 -salt -in plaintext.txt -out ciphertext.bin;
+```
+다음은 pciphertext.bin를 openssl을 이용하여 des3방식으로 복호화를 하여 plaintext2.txt  출력 하겠다는 의미이다.
+```
+openssl enc -d -des3 -in ciphertext.bin -out plaintext2.txt;
+```
+
+ ## 공개키
+
+
+
+
+
+ ## SSL 인증서
+
+
+
+
+ ## SSL인증서가 서비스를 보장하는 방법
+웹 브라우저가 서버에 접속할 때 서버는 제일 먼저 인증서를 제공한다. 브라우저는 이 인증서를 발급한 CA가 자신이 내장한 CA의 리스트에 있는지를 확인한다.  확인 결과 서버를 통해서 다운받은 인증서가 내장된 CA 리스트에 포함되어 있다면 해당 CA의 공개키를 이용해서 인증서를 복호화 한다. 
+  
