@@ -1,24 +1,20 @@
-## Spring
+## HTTPS
 
 
-@Consumes : 수신 하고자하는 데이터 포맷을 정의한다.(request)
-@Produces : 출력하고자 하는 데이터 포맷을 정의한다.(response)
+대칭키 (시크릿키가 같은것)
+공개키 (시크릿키가 서로다른방식)
 
-Produces와 Consumes 차이 : @Produces는 Accept 헤더를 참고하고, @Consumes은 Content-Type 헤더를 참고함
+# SSL의 동작 방법
+결론부터 말하면 SSL은 암호화된 데이터를 전송하기 위해서 공개키와 대칭키를 혼합해서 사용한다. 즉 클라이언트와 서버가 주고 받는 실제 정보는 대칭키 방식으로 암호화하고, 대칭키 방식으로 암호화된 실제 정보를 복호화할 때사용할 대칭키는 공개키 방식으로 암호화해서 클라이언트와 서버가 주고 받는다. 이 설명만으로는 이해하기 어려울 것이다. 아래의 관계만 일단 머리속에 기억해두고 좀 더 구체적인 설명으로 넘어가자.
 
-@RequestMapping
-컨트롤러에 기본이 되는 요청정보를 설정하는 어노테이션이다.
-Accept 와 content-Type 에 대한 접근 허용을 사용하기 위해 header 라는 속성을 사용했다면, 3.1부터는 consumes 와 produces 로 나눠 사용할 수 있다.
+**공개키 방식은 암호화하고 복호화하는 과정에서 성능상에 단점을 가지고있기 때문에  대칭키방식과 공개키방식을 둘다 쓴다.**
+
+실제 데이터(서버로부터 받은 정보들) : 대칭키방식으로 암호화.
+대칭키의 키를 공유하는 방법은 : 공개키방식으로 암호화.
 
 
-## spring 의 컨트롤러에서 gson의 JsonObject를 리턴하면 에러나는이유.
-Spring 에서 @responsebody을 사용하게되면 RequestResponseBodyMethodProcessor 는 MappingJackson2HttpMessageConverter 이핸들러를 사용하여 serialize한다. 내부적으로 MappingJackson2HttpMessageConverter는 ObjectMapper을 사용한다. 기본적으로 ObjectMapper는 클래스의 getter을 이용하여 serialize하여 json형식으로 만든다.
-그래서 gson은 출력안되고 JSONObject는 json형식으로 출력해주는듯.
-참고
 
-## javascript
 
-이렇게 contentType을 application/json으로 명시해줄 경우 반드시 Stringify를 해야 한다. 그렇지 않으면, 기본적으로 Ajax는 data값이 string이 아닐 경우 pre-process과정을 통해 data obejct를 query String형태(?key=value&key=value&…)로 변경시킨다. 결국 서버에서는 JSON형태가 아니기에 잘못된 파라미터로 인식하고 400 error(Bad request)를 리턴 할 것이다.
+컴퓨터와 컴퓨터가 네트워크를 이용해서 통신을 할 때는 내부적으로 3가지 단계가 있다. 아래와 같다.
 
-* [Syaku 샤쿠](http://syaku.tistory.com/277)
-* [참고](https://stackoverflow.com/questions/19204048/returning-jsonobject-using-responsebody-in-springmvc)
+악수 -> 전송 -> 세션종료
