@@ -56,7 +56,7 @@ public class ResourceServerConfigurerAdapterImpl extends ResourceServerConfigure
 
 }
 ```
-위와 같이 지정을 하게 되면 /users라는 자원에 접근하기 위해서는 access_token이 있어야 접근을 할 수 있다. 자원에 대한 CRUD는 Rest Repositories(Spring Data Rest를 스프링 부트에 맞도록 쉽게 사용할 수 있는 형태 제공하는 부분이면 Rest API 서버를 쉽게 만들어 준다)를 이용할 것이다.  도메인 구성등에 대한 정보는 [소스](https://github.com/minwan1/spring-oauth/tree/simple-inmemory-oauth)을 참조 할 수 있다. 이제 실제로 /users를 접근을 할 수 없는지 테스트를 해보자. 테스트는 아래와 같이 junit을 사용할 것이다.
+위와 같이 지정을 하게 되면 /users라는 자원에 접근하기 위해서는 access_token이 있어야 접근을 할 수 있다. 자원에 대한 CRUD는 Rest Repositories(도메인만으로 REST API를 자동으로 만들어준다.)를 이용할 것이다.  도메인 구성등에 대한 정보는 [소스](https://github.com/minwan1/spring-security-oauth2-example/blob/example-1/src/main/java/com/example/oauth/user/User.java)을 참조 할 수 있다. 사실 너무 간단해서 도메인이라고 할것도 없다. 이제 실제로 /users를 접근을 할 수 없는지 테스트를 해보자. 테스트는 아래와 같이 junit을 사용할 것이다.
 ```java
 @Test
 public void when_callApi_expect_unauthorized() throws Exception {
@@ -65,7 +65,7 @@ public void when_callApi_expect_unauthorized() throws Exception {
 ```
 테스트 결과는.......
 ![](https://i.imgur.com/90IClaN.png)
-그렇다. response 결과는 401이 넘어와 실패했다. access_token없이 접근해서 그렇다. 당연한 결과이다. 위 소스는 isOk에서 isUnauthorized로 수정해주면될 것 같다. 그러면 테스트 결과는 성공일 것이다. 그다음은 토큰을 생성한후 API를 호출해 성공하는 테스트를 작성할 것 이다. 먼저 rest로 토큰을 얻어보자. 이 /oauth/token URI는 Spring OAuth에서 지정해준 URI이다. 이 URI는 Basic Auth를 사용하여 Basic Auth로 ClientID와 Secret을 포함하고 바디값으로 grant_type, client_id, username, password, scope를 넘기면 토큰 값을 얻을 수 있다.
+그렇다. response 결과는 401이 넘어와 실패했다. access_token없이 접근해서 그렇다. 당연한 결과이다. 위 소스는 isOk에서 isUnauthorized로 수정해주면될 것 같다. 그러면 테스트 결과는 성공일 것이다. 그다음은 토큰을 생성한후 API를 호출해 성공하는 테스트를 작성할 것 이다. 먼저 rest로 토큰을 얻어보자. 이 /oauth/token는 Spring OAuth에서 지정해준 URI이다. 이 URI는 Basic Auth를 사용하여 ClientID와 Secret을 포함하고 바디값으로 grant_type, client_id, username, password, scope를 넘기면 토큰 값을 얻을 수 있다.
 ```java
 private String obtainAccessToken(String username, String password) throws Exception {
 
@@ -103,7 +103,7 @@ public void when_callUsers_expect_success() throws Exception {
             .andExpect(content().contentType(CONTENT_TYPE));//"application/json;charset=UTF-8"
 }
 ```
-그 다음 생성한 토큰을 이용해서 header 값에 access_token을 넣은 후 호출하면 호출에 성공한 모습을 확인할 수 있다. 이것의 전체적인 구현인 토큰 관리, client, user 등록등 In-memory기반에 의하여 구현되었다. 그렇기 때문에 서버가 종료되면 기존에 발급되었던 토큰들이 모두 소멸된다. Product로 사용하기 위해서는 JdbcTokenStore빈을 통해서 토큰 관리, client, user 등록등을 영속화하여 사용해야 한다. in-memory 방식으로 구현한 OAuth소스는 [이곳](https://github.com/minwan1/spring-oauth/tree/simple-inmemory-oauth)에서 확인할 수 있다.
+그다음 생성한 토큰을 이용해서 header 값에 access_token을 넣은 후 호출하면 호출에 성공한 모습을 확인할 수 있다. 이것의 전체적인 구현인 토큰 관리, client, user 등록등 In-memory기반에 의하여 구현되었다. 그렇기 때문에 서버가 종료되면 기존에 발급되었던 토큰들이 모두 소멸된다. Product로 사용하기 위해서는 JdbcTokenStore빈을 통해서 토큰 관리, client, user 등록등을 영속화하여 사용해야 한다. in-memory 방식으로 구현한 OAuth소스는 [in-memory 방식을 사용한 OAuth2 구현](https://github.com/minwan1/spring-security-oauth2-example/tree/example-1)에서 확인할 수 있다.
 
 
 #### OAuth2 JdbcTokenStore등을 이용한 데이터 영속화
@@ -117,7 +117,7 @@ public TokenStore JdbcTokenStore(@Qualifier("dataSource") DataSource dataSource)
 ```
 
 
-그다음 Authorization Server, Resource Server를 두개의 클래스로 분리할 것이다. ResourceServerConfigurerAdapter, AuthorizationServerConfigurerAdapter를 상속해서 세부내용을 구현해야 한다. 그래야 좀 더 세부적으로 Authorization Server, Resource Server 컨트롤 가능하다. 아래는 각각의 구현체 구조이다.
+그 다음 Authorization Server, Resource Server를 두개의 클래스로 분리할 것이다. ResourceServerConfigurerAdapter, AuthorizationServerConfigurerAdapter를 상속해서 세부내용을 구현해야 한다. 그래야 좀 더 세부적으로 Authorization Server, Resource Server 컨트롤 가능하다. 아래는 각각의 구현체 구조이다.
 
 
 ```java
@@ -244,10 +244,12 @@ public void configure(
 
 ```
 그리고 자원 서버에서도 다른 클라이언트가 접근한다면 token이 유효한지 인증서버를 통해 체크를 해줘야 한다. 이 설정 또한 쉽게 아래와 같이 URL만 등록해주면 된다. 아래는 YML, 빈을 통해 등록하는 방식을 나열했다.
+**YML등록방법**
+// OAuth2 서버에서 기본적으로 Token정보를 받아오는 URL
 ```
-# OAuth2 서버에서 기본적으로 Token정보를 받아오는 URL
-security.resource.token-info-uri: http://localhost:8080/oauth/check_token
+security.resource.token-info-uri:url주소/oauth/check_token
 ```
+**빈등록방법**
 ```java
 @Primary
 @Bean
@@ -265,10 +267,11 @@ public RemoteTokenServices tokenService() {
 ### 마무리 하며...
 스프링을 통해 OAuth2를 간단하게 구현해봤다. 첫 부분에는 토큰 관리, 클라이언트 등록 등 In-Memory를 통해 간단하게 OAuth2 구현했고, 중간 부분부터는 인증서버와 자원 서버의 클래스를 분리했다. 또한 토큰 관리, 클라이언트 등록 등을 InMemmory로 관리했었는데 이러한 것을 외부 DB 등록을 통해 관리하게 해봤다. OAuth2 인증 방식은 password 인증 방식만 구현해봤는데, 다른 인증 방식을 넣는 것은 어렵지 않다. 인증서버와 자원 서버만 설정되어 있다면 금방 도입할 수 있다. 물론 Product 용으로 개발하는 데까지는 많은 시간이 걸릴 것이다. 요즘 점점 시간이 지나면서 쿠키를 통한 session 방식의 로그인은 없어지고 있는 것 같다. 점점 모바일 환경 등 멀티 디바이스를 지원해야 하므로 웹 하나만을 위한 서버를 만드는 일은 비효율적이기 때문일 것이다. 그래서 많은 서버들이 Token 방식의 로그인 방식으로 옮기고 있는 것 같다. 그중에서도 OAuth2는 많은 인증 방식 등과 인증의 간편함을 가져 인기가 좋은것같다.
 
-이 예제와 관련한 소스는 [여기](https://github.com/minwan1/spring-oauth/tree/oauth-server-separation-1)에서 확인할 수 있습니다
+이 예제와 관련한 소스는 [JDBC 방식을 사용한 OAuth2 구현](https://github.com/minwan1/spring-security-oauth2-example/tree/example-2)에서 확인할 수 있습니다
 
 참고
 * [OAuth 2 Developers Guide](http://projects.spring.io/spring-security-oauth/docs/oauth2.html)
 * [baeldung](http://www.baeldung.com/oauth-api-testing-with-spring-mvc)
 * [기억보단 기록을](http://jojoldu.tistory.com/234)
 * [이수홍](https://brunch.co.kr/@sbcoba/4)
+

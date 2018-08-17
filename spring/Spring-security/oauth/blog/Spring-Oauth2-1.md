@@ -23,9 +23,10 @@ OAuth는 Authorization(인가)에 대한 기능도 있다. Authorization라는 �
 동작 순서는 대략 이렇다.
 1. AuthorizationServer에 Client-id와 Secret을 등록한다(그림에는 안나와있음)
 2. User가 Id와 Password를 입력한다
-3. 클라이언트는 유저의 id와 password와 클라이언트 정보를 넘긴다.
-4. Authorization sever는 Access token을 넘긴다.
-5. Client는 token로 자원서버에 접근할 수 있게 된다.
+3. 현
+4. 
+5. Authorization sever는 Access token을 넘긴다.
+6. Client는 token로 자원서버에 접근할 수 있게 된다.
 
 그럼 이제 실제 구현을 해볼것이다.
 
