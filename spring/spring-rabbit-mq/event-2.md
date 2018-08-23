@@ -49,3 +49,10 @@ public class CustomerCreatedEventListener {
 ## @TransactionalEventListener - transaction synchronization
 
 @TransactionalEventListener를 이용하면 트랜잭션이 완료된이후에 eventlist가 진행되어진다. 
+
+
+참고
+https://dzone.com/articles/transaction-synchronization-and-spring-application
+
+
+https://dzone.com/articles/annotation-driven-event-listeners-in-spring-42
