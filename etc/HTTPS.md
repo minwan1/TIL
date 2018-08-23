@@ -73,3 +73,4 @@ openssl enc -d -des3 -in ciphertext.bin -out plaintext2.txt;
 컴퓨터와 컴퓨터가 네트워크를 이용해서 통신을 할 때는 내부적으로 3가지 단계가 있다. 아래와 같다.
 
 악수 -> 전송 -> 세션종료
+
