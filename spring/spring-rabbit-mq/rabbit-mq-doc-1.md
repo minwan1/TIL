@@ -1,5 +1,5 @@
 # AMQP
-Spring AMQP 프로젝트는 스프링의 컨셉을 AMQP기반의 메시징 솔루션 개발에 적용한것이다. 여기에서 제공하는 template은 높은 레벨로 추상호된 "template"을 제공한다. 
+Spring AMQP 프로젝트는 스프링의 컨셉을 AMQP기반의 메시징 솔루션 개발에 적용한것이다. 여기에서 제공하는 template은 높은 레벨로 추상호된 "template"을 제공한다.
 
 # 도입
 아래는 간단한 Spring AQMP를 경험해보는 간단한 예제이다.
@@ -120,7 +120,7 @@ public interface Exchange {
 
 보다시피 Exchange는 Direct, Topic, Fanout, header의 기본타입들을 가진다. 이것들은 상수로 정의되어져있다. 코어 패키지모듈에는 각각의 타입의 구현체들을 볼 수 있을것이다. 이 구현체들은 Queue에 어떤식으로 바인딩할지에따라 맞는 타입의 구현체를 사용한다. 
 예를들면 아래와같다.
-* Direct Exchange는 고정되어진 라우팅키로 큐에 배핑된다.(큐의 이름이 라우팅키와 같은경우가 있다.) FanoutExchange는 모든 큐들에게 메시지를 보낸다.
+* Direct Exchange는 고정되어진 라우팅키로 큐에 배핑된다.(큐의 이름이 라우팅키와 같은경우가 있다. FanoutExchange는 모든 큐들에게 메시지를 보낸다.
 * Fanout Exchange는 어떤 라우팅키에대한 생각없이 모든 큐에 메시지를 보낸다.
 
 
