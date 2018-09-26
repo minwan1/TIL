@@ -109,3 +109,13 @@ CollectionTable은 모든 컬렉션기록을 저장하는 테이블의 네임을
 
 
 https://www.callicoder.com/hibernate-spring-boot-jpa-element-collection-demo/
+
+
+@ElementCollection을 통해 값을 추가할 경우, JPA 구현체는 해당 컬렉션의 모든 데이터를 삭제하고 다시 모든 데이터를 추가한다. PK가 존재하지 않기 때문에 발생하는 현상이다.
+이 현상을 조금이나마 줄이려면 @OrderColumn을 사용하면 된다.
+
+
+
+### 값 추가시 전체 삭제후 재추가하는 문제
+@ElementCollection을 통해 값을 추가할 경우, JPA 구현체는 해당 컬렉션의 모든 데이터를 삭제하고 다시 모든 데이터를 추가한다. PK가 존재하지 않기 때문에 발생하는 현상이다.
+이 현상을 조금이나마 줄이려면 @OrderColumn을 사용하면 된다.
