@@ -21,8 +21,48 @@
 
 
 ## 의존성 주입(DI)
-스프링은 기본적으로 DI를 기반으로 동작한다. 
+스프링은 기본적으로 DI를 기반으로 동작한다. DI는 의존에대한 설계 패턴이다. 
 
+예를들어 유저의 password를 암호화하는 방식으로 예를 들어보겠습니다. 일반적으로는 패스워드를 암호화하기위해서는 다음과 같이 직접 객체를 생성해서 암호화를 할것입니다.
+```java
+public class Password{
+
+    private PasswordEncoder passwordEncoder = new StandardPasswordEncoder();
+
+    public String encode(final String password){
+        return passwordEncoder.encode(password);
+
+    }
+}
+
+```
+
+그런데 여기서 보안을 강화하기위해서 BCryptPasswordEncoder로 변경한다고 생각해보겠습니다. 그렇게되면 아래와같이 소스를 변경해야할 것 입니다.
+
+```java
+public class Password{
+
+    private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+    public String encode(final String password){
+        return passwordEncoder.encode(password);
+    }
+}
+
+```
+
+
+
+
+
+
+ SimpleDriverDataSource인데, 이는 Connection Pool을 지원하지 않는다.
+
+ CommonDBCP BasicDatasource
+
+
+### 의존 객체를 직정 생성하는 방식의 단점
+* 
 
 Setter Injection : Class 사이의 의존관계를 연결시키기 위해 Setter 메소드를 이용하는 방법.
 Constructor Injection : Class 사이의 의존관계를 연결시키기 위해 생성자를 이용하는 방법.

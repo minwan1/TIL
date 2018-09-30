@@ -120,12 +120,59 @@ public interface Exchange {
 
 보다시피 Exchange는 Direct, Topic, Fanout, header의 기본타입들을 가진다. 이것들은 상수로 정의되어져있다. 코어 패키지모듈에는 각각의 타입의 구현체들을 볼 수 있을것이다. 이 구현체들은 Queue에 어떤식으로 바인딩할지에따라 맞는 타입의 구현체를 사용한다. 
 예를들면 아래와같다.
-* Direct Exchange는 고정되어진 라우팅키로 큐에 배핑된다.(큐의 이름이 라우팅키와 같은경우가 있다. FanoutExchange는 모든 큐들에게 메시지를 보낸다.
+* Direct Exchange는 고정되어진 라우팅키로 큐에 매핑된다.(큐의 이름이 라우팅키와 같은경우가 있다. FanoutExchange는 모든 큐들에게 메시지를 보낸다.
 * Fanout Exchange는 어떤 라우팅키에대한 생각없이 모든 큐에 메시지를 보낸다.
+* Topic exchange는 패턴을 기반으로 routing 키를 설정하여 보조한다
 
 
+### Queue
+이 큐는 메시지 호출자가 호출메시지를 받는 구성요소를 나타낸다.
+```java
+public class Queue  {
 
+    private final String name; // 큐이름
 
+    private volatile boolean durable;
+
+    private volatile boolean exclusive;
+
+    private volatile boolean autoDelete;
+
+    private volatile Map<String, Object> arguments;
+
+    /**
+     * The queue is durable, non-exclusive and non auto-delete.
+     *
+     * @param name the name of the queue.
+     */
+    public Queue(String name) {
+        this(name, true, false, false);
+    }
+
+    // Getters and Setters omitted for brevity
+
+}
+```
+
+### Binding
+큐를 연결하여 Producer가 Exchange로 메시지를 보내거나 Consumer가 Queue로부터 데이터를 받을 때 Exchange에 Queue들을 연결하는 Binding들은 메시징 시스템에 중요하다. 
+
+You can bind a Queue to a DirectExchange with a fixed routing key.
+```java
+new Binding(someQueue, someDirectExchange, "foo.bar")
+```
+You can bind a Queue to a TopicExchange with a routing pattern.
+```java
+new Binding(someQueue, someTopicExchange, "foo.*")
+```
+You can bind a Queue to a FanoutExchange with no routing key.
+```java
+new Binding(someQueue, someFanoutExchange)
+```
+We also provide a BindingBuilder to facilitate a "fluent API" style.
+```java
+Binding b = BindingBuilder.bind(someQueue).to(someTopicExchange).with("foo.*");
+```
 
 ## 커넥션 그리고 관리
 ## CustomClientConnection properteis 추가
@@ -139,7 +186,7 @@ public interface Exchange {
 ## 메시지지연
 ## RebbiMQ REST API
 ## ExceptionHandling
-## 트랜잭샨
+## 트랜잭션
 ## MessageListner Container 구성
 ## Listner Concurrency
 
@@ -147,4 +194,8 @@ public interface Exchange {
 
 # Sample 예제
 
-.
+
+
+
+https://docs.spring.io/spring-amqp/reference/htmlsingle/
+
