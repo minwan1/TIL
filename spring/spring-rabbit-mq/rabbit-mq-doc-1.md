@@ -146,3 +146,5 @@ public interface Exchange {
 # 로깅시스템 AMQP Appenders
 
 # Sample 예제
+
+.

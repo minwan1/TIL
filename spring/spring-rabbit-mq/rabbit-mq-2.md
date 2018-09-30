@@ -22,6 +22,7 @@ rabbitmq-plugins enable rabbitmq-management
 
 
 ```
+source 해당경로
 $ rabbitmq-server
 ```
 
