@@ -1,3 +1,6 @@
+
+read committed 격리수준
+
 # Isolation 전략
 
 

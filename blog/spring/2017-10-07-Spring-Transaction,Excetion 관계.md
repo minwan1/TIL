@@ -1,5 +1,5 @@
 ## Spring에서 Exception 발생시 트랜잭션 처리 주의
-자바에서는 총 3개의  Exception이 존재한다. Error,Checked Exception, Unchecked Exception
+자바에서는 총 3개의  Exception이 존재한다. Error, Checked Exception, Unchecked Exception
 ![](https://i.imgur.com/Nc1vuAD.png)
 ### Error
 첫째는 java.lang.Error 클래스의 서브 클래스들이다. 에러는 시스템에 뭔가 비정상적인 상황이 발생했을 경우에 사용된다. 주로 VM에서 발생시키는 것이고 애플리케이션 코드에서 잡으려고 하면 안된다. 대부분 컴파일시 발견될 수 있는 예외이다.

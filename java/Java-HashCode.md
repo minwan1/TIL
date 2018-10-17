@@ -37,7 +37,7 @@ public class Test {
         final Member member2 = member1;
 
         System.out.println(member1 == member2);
-        System.out.println( member1.equals(member2));
+        System.out.println(member1.equals(member2));
     }
 
     public static class Member{
@@ -52,7 +52,7 @@ public class Test {
 }
 
 ```
-위에 예제는 둘 다 true 값이 나온다. 이것을 동일 객체라고 한다. 하지만 이렇게 생각할 수 있다. 유저의 id는 동일한데 왜 다른 유저가 되는지에 대해서... 보통 자바에서 이것을 동등 객체라고 한다. 동등 객체를 비교하기 위해서는 equals 함수를 사용해야 한다. 하지만 처음 예제에서 equals 함수도 false 값이 나왔다. 이러한 이유는 equals 함수를 재정의하지 않았기 때문이다. 아례에 예제에서 좀 더 자사하게 equals 메소드를 알아보자.
+위에 예제는 둘 다 true 값이 나온다. 이것을 동일 객체라고 한다. 하지만 이렇게 생각할 수 있다. 유저의 id는 동일한데 왜 다른 유저가 되는지에 대해서... 보통 자바에서 이것을 동등 객체라고 한다. 동등 객체를 비교하기 위해서는 equals 함수를 사용해야 한다. 하지만 처음 예제에서 equals 함수도 false 값이 나왔다. 이러한 이유는 equals 함수를 재정의하지 않았기 때문이다. 아래에 예제에서 좀 더 자세하게 equals 메소드를 알아보자.
 
 ## 객체 비교(equals())
 
