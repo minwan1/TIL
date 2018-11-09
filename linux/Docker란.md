@@ -23,6 +23,8 @@ pull ubuntu:14.04
 이미지 - 실행파일과 라이브러리가 모여있는거
 컨테이너 - 이미지를 실행시킨 것
 
+![](https://i.imgur.com/o5JQc3m.png)
+
 
 
 docker exec hello touch /hello.txt
