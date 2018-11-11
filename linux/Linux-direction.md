@@ -86,3 +86,9 @@ nslookup admin_dev.sodatransfer.com // ip보는 명령어
 ls -altr  // 현재위치에서 파일업데이트된 시간확인하는것
 
 출처: http://chago.tistory.com/4 [Mr,Cha GO!!!]
+
+
+## 라인 지우기
+```
+control + w
+```

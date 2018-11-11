@@ -19,6 +19,7 @@ docker ps -a //docker ps 확인
 **도커 이미지 제거**
 ```
 docker rm [CONTAINER ID] // docker 컨테이너 삭제
+docker rmi -f `docker images` //docker 모든 이미지 제거
 ```
 **도커 컨테이너 제거**
 ```
