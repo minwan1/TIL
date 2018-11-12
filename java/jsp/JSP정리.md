@@ -85,3 +85,6 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 JSP는 서블릿과 똑같은 기능을 가지고 있다. 차이가 있다면 표현하는 방법과 웹 애플리케이션에서의 역할이 다르다. 첫 번재 차이는 서블릿은 완벽하게 자바언어로 구현해야하지만, JSP는 HTML페이지 안에서 스크립트 형태로 구현해야한다. 또 한, 일부 서블릿 객체는 변수 선언과 초기화 작업 없이 바로 사용해서 코드가 훨씬 간단할 수 있다.
 
 두번째 차이는 서블릿은 컨트롤러 페이지를 만들때 사용하지만 JSP는 HTML 페이지 안에서 스크립트 형태로 구현한다. 
+
+
+![](https://i.imgur.com/26ONL6S.png)
