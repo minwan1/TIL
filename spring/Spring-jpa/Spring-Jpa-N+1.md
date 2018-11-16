@@ -40,3 +40,17 @@ JPQL : select o from Order o join fetch o.member
 SQL : select o.*, m.* from Order o join Member m on o.Member_ID=m.MEMBER_ID
 ```
 페치조인을 사용하게되면 조인 대상까지 함께 조회한다.(연관된 엔터티를 이미 로딩했으므로 글로벌 페치 전략은 무의미하다.)
+
+
+
+## 새로 테스트 한내용
+아카데미와 제목은 1대 다 관계
+```java
+        for(Academy ac : academies){
+            System.out.println(ac.getSubjects().get(0).getName()); // for문 돌떄마다 n+1하나씩 발생.
+        }
+```
+
+find all로 academy안에 one to one 이나 manytoone의 글로벌 페치 전략이 eargar여도 n+1이 발생하기 떄문에 fetch전략으로 조회를 해야한다.
+
+대신 여기에서 onetoone의 관계에서는 lazy로 변경해주면 조히할떄 n+1이 발생하지 않는다.
