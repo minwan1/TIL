@@ -84,3 +84,103 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 ## 서블릿 컨테이너 안내
 아파치 톰켓, 제티등이 서블릿 컨테이너로 혀재 널리사용된다.
 
+
+## 스프링 부트 실행 동작 순서
+
+* 내장 톰켓은 실행한다.
+
+
+
+
+## 스프링 부트는 다음과 같이 실행된다.
+
+* Spring boot는 ServletContainerInitializer를 구현한 TomcatStarter의 onStartup 메소드를 먼저 실행한다.(어딘가에 구성되어져있는 dispatch 서블릿 빈등록으로 자동 등록되어진다.)(이것을 통해 서블릿컨테이너 서블릿, 필터등을 등록한다.)
+    * 서블릿컨테이너가 ContextLoader 를 내려 초기 셋팅을한다.
+    * 서블릿 컨테이너 컨텍스트에 서블릿을등록한다. (이 과정에서 서블릿은 디스패처 서블릿을 의미한다.)
+    * 서블릿 컨테이너 필터에 등록설정 해놓은 필터들을 등록한다.
+
+* 디스팻처서블릿에 각종 핸들러 매핑(자원 URL)들이 등록 한다.(컨트롤러 빈들이 다 생성되어 싱글톤으로 관리되어진다.)
+
+
+![](https://i.imgur.com/CvVBmhQ.png)
+
+
+
+
+## 그후 클라이언트 요청으로부터 디스팻처서블릿은 어떻게 호출되어질까.
+
+* FrameworkService.service()를 먼저 탄다.
+* FrameworkService.service()는 dispatch.doService()를 호출한다.
+* dispatch.doService()는 dispatch.doDispatch()를 실행한다.
+    * doDispatch는 AbstractHandlerMapping매핑에서 핸들러(컨틀롤러)를 가져온다.
+    * 인터셉트 등을 지나서 해당 컨트롤러 메소드로 이동한다.
+    * 해당 핸들러는 MV를 리턴한다.
+    * @restoroller 컨트롤 같은경우 컨버터를 이용해 바로 결과값을 리턴한다.
+    * 만약 view에 대한 정보가 있으면 viewresolver에 들려 뷰객체를 얻는다.
+    * 뷰를 통해 렌더링을한다.
+
+
+요청이 들어오면 디스팻처서블릿 클래스로 이동한다.
+
+* AbstractHandlerMapping여기에서 handler할 매핑을 가져온다.
+
+
+
+
+
+
+서블릿컨테이너 이니셜라이저가 실행됨
+
+
+
+
+
+
+
+리
+
+
+```java
+public class MyWebApplicationInitializer implements WebApplicationInitializer {
+
+    @Override
+    public void onStartup(ServletContext servletCxt) {
+
+        // Load Spring web application configuration
+        AnnotationConfigWebApplicationContext ac = new AnnotationConfigWebApplicationContext();
+        ac.register(AppConfig.class);
+        ac.refresh();
+
+        // Create and register the DispatcherServlet
+        DispatcherServlet servlet = new DispatcherServlet(ac);
+        ServletRegistration.Dynamic registration = servletCxt.addServlet("app", servlet);
+        registration.setLoadOnStartup(1);
+        registration.addMapping("/app/*");
+    }
+}
+```
+
+```xml
+<web-app>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/app-context.xml</param-value>
+	</context-param>
+	<servlet>
+		<servlet-name>app</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value></param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>app</servlet-name>
+		<url-pattern>/app/*</url-pattern>
+	</servlet-mapping>
+</web-app>
+```

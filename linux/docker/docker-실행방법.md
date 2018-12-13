@@ -37,7 +37,7 @@ docker pull mysql:5.6ql
 **컨테이너 실행하기**
 ```
 docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
-ex)docker run --name mysql -d -p 13306:13306 -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql:5.6
+ex)docker run --name mysql -d -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql:5.6 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 
 sudo docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 --restart=unless-stopped -e RABBITMQ_DEFAULT_USER=guest -e RABBITMQ_DEFAULT_PASS=guest rabbitmq:management
 ```
