@@ -25,13 +25,13 @@ docker rmi -f `docker images` //docker 모든 이미지 제거
 ```
 docker rmi [IMAGE ID] // 이미지 삭제 
 ```
-# 3. Docker 이미지 설치 
-
+# 3. Docker 이미지 설치 Ø
+Ø
 
 **Docker MYSQL 설치**
 ```
 docker pull mysql:5.6ql
-```
+```O
 # 4. Dcoker 컨테이너 실행
 
 **컨테이너 실행하기**

@@ -20,10 +20,11 @@ export PATH=$PATH:/usr/local/sbin
 rabbitmq-plugins enable rabbitmq-management
 ```
 
-
+키축
 ```
 source 해당경로
-$ rabbitmq-server
+$ rabbitmq-server //시작
+$ rabbitmqctl stop //스탑
 ```
 
 
