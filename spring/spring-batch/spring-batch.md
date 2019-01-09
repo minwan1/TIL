@@ -216,6 +216,9 @@ ItemWriter도 ItemReader와 비슷한 방식으로 구현하면 됩니다. 제�
 
 * 청크란 아이템이 트랜잭션에서 커밋되는 수를 말합니다.
 
+
+
+
 # 스프링 부트 휴면 회원 배치 설계하기
 
 https://github.com/young891221/Spring-Boot-Community-Batch/tree/step1
@@ -227,3 +230,8 @@ https://github.com/young891221/Spring-Boot-Community-Batch/tree/step1
 1. 휴면회원 배치 테스트 코드 생성
 2. 휴면회원 배치정보 설정
 3. SQL로 테스트 데이터 주입하기
+
+
+# Batch 메타 테이블 
+
+![](https://i.imgur.com/IBxzbj5.png)
