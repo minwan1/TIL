@@ -38,7 +38,7 @@ $ docker run --name mysql -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password mysql:
   mysql:
      container_name: study.docker-test.mysql
      image: mysql/mysql-server:5.7
-     environment:
+     environment:https://recruit.navercorp.com/naver/job/detail/developer?annoId=20002317&classId=&jobId=&entTypeCd=&searchTxt=
       MYSQL_DATABASE: study
       MYSQL_ROOT_HOST: '%'
       MYSQL_ROOT_PASSWORD: password

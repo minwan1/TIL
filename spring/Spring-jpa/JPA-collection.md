@@ -117,5 +117,67 @@ https://www.callicoder.com/hibernate-spring-boot-jpa-element-collection-demo/
 
 
 ### 값 추가시 전체 삭제후 재추가하는 문제
-@ElementCollection을 통해 값을 추가할 경우, JPA 구현체는 해당 컬렉션의 모든 데이터를 삭제하고 다시 모든 데이터를 추가한다. PK가 존재하지 않기 때문에 발생하는 현상이다.
-이 현상을 조금이나마 줄이려면 @OrderColumn을 사용하면 된다.
+@ElementCollection을 통해 값을 추가할 경우 아래와 같이 JPA 구현체는 해당 컬렉션의 모든 데이터를 삭제하고, 다시 모든 데이터를 insert문을 실행한다. PK가 존재하지 않기 때문에 발생하는 현상이다.
+
+```sql
+Hibernate: 
+    select
+        order0_.order_number as order_nu1_4_0_,
+        order0_.create_at as create_a2_4_0_,
+        order0_.update_at as update_a3_4_0_ 
+    from
+        purchase_order order0_ 
+    where
+        order0_.order_number=?
+Hibernate: 
+    select
+        orderlines0_.order_number as order_nu1_3_0_,
+        orderlines0_.price as price2_3_0_ 
+    from
+        order_line orderlines0_ 
+    where
+        orderlines0_.order_number=?
+Hibernate: 
+    delete 
+    from
+        order_line 
+    where
+        order_number=?
+Hibernate: 
+    insert 
+    into
+        order_line
+        (order_number, price) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        order_line
+        (order_number, price) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        order_line
+        (order_number, price) 
+    values
+        (?, ?)
+
+```
+
+이 현상을 조금이나마 줄이려면 @OrderColumn을 사용하면 된다. @OrderColumn 사용하게되면 다삭제하지 않고 기존 데이터문을 update를 실행하고 마지막 추가한 데이터만 삽입하게 된다.
+
+만약 벨류타입을 많이사용한다면 @ElementCollection보다 onetomany를 사용하는것이 좋다.
+
+
+@OrderColumn을 사용하면 자동으로 index를 추가한다. 그럼 아래와같이 해당 주문에 맞춰서 index을 값지게 된다.
+
+order_number | 가격 | line_idx
+------- | ------- | -------
+order | 3000 | 0
+order1 | 3000 | 0
+order | 30 | 1
+order2 | 3000 | 0
+order | 30 | 2
