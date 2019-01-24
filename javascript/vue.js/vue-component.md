@@ -141,7 +141,53 @@ new Vue({
     }
 })
 
+```
+
+## 사용자 정의 이벤트
+
+```html
+<div id="app">
+    <counter-component v-on:increment="incrementTotal"></counter-component>
+    <counter-component v-on:increment="incrementTotal"></counter-component>
+    <p>Total:{{ total }}</p>
+</div>
+
+```
+
+```javascript
+var counterComponent = {
+    template:'<button @click="increment">{{ counter }} </button>',
+    data: function(){
+        return { counter : 0};
+    },
+    methods : {
+        increment: function(){
+            this.counter +=1;
+            this.$emit('increment');
+        }
+    }
+
+    new Vue({
+        el:"#app",
+        data: {
+            total: 0
+        },
+        methods:{
+            incrementTotal: function(){
+                this.total += 1;
+            }
+        },
+        components:{
+            'counter-component':counterComponet
+        }
+    });
+
+}
+```
 
 
-*
+결과값
+<button>1</button><button>2</button><br>
+total:3
+
 
