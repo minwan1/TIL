@@ -156,3 +156,26 @@ new Vue({
         }
     }
 })
+
+
+## Model 사용법
+
+Model은 데이터가 양방향 바인딩이 된다.
+
+```
+<input v-model="message" placeholder="여기를 수정해보세요">
+<p>메시지: {{ message }}</p>
+```
+
+## bind 사용법
+
+bind는 부모의 데이터를 자식 데이터에 바인딩할 떄 아래와같이 사용할 수 있다. bind는 단방향이다.
+
+<div>
+  <input v-model="parentMsg">
+  <br>
+  <child v-bind:my-message="parentMsg"></child>
+</div>
+v-bind에 대한 단축 구문을 사용하는 것이 더 간단합니다.
+
+<child :my-message="parentMsg"></child>
