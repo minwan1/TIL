@@ -74,7 +74,7 @@ new Vue({
 
 전체적인 라이플 사이클은 다음과 같습니다.
 
-![](https://i.imgur.com/jqfs9k1.png)
+![](https://kr.vuejs.org/images/lifecycle.png)
 
 
 
