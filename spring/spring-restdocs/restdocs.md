@@ -1,4 +1,4 @@
-## Spring rest docs
+`## Spring rest docs
 ### 의존성 추가
 ```xml
 <dependency>
@@ -121,3 +121,4 @@ public class MemberControllerTest {
     * preprocessResponse(prettyPrint() 설정을 통해서 해당 문서가 이쁘게 출력됩니다. 
     * 예를들어 JSON Response 값이 JSON 포멧팅에 맞게 출력됩니다.
     * alwaysDo() 메서드로 위에서 생성된 RestDocumentationResultHandler 객체를 의존성 주입해줍니다. 모든 mockMvc 테스트에 대한 snippets이 생성됩니다.
+`
