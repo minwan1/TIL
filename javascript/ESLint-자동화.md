@@ -1,8 +1,6 @@
-# Git Commit 전에 ESLint 자동화하기
+# Git Commit 전에 ESLint 자동 검사 하기
 보통 프론트엔드에서는 2인 이상 개발할 때 코드 컨벤션을 잡아주는 ESLint 오픈 소스를 사용합니다. 그런데 실제로 커밋을 하기전에 lint 검사를 하지 않거나 build 명령어를 실행하고 커밋하지 않는 이상 ESLint 코드 컨벤션을 어긴 코드들이 커밋될 수 있습니다. 이러한 문제점을 해결해주는것이 [husky](https://github.com/typicode/husky), [lint-staged](https://github.com/okonet/lint-staged), [prettier](https://github.com/prettier/prettier)가 있습니다. 이것에 대해 간단히 알아보겠습니다.
 
-
- ESLint를 사용하더라도 
 
 ## husky 
 깃 커밋 또는 푸쉬전에 eslint, test 등을 실행 해볼 수 있는 도구입니다. 만약 테스트 또는 eslint 문법을 어겼다면 방금 커밋하려고했던 파일들은 커밋이 되지 않습니다.
@@ -13,7 +11,7 @@ npm install husky --save-dev
 ```
 
 ### husky 사용법
-아래와같이 커밋이나 푸쉬전에 테스트나 eslint등을 테스트할 수 있습니다.
+아래와 같이 커밋이나 푸시전에 테스트나 eslint 등을 테스트할 수 있습니다.
 ```
 // package.json
 {
@@ -29,7 +27,10 @@ npm install husky --save-dev
 ```
 
 ## lint-staged
-staged된 파일들을 lint 해주는 도구입니다. 전체 프로젝트를 ESLint를 실행하는것은 속도가 느릴 수 있는데 lint-staged를 사용하면 특정 패턴에 파일에대해서만 lint 수행을 가능하게 해줍니다.
+
+검사하기118/500자 내용삭제
+맞춤법검사기 결과영역
+staged된 파일들을 lint 해주는 도구입니다. 전체 프로젝트를 ESLint를 실행하는 것은 속도가 느릴 수 있는데 lint-staged를 사용하면 특정 패턴에 파일에 대해서만 lint 수행을 가능하게 해줍니다.
 
 ### lint-staged 설치
 ```
