@@ -1,6 +1,20 @@
 # 간단한 잡으로 메타테이블 간단하게 알아보기
-
+그럼 실제로 스프링 배치를 돌렸을 때 어떻게 아래의 메타테이블에 데이터들이 저장되는지 알아보겠습니다. 
 ![](https://i.imgur.com/IBxzbj5.png)
+
+먼저 
+```gradle
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'mysql:mysql-connector-java'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+```
 
 # BATCH_JOB_INSTANCE
 다음 테이블을 조회하면 다음과 같이 조회될것이다.

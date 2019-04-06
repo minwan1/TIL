@@ -12,5 +12,15 @@ relative가 static인 상태를 기준으로 주어진 픽셀만큼 움직였다
 ## Fixed 
 
 
+
+## -webkit-overflow-scrolling:touch;
+기존 overflow 설정만 하고 모바일에서 스크롤을 하면 뚝뚝 끊기게 된다. 하지만 -webkit-overflow-scrolling:touch;이속성을 사용하게되면 부드럽게 스크롤이 잘된다. 아래 예제를 실행해보면 확실하게 구분할 수 있다.
+
+[예제](https://www.quirksmode.org/css/css2/overflowscrolling.html)
+
+
+
 참고
 * [z](https://www.zerocho.com/category/CSS/post/5864f3b59f1dc000182d3ea1)
+
+
