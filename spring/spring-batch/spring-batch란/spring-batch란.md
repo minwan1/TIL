@@ -175,3 +175,7 @@ ItemWriter도 ItemReader와 비슷한 방식으로 구현하면 됩니다. 제�
 * 청크란 아이템이 트랜잭션에서 커밋되는 수를 말합니다.
 
 
+참고 사이트
+* [Spring batch document](https://docs.spring.io/spring-batch/trunk/reference/htmlsingle/)
+* [처음으로 배우는 스프링 부트 2](http://book.interpark.com/product/BookDisplay.do?_method=detail&sc.saNo=001&sc.prdNo=292639632&utm_source=facebook&utm_medium=remarketing&utm_campaign=incorp_DAP_20180131&gclid=CjwKCAiAyrXiBRAjEiwATI95mQZB0ynb1xF3zqsoj4wmuyH9qRIXmKz9s4yDpyDAqoqVoPO5S8IipRoCNg0QAvD_BwE&product2017=true)
+* [기억보단 기록을](https://jojoldu.tistory.com/324)
