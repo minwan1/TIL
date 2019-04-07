@@ -209,3 +209,39 @@ BATCH_JOB_EXECUTION_PARAM테이블은 BATCH_JOB_EXECUTION 테이블이 생성될
 3 | STRING | requestDate | 20180806 | 1970-01-01 00:00:00 | 0 | 0 | Y
 4 | STRING | requestDate | 20180807 | 1970-01-01 00:00:00 | 0 | 0 | Y
 5 | STRING | requestDate | 20180807 | 1970-01-01 00:00:00 | 0 | 0 | Y
+
+
+
+1. 배치 테이블 간단한소개
+2. docker로 테이블생성
+3. 실행
+
+
+먼저 위에 스프링 배치에서 정의 해준 테이블들을 생성하기위해서는 데이터베이스 구성이 필요합니다. docker-compose를 통해 데이터베이스를 구성해보겠습니다. 프로젝트 Root폴더에 다음과 같이 docker-compose.yaml파일 구성해야합니다.(물론 docker가 설치 되있으셔야합니다.)
+
+```yml
+version: '3'
+
+services:
+  mysql:
+     container_name: batch.mysql
+     image: mysql/mysql-server:5.7
+     environment:
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_DATABASE: "batch"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+     ports:
+     - "3306:3306"
+     volumes:
+     - ./volumes/mysql:/var/lib/mysql
+```
+* [도커 윈도우 설치](https://docs.docker.com/docker-for-windows/install/)
+* [도커 맥 설치](https://docs.docker.com/docker-for-mac/install/)
+
+docker-compose를 구성하셨다면 docker-compose를 아래와 같은 명령어로 실행시키시면 local환경에서 mysql구성이 됩니다.
+
+```
+$ docker-compose up -d
+```
+
+
