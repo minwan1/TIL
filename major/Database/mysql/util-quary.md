@@ -12,3 +12,27 @@ where selected_date between '2018-05-30' and '2018-06-15'
 ) sd;
 
 ```
+
+
+
+```sql
+# 일반
+select DATE_FORMAT(created_at, '%y-%m-%d') m, count(*) count
+from applications 
+where pre_qr_serial_number is NULL
+and application_type = "REGISTERED"
+and created_at between '2018-04-03 00:00:00' and '2019-04-23 23:59:59'
+group by m;
+
+
+
+## 사전제작
+select DATE_FORMAT(created_at, '%y-%m-%d') m, count(*) count
+from applications 
+where pre_qr_serial_number is not NULL
+and application_type = "REGISTERED"
+and created_at between '2018-04-03 00:00:00' and '2019-04-23 23:59:59'
+group by m;
+
+
+```
