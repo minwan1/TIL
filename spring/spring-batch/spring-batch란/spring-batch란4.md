@@ -182,3 +182,12 @@ public class JpaPagingItemReader<T> extends AbstractPagingItemReader<T> {
 
 }
 ```
+
+
+
+
+//
+
+
+##
+스프링 jpa에서 write한후에 자동으로 commit이 벌크단위로 된다. 하지만 마지막부분 벌크만큼 양이안되면 commit이 안되기떄문에 write단계에서 꼭 update처리가 필요하다.

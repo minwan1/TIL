@@ -62,7 +62,7 @@ for(int i = 0; i < commitInterval; i++){
 itemWriter.write(items);
  ```
 ## ChunkOrientedTasklet
-청크지향 처리를 담당하는 클래스는 ChunkOrientedTasklet 클래스입니다. ChunkOrientedTasklet 클래스가 ItemReader로부터 데이터를 읽어와 ItemProcessor로 데이터를 가공하고 ItemWriter로 데이터를 저장하는 일을 총괄하는 class입니다.
+청크지향 처리를 담당하는 클래스는 ChunkOrientedTasklet 클래스입니다. **ChunkOrientedTasklet 클래스가 ItemReader로부터 데이터를 읽어와 ItemProcessor로 데이터를 가공하고 ItemWriter로 데이터를 저장하는 일을 총괄하는 class입니다.**
 
 ### ChunkOrientedTasklet
 
@@ -96,13 +96,13 @@ public class ChunkOrientedTasklet<I> implements Tasklet {
 		if (inputs == null) {
 
             //chunkProvider의 구현체인 SimpleChunkProvider가 존재한다. 이것을 deafult로 사용한다.
-			inputs = chunkProvider.provide(contribution);
+			inputs = chunkProvider.provide(contribution); //1. 데이터를 읽어온다.
 			if (buffering) {
 				chunkContext.setAttribute(INPUTS_KEY, inputs);
 			}
 		}
 
-		chunkProcessor.process(contribution, inputs); //실제 데이터를 가공 처리하고 저장한다.
+		chunkProcessor.process(contribution, inputs); //2. 실제 데이터를 가공 처리하고 저장한다.
 		chunkProvider.postProcess(contribution, inputs);
 
 		if (inputs.isBusy()) {
@@ -296,73 +296,88 @@ public class SimpleChunkProcessor<I, O> implements ChunkProcessor<I>, Initializi
 ```
 
 
+## 심사 상태에 따른 유저 상태 변경 배치 처리
+실제 예제를 한번만들어 보겠습니다. 아래 예제는 다음과 같은 요구 조건으로 시나리오로 만들어진 배치잡입니다.
+1. 유저가 처음 생성되면 유저의 상태는 WAITING 즉 싱사대기중인 상태이다.
+2. 유저가 가입한지 하루가 지났다면 COMPLETED 심사 완료 배치처리를 해야한다.
 
-
+그럼 위의 요구조건을 만족하기위해 어떠한 설정들이 필요할지 나열해보겠습니다.
+* 유저 심사 완료처리 Job
+* 유저 심사 완료처리 Step
+* 유저 심사 완료처리 Reader, Processor, Writer
 
 ```java
-@AllArgsConstructor
+@Slf4j
 @Configuration
-public class InactiveUserJobConfig {
+@RequiredArgsConstructor
+public class JobConfiguration {
 
-    private UserRepository userRepository;
+    private final MemberRepository memberRepository;
+    private final int CHUNK_SIZE = 10;
 
     @Bean
-    public Job inactiveUserJob(JobBuilderFactory jobBuilderFactory, Step inactiveJobStep) {
-        return jobBuilderFactory.get("inactiveUserJob")
-//                .preventRestart()
+    public Job completeUserJob(JobBuilderFactory jobBuilderFactory, Step completeJobStep) {
+        return jobBuilderFactory.get("completeUserJob")
                 .incrementer(new RunIdIncrementer())
-                .start(inactiveJobStep)
+                .start(completeJobStep)
                 .build();
     }
-
     @Bean
-    public Step inactiveJobStep(StepBuilderFactory stepBuilderFactory) {
-        return stepBuilderFactory.get("inactiveUserStep")
+    public Step completeJobStep(StepBuilderFactory stepBuilderFactory) {
+        return stepBuilderFactory.get("completeUserStep")
                 .allowStartIfComplete(true)
-                .<User, User> chunk(10)
-                .reader(inactiveUserReader())
-                .processor(inactiveUserProcessor())
-                .writer(inactiveUserWriter())
+                .<Member, Member> chunk(CHUNK_SIZE)
+                .reader(completeMemberReader())
+                .processor(completeUserProcessor())
+                .writer(completeUserWriter())
                 .build();
     }
 
     @Bean
     @StepScope
-    public QueueItemReader<User> inactiveUserReader() {
-        List<User> oldUsers = userRepository.findByUpdatedDateBeforeAndStatusEquals(LocalDateTime.now().minusYears(1), UserStatus.ACTIVE);
-        return new QueueItemReader<>(oldUsers);  // 전체를 다읽어옴
+    public QueueItemReader<Member> completeMemberReader() {
+        List<Member> oldMembers =
+                memberRepository.findByCreatedAtBeforeAndProcessStatusEquals(
+                        LocalDateTime.now().minusDays(1), ProcessStatus.WAITING);
+        return new QueueItemReader<>(oldMembers);  // 전체를 다읽어옴
     }
 
-    public ItemProcessor<User, User> inactiveUserProcessor() {
-//        return User::setInactive;
-        return new ItemProcessor<User, User>() {
+    public ItemProcessor<Member, Member> completeUserProcessor() {
+        return new ItemProcessor<Member, Member>() {
             @Override
-            public User process(User user) throws Exception {
-                return user.setInactive();
+            public Member process(Member member) {
+                return member.setCompleted();
             }
 
         };
     }
 
-    public ItemWriter<User> inactiveUserWriter() {
-        return new ItemWriter<User>() {
+    public ItemWriter<Member> completeUserWriter() {
+
+        return new ItemWriter<Member>() {
             @Override
-            public void write(List<? extends User> users) throws Exception {
+            public void write(List<? extends Member> users) {
                 // 위에 청크가 있어서 10개씩 커밋함.
-                userRepository.saveAll(users);
+                memberRepository.saveAll(users);
             }
         };
     }
+
 }
+
 
 ```
 
-1. 전체 active인 user들을 다불러온다.
-2. 10개씩 상태를 변경한다
-3. 10개를 커밋한다.
+원래 기존 예제에서는 JobParmeter가 변경되어야 Job을 실행할 수 있다고했는데 위에 예제에서는 JobParameter가 구분될필요가 없어 같은 Jobparameter나 같은 Job을 실행하도록 incrementer, allowStartIfComplete를 설정했습니다.
 
+* [예제](https://github.com/minwan1/spring-batch-example/tree/feature/batch3-chunk-base)
 
+실제 예제가 돌아가려는 모습을 보시려면 ExampleApplicationTests.java 코드를 실행하시면됩니다. 따로 테스트 코드는 작성되어있지않지만 아래 코드를 실행하면 예제가 돌아가는것을 알 수 있습니다.
+```java
+@Test
+	public void contextLoads() {
 
-하지만 위에 문제가있음
-모든 active user를 다불러오게되면 메모리에 다올려놓을 수 없음.
-이러한 문제를 해결하는게 페이징 처리
+	}
+```
+
+하지만 위에 문제가있습니다. 문제는 유저를 불러오는 부분입니다. 저렇게 유저를 불러오게되면 데이터베이스 모든 유저를 불러오게됩니다. 그렇게되면 업데이트해야할 유저에 대상이 수십,수백만건에 데이터가 된다면 그많은 데이터를 메모리에 올리다가 시스템이 뻗을수 가 있습니다. 그렇기 때문에 페이징 처리를 해야합니다. 다음장에서는 어떤식으로 페이징 처리를 할 수 있는지 알 아보도록 하겠습니다.
