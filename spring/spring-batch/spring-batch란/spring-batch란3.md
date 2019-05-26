@@ -1,13 +1,13 @@
 # 청크 지향 프로세싱
 
 ## Spring batch 처리 방법
-스프링 배치는 크게 2가지 배치 처리 방법이 있습니다. Tasklet 방식과 청크지향 프로세싱 방법입니다. 그전글에서 예제로 만들었던 job 방식이 Tasklet방입니다. 실무에서 tasklet방식같은경우 일반적으로 통계를 구하는 작업에서 많이 쓰이는 방법입니다. 
+스프링 배치는 크게 2가지 배치 처리 방법이 있습니다. Tasklet 방식과 청크 제향 프로세싱 방법입니다. 이전 글에서 예제로 만들었던 job 방식이 Tasklet 방입니다. 실무에서 tasklet 방식 같은 경우 일반적으로 통계를 구하는 작업에서 많이 쓰이는 방법입니다.
 
-이번글에서 알아볼 방식이 청크지향 프로세싱 방법입니다. 반대로 청크지향 프로세싱방법은 일괄 데이터 변경이나 어떤 데이터 변화를 주는 작업에서 청크지향 프로세싱 방법을 사용할 수 있습니다.
+이번 글에서 알아볼 방식은 청크 제향 프로세싱 방법입니다. 반대로 청크 제향 프로세싱 방법은 일괄 데이터 변경이나 어떤 데이터 변화를 주는 작업에서 청크 제향 프로세싱 방법을 사용할 수 있습니다.
 
 ![](https://i.imgur.com/xZDN6mh.jpg)
 
-위 설계도는 Srping-batch1 글에서 봤던 Spring batch 구조도입니다. 일반적으로 Spring batch는 위와같은 구조를 가지게됩닏. 위에서 Step을 tasklet방법으로 구성하느냐, ItemReader, ItemProcessor, ItemWriter의 단위로 구성하느냐에 따라 tasklet 방식이 될 수 있고, 청크지향 프로세싱 방법이 될 수 있습니다.
+위 설계도는 Srping-batch1 글에서 봤던 Spring batch 구조대입니다. 일반적으로 Spring batch는 위와 같은 구조를 가지게 됩니다. 위에서 Step을 tasklet 방법으로 구성하느냐, ItemReader, ItemProcessor, ItemWriter의 단위로 구성하느냐에 따라 tasklet 방식이 될 수 있고, 청크 제향 프로세싱 방법이 될 수 있습니다.
 
 청크 지향을 프로세싱을 알아보기전에 간단하게 ItemReader, ItemProcessor, ItemWriter개념을 다시한번 봐보겠습니다.
 
@@ -19,12 +19,12 @@ public interface ItemReader<T> {
     T read() throws Exception;
 }
 ```
-ItemReader에서 read() 메서드의 반환타입을 제넥으로 구현했기 때문에 직접 타입을 지정 할 수 있습니다.
+ItemReader에서 read() 메서드의 반환타입을 제네릭으로 구현했기 때문에 직접 타입을 지정 할 수 있습니다.
 
 
 ## ItemProcessor
 
-ItemProcessor는 ItemReader로 읽어온 배치 데이터를 변환하는 역할을 수행한다.다음은 ItemProcessor인터페이스 코드이다. 제니릭을 사용해 인풋, 아웃풋 타입을 정의하고 비지니스 로직을 구현한다.
+ItemProcessor는 ItemReader로 읽어온 배치 데이터를 변환하는 역할을 수행합니다. 다음은 ItemProcessor인터페이스 코드입니다다. 제니릭을 사용해 인풋, 아웃풋 타입을 정의하고 비지니스 로직을 구현할 수 있습니다.
 
 ```java
 public interface ItemProcessor<I, O> {
@@ -34,7 +34,8 @@ public interface ItemProcessor<I, O> {
 ```
 
 ### ItemWriter
-ItemWriter도 ItemReader 와 비슷한 방식으로 구현하면됩니다. 제네릭으로 원하는 타입을 받습니다. write()메서드는 List 자료구조를 사용해 지정한 타입의 리스트를 매개변수로 받습니다. **리스트의 데이터수는 설정한 청크 단위로 불러옵니다.** write() 메서더의 반환값은 따로 없고 매개변수로 받은 데이터를 저장하는 로직을 구현하면됩니다.
+ItemWriter도 ItemReader 와 비슷한 방식으로 구현하면 됩니다. 제네릭으로 원하는 타입을 받습니다. write() 메서드는 List 자료구조를 사용해 지정한 타입의 리스트를 매개변수로 받습니다. **리스트의 데이터 수는 설정한 청크 단위로 불러옵니다.** write() 메서 더의 반환값은 따로 없고 매개변수로 받은 데이터를 저장하는 로직을 구현하면 됩니다.
+
 ```java
 public interface ItemWriter<T> {
     void write(List<? extends T> items) throws Exception;
@@ -44,54 +45,40 @@ public interface ItemWriter<T> {
 
 
 ## 청크 지향 프로세싱
-
 청크 지향 프로세싱은 트랜잭션 경계 내에서 청크 단위로 데이터를 읽고 생성하는 기법입니다. 청크란 아이템이 트랜잭션에서 커밋되는 수를 말합니다. 읽어온 데이터를 지정된 청크수에 맞게 트랜잭션 커밋을 진행합니다.
 
-예를들어 1천개의 데이터를 업데이트 해야한다고 해보겠습니다. 이럴경우 위에서 말한 tasklet방식이나 청크로 데이터를 지정하지 않은경우 천개의 데이터에 변경을 한번에 해야합니다. 이렇게되면 천개의 데이터중 한개의 데이터라도 업데이트를 실패하여 Exception발생할경우 천개의 데이터를 롤백해야합니다. 이러한 문제를 해결하기위해서는 청크를 지정해야합니다. 청크를 지정하게되면 한건에 실패에대한 청크부터 뒤에까지만 영향을 받게됩니다. 실패한 청크 앞에 영역은 영향을 받지 않습니다.
+예를 들어 1천 개의 데이터를 업데이트해야 한다고 해보겠습니다. 이럴 경우 위에서 말한 tasklet 방식이나 청크로 데이터를 지정하지 않은 경우 천 개의 데이터에 변경을 한 번에 해야 합니다. 이렇게 되면 천 개의 데이터 중 한 개의 데이터라도 업데이트를 실패하여 Exception 발생할 경우 천 개의 데이터를 롤백 해야 합니다. 또한 트랜잭션 시간을 길게 가져감으로써 데이터베이스로부터 읽어온 데이터들이 lock이 걸리게 됩니다. 이러한 문제를 해결하기 위해서는 청크 지향 프로세싱을 이용해야 합니다. 청크를 지정하게 되면 한 건에 실패에 대한 청크부터 뒤에까지만 영향을 받게 됩니다. 실패한 청크 앞에 영역은 영향을 받지 않습니다. 또한 청크만큼만 트랜잭션 시간을 가져가기 때문에 트랜잭션 시간을 짧게 가져갈 수 있습니다.
 
 ![](https://i.imgur.com/FGDqxIR.png)
 
 
-위에 도식표는 처크지향 프로세싱이 flow를 나태는 그림입니다. 다음코드는 청크지향 프로세싱 flow를 컨셉을 나타내는 자바 소스코드입니다.
+위에 도식 표는 처크 지향 프로세싱이 flow를 나태는 그림입니다. 다음 코드는 청크 제향 프로세싱 flow를 콘셉을 나타내는 자바 소스코드입니다. 아래에서 조금 더 세밀하게 청크 제향 flow를 파악해보겠습니다.
+
  ```java
  List items = new Arraylist();
 for(int i = 0; i < commitInterval; i++){
-    Object item = itemReader.read() 
-    Object processedItem = itemProcessor.process(item);
-    items.add(processedItem);
+    Object item = itemReader.read()  //reader에서 데이터 읽어오기
+    Object processedItem = itemProcessor.process(item); //process로 비지니스로직처리
+    items.add(processedItem); //list에 target 데이터 사빕
 }
-itemWriter.write(items);
+itemWriter.write(items); // 청크만큼 데이터 저장
  ```
 
 
 
 
 ## ChunkOrientedTasklet
-청크지향 처리를 담당하는 클래스는 ChunkOrientedTasklet 클래스입니다. **ChunkOrientedTasklet 클래스가 ItemReader로부터 데이터를 읽어와 ItemProcessor로 데이터를 가공하고 ItemWriter로 데이터를 저장하는 일을 총괄하는 class입니다.**
+위에 청크지향 콘셉을 실제로 담당하는 클래스는 ChunkOrientedTasklet 클래스입니다. **ChunkOrientedTasklet 클래스가 ItemReader로부터 데이터를 읽어와 ItemProcessor로 데이터를 가공하고 ItemWriter로 데이터를 저장하는 일을 총괄하는 class입니다.**
 
 ### ChunkOrientedTasklet
-
-청크 단위로 처리하는 작업을 아래에 execute가 처리를 하게 됩니다.
-* chunkProvider.provide()로 **빈으로 등록된 ItemReader**에서 Chunk size만큼 데이터를 가져옵니다.
+청크 단위로 처리하는 작업을 아래에 execute메소드가가 처리를 하게 됩니다.
+* chunkProvider.provide() **빈으로 등록된 ItemReader**에서 Chunk size만큼 데이터를 가져옵니다.
 * chunkProcessor.process() 에서 ItemReader로 받은 데이터를 **빈으로 등록된 ItemProcess와 ItemWriter**를 통해 데이터를 가공하고 저장하는 처리 해줍니다.
 
 ```java
 public class ChunkOrientedTasklet<I> implements Tasklet {
 
-	private static final String INPUTS_KEY = "INPUTS";
-
-	private final ChunkProcessor<I> chunkProcessor;
-
-	private final ChunkProvider<I> chunkProvider;
-
-	private boolean buffering = true;
-
-	private static Log logger = LogFactory.getLog(ChunkOrientedTasklet.class);
-
-	public ChunkOrientedTasklet(ChunkProvider<I> chunkProvider, ChunkProcessor<I> chunkProcessor) {
-		this.chunkProvider = chunkProvider;
-		this.chunkProcessor = chunkProcessor;
-	}
+	...
 
 	@Override
 	public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
@@ -373,16 +360,18 @@ public class JobConfiguration {
 
 ```
 
-원래 기존 예제에서는 JobParmeter가 변경되어야 Job을 실행할 수 있다고했는데 위에 예제에서는 JobParameter가 구분될필요가 없어 같은 Jobparameter나 같은 Job을 실행하도록 incrementer, allowStartIfComplete를 설정했습니다.
+원래 기존 예제에서는 JobParmeter가 변경되어야 Job을 실행할 수 있다고 했는데 위에 예제에서는 JobParameter가 구분될 필요가 없어 같은 Jobparameter 나 같은 Job을 실행하도록 incrementer, allowStartIfComplete를 설정했습니다.
+
+
 
 * [예제](https://github.com/minwan1/spring-batch-example/tree/feature/batch3-chunk-base)
 
-실제 예제가 돌아가려는 모습을 보시려면 ExampleApplicationTests.java 코드를 실행하시면됩니다. 따로 테스트 코드는 작성되어있지않지만 아래 코드를 실행하면 예제가 돌아가는것을 알 수 있습니다.
+실제 예제가 돌아가려는 모습을 보시려면 ExampleApplicationTests.java 코드를 실행하시면 됩니다. 따로 테스트 코드는 작성되어 있지 않지만 아래 코드를 실행하면 예제가 돌아가는 것을 확인하실 수 있습니다.
 ```java
 @Test
-	public void contextLoads() {
+public void contextLoads() {
 
-	}
+}
 ```
 
-하지만 위에 문제가있습니다. 문제는 유저를 불러오는 부분입니다. 저렇게 유저를 불러오게되면 데이터베이스 모든 유저를 불러오게됩니다. 그렇게되면 업데이트해야할 유저에 대상이 수십,수백만건에 데이터가 된다면 그많은 데이터를 메모리에 올리다가 시스템이 뻗을수 가 있습니다. 그렇기 때문에 페이징 처리를 해야합니다. 다음장에서는 어떤식으로 페이징 처리를 할 수 있는지 알 아보도록 하겠습니다.
+하지만 위에 문제가 있습니다. 문제는 유저를 불러오는 부분입니다. 저렇게 유저를 불러오게 되면 데이터베이스 모든 유저를 불러오게 됩니다. 그렇게 되면 업데이트해야 할 유저에 대상이 수십, 수백만 건에 데이터가 된다면 그 많은 데이터를 메모리에 올리다가 시스템이 뻗을 수가 있습니다. 그렇기 때문에 이러한 문제를 해결하기 위해서는 데이터를 읽어올 때 페이징 처리를 해야 합니다. 다음 장에서는 어떤 식으로 페이징 처리를 할 수 있는지 알아보도록 하겠습니다.
