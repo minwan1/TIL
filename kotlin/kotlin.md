@@ -61,3 +61,91 @@ var = variable의미로 값을 변경 가능함.
 
 
 ### 클래스와 프로퍼티
+
+**클래스**
+
+코틀린에서 간단한게 Person class를 선언해보자
+
+```
+class Person(val name: String)
+```
+
+**프로퍼티**
+그다음은 프로퍼티를 봐보자.
+
+```kotlin
+class Person(
+    val name: String, //읽기전용으로 단순 getter만 제공한다.
+    var isMarried:Boolean //getter,setter를 제공한다.
+)
+```
+
+**커스텀 접근자**
+이번에는 프로퍼티의 접근자를 직접 작성하는 방법을 확인해보자. 직사각형 클래스인 Rectangle을 정의하면서 자신이 정사각형인지 알려주는 기능을 만들어보자. 
+
+```kotlin
+class Rectangle(val height: Int, val width: Int){
+    val isSquare: Boolean
+    get () {
+        return height == width
+    }
+}
+
+var rectangle = Rectangle(41, 43)
+println(rectangle.isSquare) // false
+```
+
+isSquare프로퍼티에는 자체값을 저장하는 필드가 필요없다. 이 프로퍼티에는 자체 구현을 제공하는 게터만 존재한다. 클라이언트가 프로퍼티에 접근할 때마다 게터가 프로퍼티값을 매번 다시 계산한다.
+
+### 선택 표현과 처리: enum과 when
+when은 자바의 switch를 대치하되 훨씬 더 강력하다.
+**enum class 선언**
+```
+enum class Color {
+    RED, ORANGE, YELLOW, GREEN, BLUE, INDIGO, VIOLET
+}
+```
+**다음은 프로퍼티와 메소가 있는 enum 클래스 선언하기 예제이다.**
+```kotlin
+enum class Color (val r: Int, val g: Int, val b: Int){
+    RED(255, 0, 0), 
+    ORANGE(255, 165, 0), 
+    YELLOW(255, 255, 0), 
+    GREEN(0, 255, 0), 
+    BLUE(0, 0, 255), 
+    INDIGO(75, 0, 130), 
+    VIOLET(238, 130, 238)
+
+    fun rgb() = (r * 256 + g) * 256 + b
+}
+```
+**when을 사용해 올바른 enum 값 찾기**
+```kotlin
+fun getMnmonic(color :Color) = 
+    when(color) {
+        Color.RED -> "Richard"
+        Color.ORANGE -> "Of"
+        Color.YELLOW -> "York"
+        Color.GREEN -> "Gave"
+        Color.BLUE -> "Battle"
+        Color.INDIGO -> "In"
+        Color.VIOLET -> "Vain"
+    }
+```
+자바와 달리 각 분기 끝에 break를 넣지 않아도 된다. 만약 한분기에 여러값을 넣고 싶다면 ,를 이용할 수 있다.
+
+```kotlin
+fun getMnmonic(color :Color) = 
+    when(color) {
+        Color.RED -> "Richard"
+        Color.ORANGE, Color.YELLOW -> "Of"
+    }
+}
+```
+
+### 코틀린의 예외 처리
+코틀린의 예외처리는 다음과같은 구문으로 처리 가능하다.
+```kotlin
+throw IllegalArgumentException("exception");
+```
+

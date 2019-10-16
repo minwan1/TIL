@@ -1,11 +1,11 @@
 
 # Spring Integration이란?
-Spring integration은 스프링 기반 어플리케이션 내에 가벼운 메시징 기반서비스를 제공하고 선언적 어뎁터를 사용해 외부 시스템과 통합을 쉽게해준다. 이것은 spring의 messaging, scheduling보다 더높은 추상화를 제공한다. Spring integration의 주된 목적은 좀더 테스트하기쉽고 유지보수하기좋은 엔터프라이즈 솔루션용 모델을 제공하는것이다.
+Spring integration은 스프링 기반 어플리케이션 내에 가벼운 메시징 기반서비스를 제공하고 선언적 어뎁터를 사용해 외부 시스템과 통합을 쉽게해준다. 이것은 Spring에서 기존사용하던 messaging, scheduling보다 더높은 추상화를 제공한다. Spring integration의 주된 목적은 좀더 테스트하기쉽고 유지보수하기 좋은 엔터프라이즈 Intergration 모델을 제공하는것이다.
 
 
-사용하는 이유는 말그대로 통합이다. 예를들어 여러 서비스가 각자 다른 통신 프로토콜을 사용한다면 그 여러 서비스를 사용하는 client입장에서는 개발하기 번거롭고 서비스 특성마다 개발을 해야한다. 그래서 Spring Integration을 통해 중간 Gateway를 만들어서 여러 서비스를 하나의 통신 프로토콜로 통신 가능하게 통합할 수 있게 도와주는 프로젝트다.
+흔히 스프링 프레임워크는 개발자에게 인터페이스를 제공하고, DI를 통해 디펜던시 의존성을 주입하여 준다. 스프링 인테그레이션은 이러한 개념에서 한걸음 더 나가, 애플리케이션 컴포넌트 레벨에서가 아닌 더 높은 상위 레벨에서 message paradigm 을 이용한 POJO 와이어링을 적용한다. 높은 레벨의 요구사항을 달성하기 위해,  재사용 가능한 세분화 된 컴포넌트를 조합하여 애플리케이션을 만들게 되는데, 디자인을 잘 고려한다면 이러한 flow가 상위레벨에서 재사용될 수 있도록 모듈화 될 수 있다.
 
-
+또한 구체화된 컴포턴트를 와이어링하여, 스프링 인테으게이션은 외부 시스템과 커뮤니케이션 하기 위한 다양한 채널 어댑터와 게이트웨이를 제공한다. 채널 어댑터는 단방향(one-way) integration(보내기, 받기)으로써 사용되고, 게이트웨이는  요청/답변 시나리오(inbound, outbound)로써 사용된다. 
 
 
 Spring Integration 은 스프링 프레임웍의 기본 기능에 **Messages, Message Channel, EndPoint** 라는 3가지 핵심 컴포넌트를 추가로 제공해 준다.
@@ -74,3 +74,61 @@ java.lang.String: Text that represents the file contents
 
 
 
+```xml
+<int: channel id="requestChannel" />
+
+<int:gateway id="requestGateway"
+            service-interface="integration.PointRequestGateway"
+            default-request-channel="requestChannel" />
+
+// 아래아웃바운드를 통해 http를 진행한다.
+<int-http:outbound-gateway
+        request-channel="requestChannel"
+        url="http://example.com/point/>"
+        http-method="GET"
+        expected-response-type="java.lang.String" />
+
+```
+
+```java
+public interface PointRequestGateway{
+    Point getPoint(String id);
+}
+```
+
+아래와같이 진행하게되면 주입된 interface를 통해 Spring integration을통해 http통신을 하게 된다.
+```java
+@Autowired
+public PointRequestGateway gateway;
+Point point = gateway.getPoint("41");
+```
+
+
+Spring integration은 messaging 기반으로 통신을 구현한다.
+
+Messaging은 프로그램간에 빠르고 실뢰할 수 있는 통신을 비동기 방식으로 가능케하는 전송기술 
+
+
+
+## Message
+전송할 데이터가 담김 Wrapper Class
+## Pipes 
+Message 오브젝트를 발신 / 수신하기 위한 창구
+## Filters
+Message 오브젝트를 발신 / 수신하는 목적지
+
+
+![](https://i.imgur.com/H9nzIfP.jpg)    
+
+![](https://i.imgur.com/TXCNYfs.jpg)
+
+
+```java
+@Autowired
+private DirectChannel helloChannel;
+
+Message<String> message = MessageBuilder.withPayload("Hello world!").build();
+
+helloChannel.send(message);
+```
+위와같이 보내면 채널로 메시지가 날라가게 된다.
