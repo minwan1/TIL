@@ -23,7 +23,6 @@
 * **Step**은 **ItemReader, ItemProcessor, ItemWriter**로 만들어집니다. 
 * **Step**은 차례대로 **ItemReader, ItemProcessor, ItemWriter** 처리합니다.
 * **Job**, **Step**이 실행됐는지 또 이러한 작업의 단위가 중복 실행됐는지등은 미리 스프링 배치에서 생성한 **JobRepository**를 통해 확인하게 됩니다. 
-* *Step*에 **ItemReader, ItemProcessor, ItemWriter** 대신에 하나의 작업단위 tasklet단위를 넣을 수 있다.
 
 ![](https://i.imgur.com/xZDN6mh.jpg)
 

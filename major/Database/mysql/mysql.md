@@ -30,3 +30,19 @@ root 1234 local
 
 1. [백발의개발자](http://m.blog.naver.com/jjoommnn/130181901609) - angular 이론에 대해 아주 쉽게 설명해준다.
 출처: http://windowx.tistory.com/entry/mysql-scheduler-사용하기 [mulder's it blog]
+
+
+
+
+##
+SELECT @@sql_mode;
+
+mysql only_full_group_by
+
+
+
+show variables like 'general%';
+
+set global general_log=on;
+
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));

@@ -24,8 +24,13 @@ docker rmi -f `docker images` //docker 모든 이미지 제거
 **도커 컨테이너 제거**
 ```
 docker rmi [IMAGE ID] // 이미지 삭제 
+
+**도커 네트워크 리스트**
 ```
-# 3. Docker 이미지 설치 Ø
+docker network ls
+```
+```
+# 3. Docker 이미지 설치
 Ø
 
 **Docker MYSQL 설치**
