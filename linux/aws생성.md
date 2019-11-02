@@ -50,7 +50,7 @@ chmod 400 wankeypair.pem
 ```
 그리고 아래와같이 ssh명령어로 서버를 접속하시면 서버에 접속된 모습을 볼 수 있습니다.
 ```
-ssh ec2-52-78-246-68.ap-northeast-2.compute.amazonaws.com -i wankeypair.pem
+ssh ec2-user@ec2-52-78-246-68.ap-northeast-2.compute.amazonaws.com -i wankeypair.pem
 ```
 
 간단하게 EC2를 생성하고 접속하는 방법에 대해 알아 봤습니다.

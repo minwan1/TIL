@@ -1,6 +1,5 @@
 # Docker
 
-
 # 1. Docker 이미지
 도커 이미지는 컨테이너 실행에 필요한 파일과 설정값등을 포함하고 있는 것으로 상태값을 가지지 않고 변하지 않습니다(Immutable).  컨테이너는 이미지를 실행한 상태라고 볼 수 있고 추가되거나 변하는 값은 컨테이너에 저장됩니다. 같은 이미지에서 여러개의 컨테이너를 생성할 수 있고 컨테이너의 상태가 바뀌거나 컨테이너가 삭제되더라도 이미지는 변하지 않고 그대로 남아있습니다
 
@@ -68,15 +67,8 @@ mysql -u root -p
 ```
 
 
-
-
-
 참고
 [도커](https://subicura.com/2017/01/19/docker-guide-for-beginners-2.html)
-
-
-
-
 
 
 
@@ -115,18 +107,8 @@ Server:
 ![](http://i.imgur.com/eQN0q8D.png)
 
 
-
 docker compose
 여러가지 컨테이너를 한번에 빌드할수 있게해주는 툴
-
-
-docker 젠킨스 실행
-```
-docker run -p 8080:8080 -v /docker/jenkins:/var/jenkins_home -u root jenkins
-docker run -d -p 8080:8080 -v /docker/jenkins:/var/jenkins_home -u root jenkins //background돌림
-docker run -i -t jenkins /bin/bash //도커 접속하는것
-``
-
 
 
 
